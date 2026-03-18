@@ -1,0 +1,3959 @@
+{
+  "version": 5,
+  "max_local_methods_per_country": 5,
+  "note": "Use ISO-3166 alpha-2 lowercase keys. Each country can define up to 5 local organizations. Include fajrAngle and ishaAngle for each local organization entry.",
+  "global_method_keys": [
+    "MWL",
+    "ISNA",
+    "EGYPT",
+    "KARACHI",
+    "AR_UAQ"
+  ],
+  "countries": {
+    "af": [
+      {
+        "key": "KARACHI",
+        "label": "University of Islamic Sciences, Karachi",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "University of Islamic Sciences, Karachi"
+      }
+    ],
+    "ax": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "fi",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "al": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "dz": [
+      {
+        "key": "ALGERIA",
+        "label": "Algerian Ministry of Religious Affairs and Wakfs",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Algerian Ministry of Religious Affairs and Wakfs"
+      },
+      {
+        "key": "LOCAL_DZ_CRA",
+        "label": "Conseil religieux d'Algerie (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Conseil religieux d'Algerie (reference locale)"
+      }
+    ],
+    "as": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ad": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ao": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ai": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "aq": [],
+    "ag": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ar": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "am": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "aw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "au": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "at": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "az": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bh": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "bd": [
+      {
+        "key": "KARACHI",
+        "label": "University of Islamic Sciences, Karachi",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "University of Islamic Sciences, Karachi"
+      }
+    ],
+    "bb": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "by": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "be": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bj": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bt": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bo": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ba": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "hr",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "bw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "br": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_BR_FAMBRAS",
+        "label": "FAMBRAS (Federation of Muslim Associations in Brazil)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "FAMBRAS (Federation of Muslim Associations in Brazil)"
+      },
+      {
+        "key": "LOCAL_BR_CDIAL",
+        "label": "CDIAL Halal (reference locale Bresil)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "CDIAL Halal (reference locale Bresil)"
+      }
+    ],
+    "io": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "gb",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "vg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bi": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "kh": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ca": [
+      {
+        "key": "ISNA",
+        "label": "Islamic Society of North America (ISNA)",
+        "fajrAngle": -15,
+        "ishaAngle": -15,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Islamic Society of North America (ISNA)"
+      }
+    ],
+    "cv": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ky": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "td": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "co": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "km": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ck": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "hr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cy": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cd": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "dk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "dj": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "dm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "do": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ec": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "eg": [
+      {
+        "key": "EGYPT",
+        "label": "Egyptian General Authority of Survey",
+        "fajrAngle": -19.5,
+        "ishaAngle": -17.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Egyptian General Authority of Survey"
+      }
+    ],
+    "sv": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gq": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "er": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ee": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "et": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "fk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "fo": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "fm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "fj": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "fi": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "fr": [
+      {
+        "key": "FR_GMP",
+        "label": "Grande Mosquee de Paris (France)",
+        "fajrAngle": -12,
+        "ishaAngle": -12,
+        "source": "local_curated_france",
+        "updatedAtUtc": "2026-03-03T02:37:23.075Z"
+      },
+      {
+        "key": "UOIF",
+        "label": "Union des Organisations Islamiques de France (UOIF)",
+        "fajrAngle": -12,
+        "ishaAngle": -12,
+        "source": "local_curated_france",
+        "updatedAtUtc": "2026-03-03T02:37:23.075Z"
+      }
+    ],
+    "pf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "fr",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "ga": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ge": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "de": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_DE_ZMD",
+        "label": "ZMD (Central Council of Muslims in Germany)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "ZMD (Central Council of Muslims in Germany)"
+      },
+      {
+        "key": "LOCAL_DE_DITIB",
+        "label": "DITIB (reference locale Allemagne)",
+        "fajrAngle": -18,
+        "ishaAngle": -17.5,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "DITIB (reference locale Allemagne)"
+      }
+    ],
+    "gh": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gi": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gd": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gt": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gy": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ht": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "hm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "au",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "hn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "hk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "hu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "is": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "in": [
+      {
+        "key": "KARACHI",
+        "label": "University of Islamic Sciences, Karachi",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "University of Islamic Sciences, Karachi"
+      }
+    ],
+    "id": [
+      {
+        "key": "ID_KEMENAG",
+        "label": "Kementerian Agama Republik Indonesia",
+        "fajrAngle": -20,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Sihat/Kemenag (Kementerian Agama RI)"
+      }
+    ],
+    "ir": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "iq": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ie": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "im": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "il": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "it": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_IT_UCOII",
+        "label": "UCOII (reference locale Italie)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "UCOII (reference locale Italie)"
+      },
+      {
+        "key": "LOCAL_IT_CII",
+        "label": "Comunita Islamica Italiana (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Comunita Islamica Italiana (reference locale)"
+      }
+    ],
+    "ci": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "jm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "jp": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_JP_JMA",
+        "label": "Japan Muslim Association (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Japan Muslim Association (reference locale)"
+      },
+      {
+        "key": "LOCAL_JP_TMC",
+        "label": "Tokyo Mosque community reference",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Tokyo Mosque community reference"
+      }
+    ],
+    "je": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "jo": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "kz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ke": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ki": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "xk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "kw": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "kg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "la": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "lv": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "lb": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ls": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "lr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ly": [
+      {
+        "key": "EGYPT",
+        "label": "Egyptian General Authority of Survey",
+        "fajrAngle": -19.5,
+        "ishaAngle": -17.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Egyptian General Authority of Survey"
+      }
+    ],
+    "li": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "lt": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "lu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mo": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "my": [
+      {
+        "key": "MS_JAKIM",
+        "label": "JAKIM",
+        "fajrAngle": -20,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Jabatan Kemajuan Islam Malaysia (JAKIM)"
+      }
+    ],
+    "mv": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ml": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mt": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mh": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mx": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "md": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mc": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "me": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ms": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ma": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_MA_HABOUS",
+        "label": "Ministry of Habous and Islamic Affairs (Morocco)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Ministry of Habous and Islamic Affairs (Morocco)"
+      },
+      {
+        "key": "LOCAL_MA_RABITA",
+        "label": "Rabita Mohammadia des Oulemas (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Rabita Mohammadia des Oulemas (reference locale)"
+      }
+    ],
+    "mz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "na": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "nr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "np": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "nl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "nc": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "nz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ni": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ne": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ng": [
+      {
+        "key": "EGYPT",
+        "label": "Egyptian General Authority of Survey",
+        "fajrAngle": -19.5,
+        "ishaAngle": -17.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Egyptian General Authority of Survey"
+      }
+    ],
+    "nu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "nf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "au",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "kp": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mp": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "no": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "om": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "pk": [
+      {
+        "key": "KARACHI",
+        "label": "University of Islamic Sciences, Karachi",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "University of Islamic Sciences, Karachi"
+      }
+    ],
+    "pw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ps": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "pa": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "pg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "py": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "cn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "pe": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ph": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "pn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "gb",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "pl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "pt": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_PT_CIL",
+        "label": "Comunidade Islamica de Lisboa (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Comunidade Islamica de Lisboa (reference locale)"
+      },
+      {
+        "key": "LOCAL_PT_CIP",
+        "label": "Comunidade Islamica do Porto (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Comunidade Islamica do Porto (reference locale)"
+      }
+    ],
+    "pr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "qa": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "cg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ro": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ru": [
+      {
+        "key": "RUSSIA",
+        "label": "Spiritual Administration of Muslims of Russia",
+        "fajrAngle": -16,
+        "ishaAngle": -15,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Spiritual Administration of Muslims of Russia"
+      }
+    ],
+    "rw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sh": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "kn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "lc": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "mf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "pm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "vc": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ws": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "st": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sa": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "sn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "rs": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sc": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sl": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sg": [
+      {
+        "key": "MS_MUIS",
+        "label": "Majlis Ugama Islam Singapura",
+        "fajrAngle": -20,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Majlis Ugama Islam Singapura, Singapore"
+      }
+    ],
+    "sx": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "si": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sb": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "so": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "za": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gs": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "gb",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "kr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ss": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "es": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_ES_CIE",
+        "label": "Comision Islamica de Espana (CIE)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Comision Islamica de Espana (CIE)"
+      },
+      {
+        "key": "LOCAL_ES_FEERI",
+        "label": "FEERI (reference locale Espagne)",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "FEERI (reference locale Espagne)"
+      }
+    ],
+    "lk": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "sd": [
+      {
+        "key": "EGYPT",
+        "label": "Egyptian General Authority of Survey",
+        "fajrAngle": -19.5,
+        "ishaAngle": -17.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Egyptian General Authority of Survey"
+      }
+    ],
+    "sr": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "se": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ch": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_CH_FIDS",
+        "label": "FIDS (Federation of Islamic Organizations in Switzerland)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "FIDS (Federation of Islamic Organizations in Switzerland)"
+      },
+      {
+        "key": "LOCAL_CH_IGS",
+        "label": "Islamische Gemeinschaft Schweiz (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Islamische Gemeinschaft Schweiz (reference locale)"
+      }
+    ],
+    "sy": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "tw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tj": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "th": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "bs": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "gm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tg": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "to": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tt": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tn": [
+      {
+        "key": "TUNISIA",
+        "label": "Tunisian Ministry of Religious Affairs",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Tunisian Ministry of Religious Affairs"
+      },
+      {
+        "key": "LOCAL_TN_ZITOUNA",
+        "label": "Reference locale Tunisie (Zitouna)",
+        "fajrAngle": -18,
+        "ishaAngle": -17.5,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Reference locale Tunisie (Zitouna)"
+      }
+    ],
+    "tr": [
+      {
+        "key": "LOCAL_TR_1",
+        "label": "Diyanet ??leri Ba?kanl???, Turkey",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Diyanet İşleri Başkanlığı, Turkey"
+      }
+    ],
+    "tm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tc": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "tv": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ug": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ua": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ae": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "gb": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      },
+      {
+        "key": "LOCAL_GB_BMC",
+        "label": "Birmingham mosques consensus (reference locale)",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "Birmingham mosques consensus (reference locale)"
+      },
+      {
+        "key": "LOCAL_GB_ELM",
+        "label": "East London mosque reference",
+        "fajrAngle": -18,
+        "ishaAngle": -18,
+        "source": "curated_local_pack_2026-03-16",
+        "sourceMethodText": "East London mosque reference"
+      }
+    ],
+    "um": [
+      {
+        "key": "ISNA",
+        "label": "Islamic Society of North America (ISNA)",
+        "fajrAngle": -15,
+        "ishaAngle": -15,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Islamic Society of North America (ISNA)",
+        "derivedFrom": "us",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "us": [
+      {
+        "key": "ISNA",
+        "label": "Islamic Society of North America (ISNA)",
+        "fajrAngle": -15,
+        "ishaAngle": -15,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Islamic Society of North America (ISNA)"
+      }
+    ],
+    "vi": [
+      {
+        "key": "ISNA",
+        "label": "Islamic Society of North America (ISNA)",
+        "fajrAngle": -15,
+        "ishaAngle": -15,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Islamic Society of North America (ISNA)",
+        "derivedFrom": "us",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "uy": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "uz": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "vu": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "va": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "derived_parent_country",
+        "sourceMethodText": "Muslim World League (MWL)",
+        "derivedFrom": "it",
+        "derivedAtUtc": "2026-03-03T02:30:00.972Z"
+      }
+    ],
+    "ve": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "vn": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "wf": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "eh": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "ye": [
+      {
+        "key": "AR_UAQ",
+        "label": "Umm al-Qura, Makkah",
+        "fajrAngle": -18.5,
+        "ishaAngle": -18.5,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Umm al-Qura, Makkah"
+      }
+    ],
+    "zm": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ],
+    "zw": [
+      {
+        "key": "MWL",
+        "label": "Muslim World League (MWL)",
+        "fajrAngle": -18,
+        "ishaAngle": -17,
+        "source": "islamictimedate.com",
+        "sourceMethodText": "Muslim World League (MWL)"
+      }
+    ]
+  },
+  "workflow": {
+    "ordering": "alphabetical_by_country_name",
+    "batch_size": 24,
+    "total_countries": 239,
+    "total_batches": 10,
+    "generated_at_utc": "2026-03-03T01:29:37.869Z",
+    "batches": [
+      {
+        "batch": "B01",
+        "from": "Afghanistan",
+        "to": "Bermuda",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "af",
+            "iso3": "AFG",
+            "country": "Afghanistan"
+          },
+          {
+            "iso2": "ax",
+            "iso3": "ALA",
+            "country": "Åland"
+          },
+          {
+            "iso2": "al",
+            "iso3": "ALB",
+            "country": "Albania"
+          },
+          {
+            "iso2": "dz",
+            "iso3": "DZA",
+            "country": "Algeria"
+          },
+          {
+            "iso2": "as",
+            "iso3": "ASM",
+            "country": "American Samoa"
+          },
+          {
+            "iso2": "ad",
+            "iso3": "AND",
+            "country": "Andorra"
+          },
+          {
+            "iso2": "ao",
+            "iso3": "AGO",
+            "country": "Angola"
+          },
+          {
+            "iso2": "ai",
+            "iso3": "AIA",
+            "country": "Anguilla"
+          },
+          {
+            "iso2": "aq",
+            "iso3": "ATA",
+            "country": "Antarctica"
+          },
+          {
+            "iso2": "ag",
+            "iso3": "ATG",
+            "country": "Antigua and Barbuda"
+          },
+          {
+            "iso2": "ar",
+            "iso3": "ARG",
+            "country": "Argentina"
+          },
+          {
+            "iso2": "am",
+            "iso3": "ARM",
+            "country": "Armenia"
+          },
+          {
+            "iso2": "aw",
+            "iso3": "ABW",
+            "country": "Aruba"
+          },
+          {
+            "iso2": "au",
+            "iso3": "AUS",
+            "country": "Australia"
+          },
+          {
+            "iso2": "at",
+            "iso3": "AUT",
+            "country": "Austria"
+          },
+          {
+            "iso2": "az",
+            "iso3": "AZE",
+            "country": "Azerbaijan"
+          },
+          {
+            "iso2": "bh",
+            "iso3": "BHR",
+            "country": "Bahrain"
+          },
+          {
+            "iso2": "bd",
+            "iso3": "BGD",
+            "country": "Bangladesh"
+          },
+          {
+            "iso2": "bb",
+            "iso3": "BRB",
+            "country": "Barbados"
+          },
+          {
+            "iso2": "by",
+            "iso3": "BLR",
+            "country": "Belarus"
+          },
+          {
+            "iso2": "be",
+            "iso3": "BEL",
+            "country": "Belgium"
+          },
+          {
+            "iso2": "bz",
+            "iso3": "BLZ",
+            "country": "Belize"
+          },
+          {
+            "iso2": "bj",
+            "iso3": "BEN",
+            "country": "Benin"
+          },
+          {
+            "iso2": "bm",
+            "iso3": "BMU",
+            "country": "Bermuda"
+          }
+        ]
+      },
+      {
+        "batch": "B02",
+        "from": "Bhutan",
+        "to": "Croatia",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "bt",
+            "iso3": "BTN",
+            "country": "Bhutan"
+          },
+          {
+            "iso2": "bo",
+            "iso3": "BOL",
+            "country": "Bolivia"
+          },
+          {
+            "iso2": "ba",
+            "iso3": "BIH",
+            "country": "Bosnia and Herzegovina"
+          },
+          {
+            "iso2": "bw",
+            "iso3": "BWA",
+            "country": "Botswana"
+          },
+          {
+            "iso2": "br",
+            "iso3": "BRA",
+            "country": "Brazil"
+          },
+          {
+            "iso2": "io",
+            "iso3": "IOT",
+            "country": "British Indian Ocean Territory"
+          },
+          {
+            "iso2": "vg",
+            "iso3": "VGB",
+            "country": "British Virgin Islands"
+          },
+          {
+            "iso2": "bn",
+            "iso3": "BRN",
+            "country": "Brunei"
+          },
+          {
+            "iso2": "bg",
+            "iso3": "BGR",
+            "country": "Bulgaria"
+          },
+          {
+            "iso2": "bf",
+            "iso3": "BFA",
+            "country": "Burkina Faso"
+          },
+          {
+            "iso2": "bi",
+            "iso3": "BDI",
+            "country": "Burundi"
+          },
+          {
+            "iso2": "kh",
+            "iso3": "KHM",
+            "country": "Cambodia"
+          },
+          {
+            "iso2": "cm",
+            "iso3": "CMR",
+            "country": "Cameroon"
+          },
+          {
+            "iso2": "ca",
+            "iso3": "CAN",
+            "country": "Canada"
+          },
+          {
+            "iso2": "cv",
+            "iso3": "CPV",
+            "country": "Cape Verde"
+          },
+          {
+            "iso2": "ky",
+            "iso3": "CYM",
+            "country": "Cayman Islands"
+          },
+          {
+            "iso2": "cf",
+            "iso3": "CAF",
+            "country": "Central African Republic"
+          },
+          {
+            "iso2": "td",
+            "iso3": "TCD",
+            "country": "Chad"
+          },
+          {
+            "iso2": "cl",
+            "iso3": "CHL",
+            "country": "Chile"
+          },
+          {
+            "iso2": "co",
+            "iso3": "COL",
+            "country": "Colombia"
+          },
+          {
+            "iso2": "km",
+            "iso3": "COM",
+            "country": "Comoros"
+          },
+          {
+            "iso2": "ck",
+            "iso3": "COK",
+            "country": "Cook Islands"
+          },
+          {
+            "iso2": "cr",
+            "iso3": "CRI",
+            "country": "Costa Rica"
+          },
+          {
+            "iso2": "hr",
+            "iso3": "HRV",
+            "country": "Croatia"
+          }
+        ]
+      },
+      {
+        "batch": "B03",
+        "from": "Cuba",
+        "to": "France",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "cu",
+            "iso3": "CUB",
+            "country": "Cuba"
+          },
+          {
+            "iso2": "cw",
+            "iso3": "CUW",
+            "country": "Curaçao"
+          },
+          {
+            "iso2": "cy",
+            "iso3": "CYP",
+            "country": "Cyprus"
+          },
+          {
+            "iso2": "cz",
+            "iso3": "CZE",
+            "country": "Czech Republic"
+          },
+          {
+            "iso2": "cd",
+            "iso3": "COD",
+            "country": "Democratic Republic of the Congo"
+          },
+          {
+            "iso2": "dk",
+            "iso3": "DNK",
+            "country": "Denmark"
+          },
+          {
+            "iso2": "dj",
+            "iso3": "DJI",
+            "country": "Djibouti"
+          },
+          {
+            "iso2": "dm",
+            "iso3": "DMA",
+            "country": "Dominica"
+          },
+          {
+            "iso2": "do",
+            "iso3": "DOM",
+            "country": "Dominican Republic"
+          },
+          {
+            "iso2": "tl",
+            "iso3": "TLS",
+            "country": "East Timor"
+          },
+          {
+            "iso2": "ec",
+            "iso3": "ECU",
+            "country": "Ecuador"
+          },
+          {
+            "iso2": "eg",
+            "iso3": "EGY",
+            "country": "Egypt"
+          },
+          {
+            "iso2": "sv",
+            "iso3": "SLV",
+            "country": "El Salvador"
+          },
+          {
+            "iso2": "gq",
+            "iso3": "GNQ",
+            "country": "Equatorial Guinea"
+          },
+          {
+            "iso2": "er",
+            "iso3": "ERI",
+            "country": "Eritrea"
+          },
+          {
+            "iso2": "ee",
+            "iso3": "EST",
+            "country": "Estonia"
+          },
+          {
+            "iso2": "sz",
+            "iso3": "SWZ",
+            "country": "Eswatini"
+          },
+          {
+            "iso2": "et",
+            "iso3": "ETH",
+            "country": "Ethiopia"
+          },
+          {
+            "iso2": "fk",
+            "iso3": "FLK",
+            "country": "Falkland Islands"
+          },
+          {
+            "iso2": "fo",
+            "iso3": "FRO",
+            "country": "Faroe Islands"
+          },
+          {
+            "iso2": "fm",
+            "iso3": "FSM",
+            "country": "Federated States of Micronesia"
+          },
+          {
+            "iso2": "fj",
+            "iso3": "FJI",
+            "country": "Fiji"
+          },
+          {
+            "iso2": "fi",
+            "iso3": "FIN",
+            "country": "Finland"
+          },
+          {
+            "iso2": "fr",
+            "iso3": "FRA",
+            "country": "France"
+          }
+        ]
+      },
+      {
+        "batch": "B04",
+        "from": "French Polynesia",
+        "to": "Indonesia",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "pf",
+            "iso3": "PYF",
+            "country": "French Polynesia"
+          },
+          {
+            "iso2": "tf",
+            "iso3": "ATF",
+            "country": "French Southern and Antarctic Lands"
+          },
+          {
+            "iso2": "ga",
+            "iso3": "GAB",
+            "country": "Gabon"
+          },
+          {
+            "iso2": "ge",
+            "iso3": "GEO",
+            "country": "Georgia"
+          },
+          {
+            "iso2": "de",
+            "iso3": "DEU",
+            "country": "Germany"
+          },
+          {
+            "iso2": "gh",
+            "iso3": "GHA",
+            "country": "Ghana"
+          },
+          {
+            "iso2": "gi",
+            "iso3": "GIB",
+            "country": "Gibraltar"
+          },
+          {
+            "iso2": "gr",
+            "iso3": "GRC",
+            "country": "Greece"
+          },
+          {
+            "iso2": "gl",
+            "iso3": "GRL",
+            "country": "Greenland"
+          },
+          {
+            "iso2": "gd",
+            "iso3": "GRD",
+            "country": "Grenada"
+          },
+          {
+            "iso2": "gu",
+            "iso3": "GUM",
+            "country": "Guam"
+          },
+          {
+            "iso2": "gt",
+            "iso3": "GTM",
+            "country": "Guatemala"
+          },
+          {
+            "iso2": "gg",
+            "iso3": "GGY",
+            "country": "Guernsey"
+          },
+          {
+            "iso2": "gn",
+            "iso3": "GIN",
+            "country": "Guinea"
+          },
+          {
+            "iso2": "gw",
+            "iso3": "GNB",
+            "country": "Guinea-Bissau"
+          },
+          {
+            "iso2": "gy",
+            "iso3": "GUY",
+            "country": "Guyana"
+          },
+          {
+            "iso2": "ht",
+            "iso3": "HTI",
+            "country": "Haiti"
+          },
+          {
+            "iso2": "hm",
+            "iso3": "HMD",
+            "country": "Heard Island and McDonald Islands"
+          },
+          {
+            "iso2": "hn",
+            "iso3": "HND",
+            "country": "Honduras"
+          },
+          {
+            "iso2": "hk",
+            "iso3": "HKG",
+            "country": "Hong Kong"
+          },
+          {
+            "iso2": "hu",
+            "iso3": "HUN",
+            "country": "Hungary"
+          },
+          {
+            "iso2": "is",
+            "iso3": "ISL",
+            "country": "Iceland"
+          },
+          {
+            "iso2": "in",
+            "iso3": "IND",
+            "country": "India"
+          },
+          {
+            "iso2": "id",
+            "iso3": "IDN",
+            "country": "Indonesia"
+          }
+        ]
+      },
+      {
+        "batch": "B05",
+        "from": "Iran",
+        "to": "Liechtenstein",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "ir",
+            "iso3": "IRN",
+            "country": "Iran"
+          },
+          {
+            "iso2": "iq",
+            "iso3": "IRQ",
+            "country": "Iraq"
+          },
+          {
+            "iso2": "ie",
+            "iso3": "IRL",
+            "country": "Ireland"
+          },
+          {
+            "iso2": "im",
+            "iso3": "IMN",
+            "country": "Isle of Man"
+          },
+          {
+            "iso2": "il",
+            "iso3": "ISR",
+            "country": "Israel"
+          },
+          {
+            "iso2": "it",
+            "iso3": "ITA",
+            "country": "Italy"
+          },
+          {
+            "iso2": "ci",
+            "iso3": "CIV",
+            "country": "Ivory Coast"
+          },
+          {
+            "iso2": "jm",
+            "iso3": "JAM",
+            "country": "Jamaica"
+          },
+          {
+            "iso2": "jp",
+            "iso3": "JPN",
+            "country": "Japan"
+          },
+          {
+            "iso2": "je",
+            "iso3": "JEY",
+            "country": "Jersey"
+          },
+          {
+            "iso2": "jo",
+            "iso3": "JOR",
+            "country": "Jordan"
+          },
+          {
+            "iso2": "kz",
+            "iso3": "KAZ",
+            "country": "Kazakhstan"
+          },
+          {
+            "iso2": "ke",
+            "iso3": "KEN",
+            "country": "Kenya"
+          },
+          {
+            "iso2": "ki",
+            "iso3": "KIR",
+            "country": "Kiribati"
+          },
+          {
+            "iso2": "xk",
+            "iso3": "KOS",
+            "country": "Kosovo"
+          },
+          {
+            "iso2": "kw",
+            "iso3": "KWT",
+            "country": "Kuwait"
+          },
+          {
+            "iso2": "kg",
+            "iso3": "KGZ",
+            "country": "Kyrgyzstan"
+          },
+          {
+            "iso2": "la",
+            "iso3": "LAO",
+            "country": "Laos"
+          },
+          {
+            "iso2": "lv",
+            "iso3": "LVA",
+            "country": "Latvia"
+          },
+          {
+            "iso2": "lb",
+            "iso3": "LBN",
+            "country": "Lebanon"
+          },
+          {
+            "iso2": "ls",
+            "iso3": "LSO",
+            "country": "Lesotho"
+          },
+          {
+            "iso2": "lr",
+            "iso3": "LBR",
+            "country": "Liberia"
+          },
+          {
+            "iso2": "ly",
+            "iso3": "LBY",
+            "country": "Libya"
+          },
+          {
+            "iso2": "li",
+            "iso3": "LIE",
+            "country": "Liechtenstein"
+          }
+        ]
+      },
+      {
+        "batch": "B06",
+        "from": "Lithuania",
+        "to": "Nepal",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "lt",
+            "iso3": "LTU",
+            "country": "Lithuania"
+          },
+          {
+            "iso2": "lu",
+            "iso3": "LUX",
+            "country": "Luxembourg"
+          },
+          {
+            "iso2": "mo",
+            "iso3": "MAC",
+            "country": "Macau"
+          },
+          {
+            "iso2": "mg",
+            "iso3": "MDG",
+            "country": "Madagascar"
+          },
+          {
+            "iso2": "mw",
+            "iso3": "MWI",
+            "country": "Malawi"
+          },
+          {
+            "iso2": "my",
+            "iso3": "MYS",
+            "country": "Malaysia"
+          },
+          {
+            "iso2": "mv",
+            "iso3": "MDV",
+            "country": "Maldives"
+          },
+          {
+            "iso2": "ml",
+            "iso3": "MLI",
+            "country": "Mali"
+          },
+          {
+            "iso2": "mt",
+            "iso3": "MLT",
+            "country": "Malta"
+          },
+          {
+            "iso2": "mh",
+            "iso3": "MHL",
+            "country": "Marshall Islands"
+          },
+          {
+            "iso2": "mr",
+            "iso3": "MRT",
+            "country": "Mauritania"
+          },
+          {
+            "iso2": "mu",
+            "iso3": "MUS",
+            "country": "Mauritius"
+          },
+          {
+            "iso2": "mx",
+            "iso3": "MEX",
+            "country": "Mexico"
+          },
+          {
+            "iso2": "md",
+            "iso3": "MDA",
+            "country": "Moldova"
+          },
+          {
+            "iso2": "mc",
+            "iso3": "MCO",
+            "country": "Monaco"
+          },
+          {
+            "iso2": "mn",
+            "iso3": "MNG",
+            "country": "Mongolia"
+          },
+          {
+            "iso2": "me",
+            "iso3": "MNE",
+            "country": "Montenegro"
+          },
+          {
+            "iso2": "ms",
+            "iso3": "MSR",
+            "country": "Montserrat"
+          },
+          {
+            "iso2": "ma",
+            "iso3": "MAR",
+            "country": "Morocco"
+          },
+          {
+            "iso2": "mz",
+            "iso3": "MOZ",
+            "country": "Mozambique"
+          },
+          {
+            "iso2": "mm",
+            "iso3": "MMR",
+            "country": "Myanmar"
+          },
+          {
+            "iso2": "na",
+            "iso3": "NAM",
+            "country": "Namibia"
+          },
+          {
+            "iso2": "nr",
+            "iso3": "NRU",
+            "country": "Nauru"
+          },
+          {
+            "iso2": "np",
+            "iso3": "NPL",
+            "country": "Nepal"
+          }
+        ]
+      },
+      {
+        "batch": "B07",
+        "from": "Netherlands",
+        "to": "Poland",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "nl",
+            "iso3": "NLD",
+            "country": "Netherlands"
+          },
+          {
+            "iso2": "nc",
+            "iso3": "NCL",
+            "country": "New Caledonia"
+          },
+          {
+            "iso2": "nz",
+            "iso3": "NZL",
+            "country": "New Zealand"
+          },
+          {
+            "iso2": "ni",
+            "iso3": "NIC",
+            "country": "Nicaragua"
+          },
+          {
+            "iso2": "ne",
+            "iso3": "NER",
+            "country": "Niger"
+          },
+          {
+            "iso2": "ng",
+            "iso3": "NGA",
+            "country": "Nigeria"
+          },
+          {
+            "iso2": "nu",
+            "iso3": "NIU",
+            "country": "Niue"
+          },
+          {
+            "iso2": "nf",
+            "iso3": "NFK",
+            "country": "Norfolk Island"
+          },
+          {
+            "iso2": "kp",
+            "iso3": "PRK",
+            "country": "North Korea"
+          },
+          {
+            "iso2": "mk",
+            "iso3": "MKD",
+            "country": "North Macedonia"
+          },
+          {
+            "iso2": "mp",
+            "iso3": "MNP",
+            "country": "Northern Mariana Islands"
+          },
+          {
+            "iso2": "no",
+            "iso3": "NOR",
+            "country": "Norway"
+          },
+          {
+            "iso2": "om",
+            "iso3": "OMN",
+            "country": "Oman"
+          },
+          {
+            "iso2": "pk",
+            "iso3": "PAK",
+            "country": "Pakistan"
+          },
+          {
+            "iso2": "pw",
+            "iso3": "PLW",
+            "country": "Palau"
+          },
+          {
+            "iso2": "ps",
+            "iso3": "PSE",
+            "country": "Palestine"
+          },
+          {
+            "iso2": "pa",
+            "iso3": "PAN",
+            "country": "Panama"
+          },
+          {
+            "iso2": "pg",
+            "iso3": "PNG",
+            "country": "Papua New Guinea"
+          },
+          {
+            "iso2": "py",
+            "iso3": "PRY",
+            "country": "Paraguay"
+          },
+          {
+            "iso2": "cn",
+            "iso3": "CHN",
+            "country": "People's Republic of China"
+          },
+          {
+            "iso2": "pe",
+            "iso3": "PER",
+            "country": "Peru"
+          },
+          {
+            "iso2": "ph",
+            "iso3": "PHL",
+            "country": "Philippines"
+          },
+          {
+            "iso2": "pn",
+            "iso3": "PCN",
+            "country": "Pitcairn Islands"
+          },
+          {
+            "iso2": "pl",
+            "iso3": "POL",
+            "country": "Poland"
+          }
+        ]
+      },
+      {
+        "batch": "B08",
+        "from": "Portugal",
+        "to": "Sint Maarten",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "pt",
+            "iso3": "PRT",
+            "country": "Portugal"
+          },
+          {
+            "iso2": "pr",
+            "iso3": "PRI",
+            "country": "Puerto Rico"
+          },
+          {
+            "iso2": "qa",
+            "iso3": "QAT",
+            "country": "Qatar"
+          },
+          {
+            "iso2": "cg",
+            "iso3": "COG",
+            "country": "Republic of the Congo"
+          },
+          {
+            "iso2": "ro",
+            "iso3": "ROU",
+            "country": "Romania"
+          },
+          {
+            "iso2": "ru",
+            "iso3": "RUS",
+            "country": "Russia"
+          },
+          {
+            "iso2": "rw",
+            "iso3": "RWA",
+            "country": "Rwanda"
+          },
+          {
+            "iso2": "bl",
+            "iso3": "BLM",
+            "country": "Saint Barthélemy"
+          },
+          {
+            "iso2": "sh",
+            "iso3": "SHN",
+            "country": "Saint Helena"
+          },
+          {
+            "iso2": "kn",
+            "iso3": "KNA",
+            "country": "Saint Kitts and Nevis"
+          },
+          {
+            "iso2": "lc",
+            "iso3": "LCA",
+            "country": "Saint Lucia"
+          },
+          {
+            "iso2": "mf",
+            "iso3": "MAF",
+            "country": "Saint Martin"
+          },
+          {
+            "iso2": "pm",
+            "iso3": "SPM",
+            "country": "Saint Pierre and Miquelon"
+          },
+          {
+            "iso2": "vc",
+            "iso3": "VCT",
+            "country": "Saint Vincent and the Grenadines"
+          },
+          {
+            "iso2": "ws",
+            "iso3": "WSM",
+            "country": "Samoa"
+          },
+          {
+            "iso2": "sm",
+            "iso3": "SMR",
+            "country": "San Marino"
+          },
+          {
+            "iso2": "st",
+            "iso3": "STP",
+            "country": "São Tomé and Príncipe"
+          },
+          {
+            "iso2": "sa",
+            "iso3": "SAU",
+            "country": "Saudi Arabia"
+          },
+          {
+            "iso2": "sn",
+            "iso3": "SEN",
+            "country": "Senegal"
+          },
+          {
+            "iso2": "rs",
+            "iso3": "SRB",
+            "country": "Serbia"
+          },
+          {
+            "iso2": "sc",
+            "iso3": "SYC",
+            "country": "Seychelles"
+          },
+          {
+            "iso2": "sl",
+            "iso3": "SLE",
+            "country": "Sierra Leone"
+          },
+          {
+            "iso2": "sg",
+            "iso3": "SGP",
+            "country": "Singapore"
+          },
+          {
+            "iso2": "sx",
+            "iso3": "SXM",
+            "country": "Sint Maarten"
+          }
+        ]
+      },
+      {
+        "batch": "B09",
+        "from": "Slovakia",
+        "to": "Trinidad and Tobago",
+        "size": 24,
+        "countries": [
+          {
+            "iso2": "sk",
+            "iso3": "SVK",
+            "country": "Slovakia"
+          },
+          {
+            "iso2": "si",
+            "iso3": "SVN",
+            "country": "Slovenia"
+          },
+          {
+            "iso2": "sb",
+            "iso3": "SLB",
+            "country": "Solomon Islands"
+          },
+          {
+            "iso2": "so",
+            "iso3": "SOM",
+            "country": "Somalia"
+          },
+          {
+            "iso2": "za",
+            "iso3": "ZAF",
+            "country": "South Africa"
+          },
+          {
+            "iso2": "gs",
+            "iso3": "SGS",
+            "country": "South Georgia and the South Sandwich Islands"
+          },
+          {
+            "iso2": "kr",
+            "iso3": "KOR",
+            "country": "South Korea"
+          },
+          {
+            "iso2": "ss",
+            "iso3": "SSD",
+            "country": "South Sudan"
+          },
+          {
+            "iso2": "es",
+            "iso3": "ESP",
+            "country": "Spain"
+          },
+          {
+            "iso2": "lk",
+            "iso3": "LKA",
+            "country": "Sri Lanka"
+          },
+          {
+            "iso2": "sd",
+            "iso3": "SDN",
+            "country": "Sudan"
+          },
+          {
+            "iso2": "sr",
+            "iso3": "SUR",
+            "country": "Suriname"
+          },
+          {
+            "iso2": "se",
+            "iso3": "SWE",
+            "country": "Sweden"
+          },
+          {
+            "iso2": "ch",
+            "iso3": "CHE",
+            "country": "Switzerland"
+          },
+          {
+            "iso2": "sy",
+            "iso3": "SYR",
+            "country": "Syria"
+          },
+          {
+            "iso2": "tw",
+            "iso3": "TWN",
+            "country": "Taiwan"
+          },
+          {
+            "iso2": "tj",
+            "iso3": "TJK",
+            "country": "Tajikistan"
+          },
+          {
+            "iso2": "tz",
+            "iso3": "TZA",
+            "country": "Tanzania"
+          },
+          {
+            "iso2": "th",
+            "iso3": "THA",
+            "country": "Thailand"
+          },
+          {
+            "iso2": "bs",
+            "iso3": "BHS",
+            "country": "The Bahamas"
+          },
+          {
+            "iso2": "gm",
+            "iso3": "GMB",
+            "country": "The Gambia"
+          },
+          {
+            "iso2": "tg",
+            "iso3": "TGO",
+            "country": "Togo"
+          },
+          {
+            "iso2": "to",
+            "iso3": "TON",
+            "country": "Tonga"
+          },
+          {
+            "iso2": "tt",
+            "iso3": "TTO",
+            "country": "Trinidad and Tobago"
+          }
+        ]
+      },
+      {
+        "batch": "B10",
+        "from": "Tunisia",
+        "to": "Zimbabwe",
+        "size": 23,
+        "countries": [
+          {
+            "iso2": "tn",
+            "iso3": "TUN",
+            "country": "Tunisia"
+          },
+          {
+            "iso2": "tr",
+            "iso3": "TUR",
+            "country": "Turkey"
+          },
+          {
+            "iso2": "tm",
+            "iso3": "TKM",
+            "country": "Turkmenistan"
+          },
+          {
+            "iso2": "tc",
+            "iso3": "TCA",
+            "country": "Turks and Caicos Islands"
+          },
+          {
+            "iso2": "tv",
+            "iso3": "TUV",
+            "country": "Tuvalu"
+          },
+          {
+            "iso2": "ug",
+            "iso3": "UGA",
+            "country": "Uganda"
+          },
+          {
+            "iso2": "ua",
+            "iso3": "UKR",
+            "country": "Ukraine"
+          },
+          {
+            "iso2": "ae",
+            "iso3": "ARE",
+            "country": "United Arab Emirates"
+          },
+          {
+            "iso2": "gb",
+            "iso3": "GBR",
+            "country": "United Kingdom"
+          },
+          {
+            "iso2": "um",
+            "iso3": "UMI",
+            "country": "United States Minor Outlying Islands"
+          },
+          {
+            "iso2": "us",
+            "iso3": "USA",
+            "country": "United States of America"
+          },
+          {
+            "iso2": "vi",
+            "iso3": "VIR",
+            "country": "United States Virgin Islands"
+          },
+          {
+            "iso2": "uy",
+            "iso3": "URY",
+            "country": "Uruguay"
+          },
+          {
+            "iso2": "uz",
+            "iso3": "UZB",
+            "country": "Uzbekistan"
+          },
+          {
+            "iso2": "vu",
+            "iso3": "VUT",
+            "country": "Vanuatu"
+          },
+          {
+            "iso2": "va",
+            "iso3": "VAT",
+            "country": "Vatican City"
+          },
+          {
+            "iso2": "ve",
+            "iso3": "VEN",
+            "country": "Venezuela"
+          },
+          {
+            "iso2": "vn",
+            "iso3": "VNM",
+            "country": "Vietnam"
+          },
+          {
+            "iso2": "wf",
+            "iso3": "WLF",
+            "country": "Wallis and Futuna"
+          },
+          {
+            "iso2": "eh",
+            "iso3": "ESH",
+            "country": "Western Sahara"
+          },
+          {
+            "iso2": "ye",
+            "iso3": "YEM",
+            "country": "Yemen"
+          },
+          {
+            "iso2": "zm",
+            "iso3": "ZMB",
+            "country": "Zambia"
+          },
+          {
+            "iso2": "zw",
+            "iso3": "ZWE",
+            "country": "Zimbabwe"
+          }
+        ]
+      }
+    ],
+    "progress": {
+      "B01": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:32:00.826Z",
+        "note": "Initial curated pass with explicit angles for available local/regional organizations."
+      },
+      "B02": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.105Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B03": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.128Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B04": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.129Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B05": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.130Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B06": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.130Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B07": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.130Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B08": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.130Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B09": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.131Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      },
+      "B10": {
+        "status": "completed",
+        "updated_at_utc": "2026-03-03T01:35:26.131Z",
+        "note": "Initial curated pass with explicit angles for local-method entry per country where no vetted organization list was available."
+      }
+    },
+    "web_verification": {
+      "source": "https://islamictimedate.com/apps/prayer-times/",
+      "processed_country_pages": 237,
+      "mapped_countries": 227,
+      "unresolved_country_labels": 9,
+      "unknown_method_patterns": 1,
+      "updated_at_utc": "2026-03-03T02:22:28.138Z"
+    },
+    "derived_fallbacks": {
+      "strategy": "copy_parent_country_method",
+      "updated_at_utc": "2026-03-03T02:30:00.972Z",
+      "affected_country_codes": [
+        "ax",
+        "ba",
+        "fr",
+        "gs",
+        "hm",
+        "io",
+        "nf",
+        "pn",
+        "tf",
+        "um",
+        "va",
+        "vi"
+      ],
+      "total_updated": 12
+    },
+    "cleaned_extra_country_codes": {
+      "removed": [
+        "re"
+      ],
+      "updated_at_utc": "2026-03-03T02:31:56.769Z",
+      "reason": "not present in travel_catalog_full.json"
+    },
+    "france_local_override": {
+      "updated_at_utc": "2026-03-03T02:37:23.075Z",
+      "note": "FR_GMP and UOIF only visible through country-local France methods"
+    }
+  }
+}
