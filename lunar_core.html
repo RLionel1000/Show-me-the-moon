@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
   <link rel="shortcut icon" href="./assets/favicon.svg" />
-  <title>Simulateur Ciel Nocturne</title>
+  <title>Show me the moon</title>
   <style>
     * { box-sizing: border-box; }
     html, body { width:100%; max-width:100%; overflow:hidden; }
@@ -914,6 +914,70 @@
       align-items:center;
       gap:7px;
       cursor:pointer;
+    }
+    .onboarding-lang-widget {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      position:relative;
+    }
+    #app-onboarding-lang-toggle {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:32px;
+      padding:6px 8px;
+      border-radius:6px;
+      border:1px solid rgba(176,203,246,0.3);
+      background:linear-gradient(180deg, #2c354a, #232c3f);
+      color:#eaf1ff;
+      font:700 11px/1 'Exo 2', sans-serif;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+    #app-onboarding-lang-toggle:hover {
+      border-color:rgba(206,220,252,0.52);
+      background:linear-gradient(180deg, #36435e, #2b354d);
+    }
+    .onboarding-lang-menu {
+      position:absolute;
+      top:100%;
+      left:0;
+      margin-top:6px;
+      background:rgba(20,30,60,0.96);
+      border:1px solid rgba(120,160,255,0.28);
+      border-radius:6px;
+      padding:4px;
+      display:grid;
+      gap:3px;
+      z-index:300;
+    }
+    .onboarding-lang-menu[hidden] {
+      display:none;
+    }
+    .onboarding-lang-menu button {
+      padding:6px 12px;
+      border-radius:4px;
+      border:1px solid #2f5aa8;
+      background:#142a5e;
+      color:#d8e8ff;
+      font:700 11px 'Exo 2', sans-serif;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
+      cursor:pointer;
+      white-space:nowrap;
+      min-width:42px;
+    }
+    .onboarding-lang-menu button:hover {
+      border-color:#4a7fd3;
+      background:#1d3375;
+    }
+    .onboarding-lang-menu button.active {
+      border-color:#6ba3e8;
+      background:#2d4a7f;
+      color:#a8c8ff;
     }
     .onboarding-actions {
       display:grid;
@@ -3803,7 +3867,18 @@
 <div id="app-onboarding-modal" class="onboarding-modal" hidden>
   <div class="onboarding-card" role="dialog" aria-modal="true" aria-labelledby="app-onboarding-title">
     <div class="onboarding-head">
-      <div class="onboarding-kicker">Guide de prise en main</div>
+      <div class="onboarding-kicker" id="app-onboarding-kicker">Guide de prise en main</div>
+      <div class="onboarding-lang-widget">
+        <button id="app-onboarding-lang-toggle" type="button" aria-expanded="false" data-i18n-aria-label="guide.change_language" aria-label="Change language">
+          <span id="app-onboarding-lang-code">FR</span>
+        </button>
+        <div id="app-onboarding-lang-menu" class="onboarding-lang-menu" hidden>
+          <button type="button" data-lang="fr" class="active">FR</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+          <button type="button" data-lang="ar">AR</button>
+        </div>
+      </div>
       <div id="app-onboarding-progress" class="onboarding-progress">Page 1 / -</div>
     </div>
     <div class="onboarding-title-wrap">
@@ -3811,45 +3886,45 @@
     </div>
     <div class="onboarding-body">
       <section class="onboarding-page active" data-onboarding-intro="1">
-        <p class="onboarding-intro">Bonjour, et bienvenue dans <strong>Show me the moon</strong>.</p>
+        <p class="onboarding-intro" id="app-onboarding-page1">Bonjour, et bienvenue dans <strong>Show me the moon</strong>.</p>
       </section>
       <section class="onboarding-page">
-        <h5>1. Navigation</h5>
+        <h5 id="app-onboarding-page2-title">1. Navigation</h5>
         <ul class="onboarding-list">
-          <li>Cliquez dans la scene pour controler la camera, puis bougez la souris.</li>
-          <li>La molette ajuste le zoom.</li>
-          <li>Appuyez sur `Esc` pour liberer la navigation et manipuler les panneaux.</li>
+          <li id="app-onboarding-page2-item1">Cliquez dans la scene pour controler la camera, puis bougez la souris.</li>
+          <li id="app-onboarding-page2-item2">La molette ajuste le zoom.</li>
+          <li id="app-onboarding-page2-item3">Appuyez sur `Esc` pour liberer la navigation et manipuler les panneaux.</li>
         </ul>
       </section>
       <section class="onboarding-page">
-        <h5>2. Date, lieu, coordonnees</h5>
+        <h5 id="app-onboarding-page3-title">2. Date, lieu, coordonnees</h5>
         <ul class="onboarding-list">
-          <li>Le panneau lateral permet de changer date, heure et coordonnees.</li>
-          <li>La section Ville aide a cibler une zone via pays + ville.</li>
-          <li>Le bouton Emplacement par defaut ouvre un pop-up pour appliquer votre lieu prefere.</li>
+          <li id="app-onboarding-page3-item1">Le panneau lateral permet de changer date, heure et coordonnees.</li>
+          <li id="app-onboarding-page3-item2">La section Ville aide a cibler une zone via pays + ville.</li>
+          <li id="app-onboarding-page3-item3">Le bouton Emplacement par defaut ouvre un pop-up pour appliquer votre lieu prefere.</li>
         </ul>
       </section>
       <section class="onboarding-page">
-        <h5>3. Lecture du ciel</h5>
+        <h5 id="app-onboarding-page4-title">3. Lecture du ciel</h5>
         <ul class="onboarding-list">
-          <li>Les cartes Lune et Soleil affichent altitude, azimut et etat de visibilite.</li>
-          <li>Les boutons de suivi recentrent la vue sur l'astre choisi.</li>
-          <li>Le repere central facilite l'orientation N/E/S/O.</li>
+          <li id="app-onboarding-page4-item1">Les cartes Lune et Soleil affichent altitude, azimut et etat de visibilite.</li>
+          <li id="app-onboarding-page4-item2">Les boutons de suivi recentrent la vue sur l'astre choisi.</li>
+          <li id="app-onboarding-page4-item3">Le repere central facilite l'orientation N/E/S/O.</li>
         </ul>
       </section>
       <section class="onboarding-page">
-        <h5>4. Fonctions annexes</h5>
+        <h5 id="app-onboarding-page5-title">4. Fonctions annexes</h5>
         <ul class="onboarding-list">
-          <li>Le time lapse accelere le temps pour observer l'evolution du ciel.</li>
-          <li>Vous pouvez partager un lien et exporter le header desktop en PNG.</li>
-          <li>Le guide reste accessible depuis le bloc Affichage.</li>
+          <li id="app-onboarding-page5-item1">Le time lapse accelere le temps pour observer l'evolution du ciel.</li>
+          <li id="app-onboarding-page5-item2">Vous pouvez partager un lien et exporter le header desktop en PNG.</li>
+          <li id="app-onboarding-page5-item3">Le guide reste accessible depuis le bloc Affichage.</li>
         </ul>
       </section>
     </div>
     <div class="onboarding-footer">
       <label class="onboarding-dismiss" for="app-onboarding-dismiss">
         <input id="app-onboarding-dismiss" type="checkbox">
-        <span>Ne plus voir ce guide au lancement</span>
+        <span id="app-onboarding-dismiss-label">Ne plus voir ce guide au lancement</span>
       </label>
       <div class="onboarding-actions">
         <button id="app-onboarding-prev-btn" type="button">Precedent</button>
@@ -3861,28 +3936,28 @@
 </div>
 <div id="default-location-modal" class="default-location-modal" hidden>
   <div class="default-location-card" role="dialog" aria-modal="true" aria-labelledby="default-location-title">
-    <h4 id="default-location-title">Emplacement par defaut</h4>
-    <p>Choisissez une source de position. Lors de la validation, les coordonnees sont appliquees directement.</p>
-    <div class="default-location-mode" role="group" aria-label="Type d'emplacement par defaut">
-      <button id="default-location-mode-geo" type="button" class="active">Ma position actuelle</button>
-      <button id="default-location-mode-city" type="button">Une ville</button>
+    <h4 id="default-location-title" data-i18n="default_location.title">Emplacement par defaut</h4>
+    <p data-i18n="default_location.description">Choisissez une source de position. Lors de la validation, les coordonnees sont appliquees directement.</p>
+    <div class="default-location-mode" role="group" data-i18n-aria-label="default_location.mode_label" aria-label="Type d'emplacement par defaut">
+      <button id="default-location-mode-geo" type="button" class="active" data-i18n="default_location.mode.geo">Ma position actuelle</button>
+      <button id="default-location-mode-city" type="button" data-i18n="default_location.mode.city">Une ville</button>
     </div>
     <div id="default-location-city-wrap" class="default-location-row" hidden>
       <div class="field-item">
         <label for="default-country-search">Pays</label>
-        <input id="default-country-search" type="text" list="default-country-suggestions" placeholder="Rechercher un pays" autocomplete="off">
+        <input id="default-country-search" type="text" list="default-country-suggestions" data-i18n-placeholder="travel.placeholder.country" placeholder="Rechercher un pays" autocomplete="off">
         <datalist id="default-country-suggestions"></datalist>
       </div>
       <div class="field-item">
         <label for="default-city-search">Ville</label>
-        <input id="default-city-search" type="text" list="default-city-suggestions" placeholder="Selectionner un pays d'abord" autocomplete="off" disabled>
+        <input id="default-city-search" type="text" list="default-city-suggestions" data-i18n-placeholder="travel.placeholder.city_disabled" placeholder="Selectionner un pays d'abord" autocomplete="off" disabled>
         <datalist id="default-city-suggestions"></datalist>
       </div>
     </div>
-    <div id="default-location-hint" class="default-location-hint">La position actuelle du navigateur sera utilisee.</div>
+    <div id="default-location-hint" class="default-location-hint" data-i18n="default_location.hint.geo">La position actuelle du navigateur sera utilisee.</div>
     <div class="default-location-actions">
-      <button id="default-location-cancel-btn" type="button">Annuler</button>
-      <button id="default-location-apply-btn" type="button">Appliquer</button>
+      <button id="default-location-cancel-btn" type="button" data-i18n="default_location.cancel">Annuler</button>
+      <button id="default-location-apply-btn" type="button" data-i18n="default_location.apply">Appliquer</button>
     </div>
   </div>
 </div>
@@ -3961,10 +4036,10 @@
     </span>
   </div>
   <span id="moon-status" class="hidden"><span class="moon-status-place"><span class="moon-status-datetime">12/03/2026 23h21</span><span class="moon-status-timezone">(GMT +1) Europe/Paris</span><span class="moon-status-city">48,8566 / 2,35220</span><span class="moon-status-country">--</span><span id="mobile-header-nav"><button id="mobile-header-menu" type="button" data-i18n="mobile.menu">Parametres</button><button id="mobile-header-moon" type="button" data-i18n="mobile.moon">Lune</button><button id="mobile-header-sun" type="button" data-i18n="mobile.sun">Soleil</button><button id="mobile-header-prayer" type="button" data-i18n="mobile.prayers">Prieres</button></span></span><span class="moon-status-state"><span id="moon-status-icon" class="moon-status-icon" aria-hidden="true">LUNE</span><span class="moon-status-arrows" aria-hidden="true">&#10230;&#10230;</span><span class="moon-status-label">LUNE INVISIBLE</span></span></span>
-  <div class="header-tl"><button id="btn-tl-reverse" class="tl-icon-btn" type="button" data-i18n-aria-label="timelapse.reverse_start" aria-label="Lecture inverse">&#9664;</button><button id="btn-tl-pause" class="tl-icon-btn" type="button" aria-label="Pause">&#10074;&#10074;</button><button id="btn-tl-start" class="tl-icon-btn" aria-label="Lecture/Pause">&#9654;</button><span class="tl-status-wrap"><span id="tl-ui-status" class="tl-inactive">INACTIF</span></span><span class="header-tl-separator" aria-hidden="true"></span><span class="header-tl-title">DEFILEMENT</span><span class="header-tl-gap" aria-hidden="true"></span><span class="header-tl-speed" data-i18n="timelapse.speed_short">VITESSE</span><span class="tl-rate-wrap"><span class="tl-rate-prefix" aria-hidden="true">&#215;</span><input id="tl-rate" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" enterkeyhint="done" value="1"></span></div>
+  <div class="header-tl"><button id="btn-tl-reverse" class="tl-icon-btn" type="button" data-i18n-aria-label="timelapse.reverse_start" aria-label="Lecture inverse">&#9664;</button><button id="btn-tl-pause" class="tl-icon-btn" type="button" aria-label="Pause">&#10074;&#10074;</button><button id="btn-tl-start" class="tl-icon-btn" aria-label="Lecture/Pause">&#9654;</button><span class="tl-status-wrap"><span id="tl-ui-status" class="tl-inactive">INACTIF</span></span><span class="header-tl-separator" aria-hidden="true"></span><span class="header-tl-title" data-i18n="menu.timelapse">DEFILEMENT</span><span class="header-tl-gap" aria-hidden="true"></span><span class="header-tl-speed" data-i18n="timelapse.speed_short">VITESSE</span><span class="tl-rate-wrap"><span class="tl-rate-prefix" aria-hidden="true">&#215;</span><input id="tl-rate" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" enterkeyhint="done" value="1"></span></div>
 </h3>
 <div id="ui">
-  <div class="menu-widget-title">Parametres</div>
+  <div class="menu-widget-title" data-i18n="menu.settings">Parametres</div>
   <div class="submenu submenu-localisation">
     <div class="local-stack">
       <div class="local-submenu">
@@ -4005,15 +4080,15 @@
         <div class="travel-grid">
           <div class="field-item">
             <label for="travel-country-search" data-i18n="label.country">Pays</label>
-            <input id="travel-country-search" type="text" list="travel-country-suggestions" placeholder="Rechercher un pays" autocomplete="off">
+            <input id="travel-country-search" type="text" list="travel-country-suggestions" data-i18n-placeholder="travel.placeholder.country" placeholder="Rechercher un pays" autocomplete="off">
             <datalist id="travel-country-suggestions"></datalist>
           </div>
           <div class="field-item">
             <label for="travel-city-search" data-i18n="label.city">Ville</label>
-            <input id="travel-city-search" type="text" list="travel-city-suggestions" placeholder="Selectionner un pays d'abord" autocomplete="off" disabled>
+            <input id="travel-city-search" type="text" list="travel-city-suggestions" data-i18n-placeholder="travel.placeholder.city_disabled" placeholder="Selectionner un pays d'abord" autocomplete="off" disabled>
             <datalist id="travel-city-suggestions"></datalist>
           </div>
-          <div id="travel-status" class="travel-status full-span" style="display:none;">Pret pour un trajet.</div>
+          <div id="travel-status" class="travel-status full-span" style="display:none;" data-i18n="travel.status.ready">Pret pour un trajet.</div>
         </div>
       </div>
       <div class="local-quick-row">
@@ -4021,7 +4096,7 @@
       </div>
       <div class="local-bottom-actions">
         <div class="local-share-row">
-          <button id="share-link-btn" type="button" aria-label="Copier lien parametre" title="Copier lien parametre">
+          <button id="share-link-btn" type="button" data-i18n-aria-label="share.copy_param_link" data-i18n-title="share.copy_param_link" aria-label="Copier lien parametre" title="Copier lien parametre">
             <span class="icon-btn-glyph" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d="M9.5 14.5l5-5"></path>
@@ -4030,7 +4105,7 @@
               </svg>
             </span>
           </button>
-          <button id="capture-header-btn" type="button" aria-label="Exporter header desktop (PNG)" title="Exporter header desktop (PNG)">
+          <button id="capture-header-btn" type="button" data-i18n-aria-label="capture.header_title" data-i18n-title="capture.header_title" aria-label="Exporter header desktop (PNG)" title="Exporter header desktop (PNG)">
             <span class="icon-btn-glyph" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d="M12 3v11"></path>
@@ -4054,11 +4129,11 @@
         </div>
         <div class="centered-toggle">
           <input id="toggle-islamic-places" type="checkbox" checked>
-          <label for="toggle-islamic-places">Lieux saints de l'Islam</label>
+          <label for="toggle-islamic-places" data-i18n="label.islamic_places">Lieux saints de l'Islam</label>
         </div>
         <div class="display-guide-row">
-          <span>Guide de prise en main</span>
-          <button id="app-onboarding-open-btn" type="button">Ouvrir</button>
+          <span data-i18n="guide.kicker">Guide de prise en main</span>
+          <button id="app-onboarding-open-btn" type="button" data-i18n="guide.open">Ouvrir</button>
         </div>
       </div>
     </div>
@@ -4096,6 +4171,15 @@
   </div>
   <button id="prayer-capture" data-i18n="prayer.save_image">Exporter</button>
 </div>
+<div id="star-tooltip" class="star-mode" aria-hidden="true">
+  <div class="star-name"></div>
+  <div class="star-type"></div>
+  <div class="star-details"></div>
+  <div class="planet-wrap">
+    <img class="planet-thumb" alt="" loading="lazy" decoding="async">
+    <div class="planet-desc"></div>
+  </div>
+</div>
 <div id="hint"></div>
 <div id="timelapse-bar">
   <span id="tl-date"></span>
@@ -4106,12 +4190,12 @@
   <span id="tl-controls-hint"></span>
 </div>
 <div id="bottom-live-info"></div>
-<footer id="legal-footer" aria-label="Informations legales et contact">
+<footer id="legal-footer" data-i18n-aria-label="legal.footer_aria" aria-label="Informations legales et contact">
   <span>&copy; 2026 Lionel R.</span>
   <span class="sep">-</span>
-  <button id="legal-footer-mentions" class="legal-footer-link" type="button">Mentions legales</button>
+  <button id="legal-footer-mentions" class="legal-footer-link" type="button" data-i18n="legal.mentions">Mentions legales</button>
   <span class="sep">-</span>
-  <button id="legal-footer-contact" class="legal-footer-link" type="button">Contact</button>
+  <button id="legal-footer-contact" class="legal-footer-link" type="button" data-i18n="legal.contact">Contact</button>
 </footer>
 <div id="legal-modal" hidden>
   <div id="legal-card" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
@@ -4147,8 +4231,69 @@ import './src/templates/islamic/template.mjs';
 import './src/templates/register-builtins.mjs';
 import './src/app/template-bridge.mjs';
 import './src/legacy/template-mode-adapter.mjs';
-// â”€â”€â”€ Renderer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-const renderer = new THREE.WebGLRenderer({ antialias:true, preserveDrawingBuffer:false });
+// Renderer
+function showWebGLUnavailableNotice(detailMessage){
+  if(document.getElementById('webgl-fallback-notice')) return;
+  const panel = document.createElement('div');
+  panel.id = 'webgl-fallback-notice';
+  panel.style.position = 'fixed';
+  panel.style.left = '50%';
+  panel.style.bottom = '20px';
+  panel.style.transform = 'translateX(-50%)';
+  panel.style.maxWidth = 'min(92vw, 760px)';
+  panel.style.padding = '12px 14px';
+  panel.style.borderRadius = '12px';
+  panel.style.border = '1px solid rgba(255,255,255,0.28)';
+  panel.style.background = 'rgba(0,0,0,0.76)';
+  panel.style.color = '#f8fafc';
+  panel.style.font = '500 13px/1.45 system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+  panel.style.zIndex = '999999';
+  panel.style.backdropFilter = 'blur(6px)';
+  panel.textContent = "WebGL est desactive dans ce navigateur (Opera GX), la vue 3D est indisponible. Activez l'acceleration materielle dans Opera GX puis redemarrez le navigateur.";
+  if(detailMessage){
+    panel.title = detailMessage;
+  }
+  document.body.appendChild(panel);
+}
+function createSafeWebGLRenderer(options, label){
+  try{
+    return new THREE.WebGLRenderer(options);
+  }catch(err){
+    const message = err && err.message ? err.message : String(err || 'Unknown WebGL error');
+    console.warn(`[WebGL] ${label} unavailable: ${message}`);
+    return null;
+  }
+}
+function createNoopRenderer(canvas){
+  return {
+    __isFallbackRenderer: true,
+    domElement: canvas,
+    localClippingEnabled: false,
+    autoClear: false,
+    physicallyCorrectLights: false,
+    outputColorSpace: THREE.SRGBColorSpace,
+    toneMapping: THREE.NoToneMapping,
+    toneMappingExposure: 1,
+    shadowMap: { enabled:false, type:THREE.PCFSoftShadowMap },
+    capabilities: { getMaxAnisotropy: ()=>1 },
+    setSize(w, h){
+      canvas.width = Math.max(1, Math.round(Number(w) || 1));
+      canvas.height = Math.max(1, Math.round(Number(h) || 1));
+    },
+    setPixelRatio(){},
+    setClearColor(){},
+    clear(){},
+    clearDepth(){},
+    render(){}
+  };
+}
+const primaryCanvas = document.createElement('canvas');
+let renderer = createSafeWebGLRenderer({ canvas:primaryCanvas, antialias:true, preserveDrawingBuffer:false }, 'Main renderer');
+if(!renderer){
+  showWebGLUnavailableNotice('Main THREE.WebGLRenderer could not be created.');
+  renderer = createNoopRenderer(primaryCanvas);
+}
+const WEBGL_RENDERING_ACTIVE = !renderer.__isFallbackRenderer;
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.localClippingEnabled = true;
@@ -4328,6 +4473,7 @@ document.body.appendChild(arrivalFlashOverlay);
 
 // Camera
 const GROUND_Y = 1.7;
+const GROUND_PLANE_HALF_SIZE = 2500; // half-side of the 5000×5000 ground PlaneGeometry
 const FOV_DEF=8.5, FOV_MIN=0.56, FOV_MAX=72;
 const FOLLOW_TARGET_DISC_PX = 86;
 const DEFAULT_GROUND_SCREEN_RATIO = 1 / 3;
@@ -4342,7 +4488,7 @@ function getDefaultViewPitchDeg(fovDeg){
 const camera = new THREE.PerspectiveCamera(FOV_DEF, innerWidth/innerHeight, 0.1, 8000);
 camera.position.set(0, GROUND_Y, 0);
 
-// â”€â”€â”€ Controls â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Controls Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const controls = new PointerLockControls(camera, renderer.domElement);
 scene.add(controls.object);
 renderer.domElement.style.touchAction = 'none';
@@ -4434,7 +4580,7 @@ document.addEventListener('keydown', e => {
 });
 document.addEventListener('keyup', e => { keys[e.code]=false; });
 
-// â”€â”€â”€ Zoom molette â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Zoom molette Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 let currentFOV=FOV_DEF;
 renderer.domElement.addEventListener('wheel', e => {
   if(!controls.isLocked) return; e.preventDefault();
@@ -4660,6 +4806,31 @@ moonScene.add(earthshine);
 
 // Twilight sky
 function updateSky(sunAltDeg, twilightCtx) {
+  const cinematicTravelActive = !!((travelTween && travelTween.active) || (landingSpinTween && landingSpinTween.active));
+  if(cinematicTravelActive){
+    const ze = [2, 4, 10];
+    const hz = [3, 6, 14];
+    skyBgColor.setRGB(ze[0]/255, ze[1]/255, ze[2]/255);
+    skyZenithColor.setRGB(ze[0]/255, ze[1]/255, ze[2]/255);
+    skyHorizonColor.setRGB(hz[0]/255, hz[1]/255, hz[2]/255);
+    scene.background = skyBgColor;
+    skyDomeUniforms.uZenithColor.value.copy(skyZenithColor);
+    skyDomeUniforms.uHorizonColor.value.copy(skyHorizonColor);
+    skyDomeUniforms.uTopBlackAlpha.value = 0;
+    skyDomeUniforms.uTopAlpha.value = 0;
+    skyDomeUniforms.uMidAlpha.value = 0;
+    skyDomeUniforms.uHorizonBandAlpha.value = 0;
+    skyDomeUniforms.uDawnCoreAlpha.value = 0;
+    skyDomeUniforms.uDawnWideAlpha.value = 0;
+    skyDomeUniforms.uDuskCoreAlpha.value = 0;
+    skyOverlayState.ze = ze.slice();
+    skyOverlayState.hz = hz.slice();
+    skyOverlayState.topBlackAlpha = 0;
+    skyOverlayState.topAlpha = 0;
+    skyOverlayState.midAlpha = 0;
+    skyOverlayState.horizonBandAlpha = 0;
+    return 1;
+  }
   const ctx = twilightCtx || {};
   const rawDawnProgress = THREE.MathUtils.clamp(ctx.dawnProgress || 0, 0, 1);
   const rawDuskProgress = THREE.MathUtils.clamp(ctx.duskProgress || 0, 0, 1);
@@ -4835,7 +5006,7 @@ function updateSky(sunAltDeg, twilightCtx) {
   if(bgStarMesh) bgStarMesh.material.opacity=starOp;
   return starOp;
 }
-// â”€â”€â”€ Sol â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Sol Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const ground = new THREE.Mesh(
   new THREE.PlaneGeometry(5000,5000),
   // Keep ground visually neutral: no solar/ambient reflections.
@@ -4847,6 +5018,7 @@ ground.visible = true;
 scene.add(ground);
 const horizonSilhouetteGroup = new THREE.Group();
 const horizonSilhouetteMaterials = [];
+let horizonLayerEffectiveConfigs = [];
 const HORIZON_SILHOUETTE_SEGMENTS = 192;
 const HORIZON_LOCATION_GRID_DEG = 0.75;
 const HORIZON_DAY_COLORS = [
@@ -4968,7 +5140,7 @@ function makeHorizonSilhouetteLayer(options){
     transparent:true,
     opacity:options.opacity,
     depthWrite:true,
-    fog:false
+    fog:false,
   });
   const mesh = new THREE.Mesh(
     makeHorizonSilhouetteGeometry(options.radius, options.baseY, options.minHeight, options.maxHeight, options.profileShift),
@@ -4994,17 +5166,27 @@ function rebuildHorizonSilhouetteForLocation(lat, lon){
   horizonBuildState.key = key;
   horizonBuildState.seed = hashStringToUnit(key);
   resetHorizonSilhouette();
+  horizonLayerEffectiveConfigs = [];
   HORIZON_LAYER_CONFIGS.forEach((cfg, index)=>{
     const profileJitter = (horizonSeededUnit(key, `layer-profile-${index}`) - 0.5) * 1.35;
     const heightScale = 0.88 + horizonSeededUnit(key, `layer-height-${index}`) * 0.34;
     const radiusOffset = (horizonSeededUnit(key, `layer-radius-${index}`) - 0.5) * 70;
-    makeHorizonSilhouetteLayer({
+    const effectiveCfg = {
       ...cfg,
       radius:cfg.radius + radiusOffset,
       minHeight:cfg.minHeight * heightScale,
       maxHeight:cfg.maxHeight * heightScale,
       profileShift:cfg.profileShift + profileJitter
-    });
+    };
+    const mesh = makeHorizonSilhouetteLayer(effectiveCfg);
+    // Store smoothed heights from the actual geometry (post 4-pass smooth).
+    const posAttr = mesh.geometry.attributes.position;
+    const smoothedHeights = [];
+    for(let i = 0; i < HORIZON_SILHOUETTE_SEGMENTS; i++){
+      smoothedHeights.push(posAttr.getY(2 * i + 1)); // top vertex Y
+    }
+    effectiveCfg.smoothedHeights = smoothedHeights;
+    horizonLayerEffectiveConfigs.push(effectiveCfg);
   });
 }
 rebuildHorizonSilhouetteForLocation(48.8566, 2.3522);
@@ -5443,7 +5625,7 @@ const worldCloudLayer = new THREE.Mesh(
   new THREE.MeshBasicMaterial({
     map:worldCloudTex,
     transparent:true,
-    opacity:0.42,
+    opacity:0.24,
     depthWrite:false
   })
 );
@@ -6349,7 +6531,7 @@ function formatTravelCoordinateLabel(lat, lon){
   return `${latStr} deg${latHem}/${lonStr} deg${lonHem}`;
 }
 
-// â”€â”€â”€ Ligne Qibla â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Ligne Qibla Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 // Direction de La Mecque (21.4225 degN, 39.8262 degE) depuis la position courante
 // Formule orthodromique (grand cercle)
 const ACTIVE_TEMPLATE_KEY = 'islamic';
@@ -7391,10 +7573,10 @@ const STAR_CATALOG=[
 astroEngine.setStarCatalog(STAR_CATALOG);
 
 function specType(T){
-  if(T>30000)return'O — supergéante bleue'; if(T>10000)return'B — géante bleue-blanche';
-  if(T>7500)return'A — étoile blanche'; if(T>6000)return'F — étoile jaune-blanc';
-  if(T>5200)return'G — type solaire'; if(T>3700)return'K — étoile orange';
-  return'M — étoile rouge';
+  if(T>30000)return'O â€” supergÃ©ante bleue'; if(T>10000)return'B â€” gÃ©ante bleue-blanche';
+  if(T>7500)return'A â€” Ã©toile blanche'; if(T>6000)return'F â€” Ã©toile jaune-blanc';
+  if(T>5200)return'G â€” type solaire'; if(T>3700)return'K â€” Ã©toile orange';
+  return'M â€” Ã©toile rouge';
 }
 function tempToColor(T){
   let r,g,b; const t=T/100;
@@ -8057,7 +8239,7 @@ function updatePlanetShine(nowMs){
   }
 }
 
-// Ã‰toiles de fond
+// Ãƒâ€°toiles de fond
 const ENABLE_ROTATING_BG_STARS = true;
 const ROTATING_BG_STAR_UPDATE_INTERVAL = 6;
 let bgStarMesh=null;
@@ -8141,7 +8323,7 @@ function updateRotatingBackgroundStars(date, lat, lon){
   scene.add(bgStarMesh);
 })();
 
-// â”€â”€â”€ Constellations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Constellations Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const CONST_LINES=[[5,8],[8,26],[26,11],[19,12],[1,9],[0,20],[0,6],[14,20]];
 const MAX_CONSTELLATION_VERTEX_COUNT = CONST_LINES.length * 2;
 let constMesh=null,constGeo=null,constPosAttr=null,showConst=false;
@@ -8187,7 +8369,7 @@ function buildConstellations(date,lat,lon){
   constMesh.visible = count > 0;
 }
 
-// â”€â”€â”€ Lune â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Lune Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const MOON_TEXTURE_MIRROR_X = true;
 const MOON_TEXTURE_U_OFFSET = 0;
 const MOON_TEXTURE_V_OFFSET = 0;
@@ -8440,25 +8622,20 @@ const MOON_LOGO_REFERENCE_RADIUS = 20 * (ASTRO_RENDER_DIST / 600);
 const moonLogoBackdropColor = new THREE.Color();
 function updateMoonLogoOverlayBackdrop(moonWindow){
   if(!moonWindow) return;
-  const tint = moonLogoBackdropColor.copy(moonSkyTintUniform.value);
-  const darkMix = THREE.MathUtils.clamp(0.05 + moonDarkBlendUniform.value * 0.18, 0.05, 0.24);
-  tint.lerp(new THREE.Color(0x11161d), darkMix);
-  const r = Math.round(THREE.MathUtils.clamp(tint.r, 0, 1) * 255);
-  const g = Math.round(THREE.MathUtils.clamp(tint.g, 0, 1) * 255);
-  const b = Math.round(THREE.MathUtils.clamp(tint.b, 0, 1) * 255);
-  const edgeAlpha = THREE.MathUtils.clamp(0.74 + moonDarkBlendUniform.value * 0.10, 0.74, 0.84).toFixed(3);
-  moonWindow.style.background = `radial-gradient(circle at 50% 50%, rgba(${r},${g},${b},0.88) 0%, rgba(${r},${g},${b},${edgeAlpha}) 78%, rgba(${Math.max(0, r - 8)},${Math.max(0, g - 8)},${Math.max(0, b - 8)},0.90) 100%)`;
+  moonWindow.style.background = 'transparent';
 }
 function createMoonLogoOverlay(canvasId){
+  if(!WEBGL_RENDERING_ACTIVE) return null;
   const canvas = document.getElementById(canvasId);
   if(!canvas) return null;
   const moonWindow = canvas.parentElement;
   if(!moonWindow) return null;
-  const overlayRenderer = new THREE.WebGLRenderer({
+  const overlayRenderer = createSafeWebGLRenderer({
     canvas,
     antialias:true,
     alpha:true
-  });
+  }, `Moon logo overlay (${canvasId})`);
+  if(!overlayRenderer) return null;
   overlayRenderer.setClearColor(0x000000, 0);
   overlayRenderer.outputColorSpace = THREE.SRGBColorSpace;
   overlayRenderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -8588,9 +8765,8 @@ function renderSunTexture(limbDarkening, horizonWarmth, horizonClipFrac) {
   // Screen-space horizon clip: hide the lower part of the disc near horizon
   // so the base cannot visually sink below the horizon line.
   if (clipFrac < 0.9995) {
-    // Small positive bias avoids a visible 1-2px sky slit at the horizon contact.
-    const keepTopPx = Math.max(0, Math.min(512, Math.round(512 * clipFrac)));
-    const clearStartPx = Math.max(0, Math.min(512, keepTopPx + 2));
+    const keepTopPx = Math.max(0, Math.min(512, Math.floor(512 * clipFrac)));
+    const clearStartPx = keepTopPx;
     sunCtx.clearRect(0, clearStartPx, 512, 512 - clearStartPx);
   }
 }
@@ -8600,9 +8776,9 @@ const sunSprite = new THREE.Sprite(new THREE.SpriteMaterial({
   map:sunTexture,
   transparent:true,
   depthWrite:false,
-  depthTest:true,
+  depthTest:false,
   blending:THREE.NormalBlending,
-  color:0xffffff
+  color:0xffffff,
 }));
 sunSprite.scale.set(1,1,1);
 sunSprite.visible = false;
@@ -8706,13 +8882,13 @@ const NEARBY_CITY_PREFIX_BY_LANG = {
   fr: 'Pres de ',
   en: 'Near ',
   es: 'Cerca de ',
-  ar: '?????? ?? '
+  ar: 'بالقرب من '
 };
 const UNKNOWN_CITY_LABEL_BY_LANG = {
   fr: 'Zone inconnue',
   en: 'Unknown area',
   es: 'Zona desconocida',
-  ar: '????? ?????'
+  ar: 'منطقة غير معروفة'
 };
 const TRAVEL_FALLBACK_CATALOG = [
   { country:'France', iso2:'fr', iso3:'FRA', cities:[
@@ -8846,17 +9022,26 @@ const MOON_LIMB_APPEAR_DEG = -(HORIZON_REFRACTION_DEG + MOON_ANGULAR_RADIUS_DEG)
 const MOON_LIMB_DISAPPEAR_DEG = MOON_LIMB_APPEAR_DEG;
 // Mean apparent solar radius used for eclipse geometry (degrees).
 const SUN_ANGULAR_RADIUS_DEG = 0.266;
+// Altitude at which the far edge of the ground plane appears from the camera.
+// The camera sits GROUND_Y above the ground (y=0), so looking toward the far edge
+// (GROUND_PLANE_HALF_SIZE away) requires looking slightly downward.
+const GROUND_VISUAL_HORIZON_ALT_DEG = -THREE.MathUtils.radToDeg(
+  Math.atan2(GROUND_Y, GROUND_PLANE_HALF_SIZE)
+); // ≈ −0.039°
 // Apparent solar radius from current rendered sprite geometry.
 const SUN_RENDER_ANGULAR_RADIUS_DEG = THREE.MathUtils.radToDeg(Math.atan2(SUN_SPRITE_DIAMETER * 0.5, SUN_DIST));
 // Visual alignment offset:
-// prayer sunrise/sunset markers include both physical solar radius and atmospheric refraction.
+// Prayer Chourouk/Maghreb markers are based on apparent altitude crossings.
 // We render without atmospheric bending, so only the *non-refraction* part of the radius mismatch
 // should be applied to the sprite altitude.
 const SUN_RENDER_ALT_OFFSET_DEG = Math.max(0, SUN_RENDER_ANGULAR_RADIUS_DEG - SUN_ANGULAR_RADIUS_DEG - HORIZON_REFRACTION_DEG);
-const SUN_EVENT_SYNC_TARGET_MIN = 1.0;
+// No extra timing bias: sunrise/sunset visuals should match prayer event instants.
+const SUN_EVENT_SYNC_TARGET_MIN = 0.0;
 const SUN_EVENT_RATE_SAMPLE_MS = 30 * 1000;
-// First visible pixel criterion for the real apparent solar disc.
-const SUN_LIMB_VISIBILITY_DEG = -(HORIZON_REFRACTION_DEG + SUN_ANGULAR_RADIUS_DEG);
+// First/last visible pixel criterion for apparent solar altitude:
+// apparent center reaches -solarRadius when upper limb is on apparent horizon.
+const SUN_HORIZON_LIMB_CROSSING_DEG = -SUN_ANGULAR_RADIUS_DEG;
+const SUN_LIMB_VISIBILITY_DEG = SUN_HORIZON_LIMB_CROSSING_DEG;
 const MOON_ECLIPSE_COLOR = new THREE.Color(0xff5a30);
 const SOLAR_ECLIPSE_DETECT_RADIUS_MULT = 1.28;
 const SUN_VISIBILITY_DEG = SUN_LIMB_VISIBILITY_DEG;
@@ -8922,8 +9107,9 @@ const I18N = {
     'app.title':'SHOW ME THE MOON','menu.location_time':'Localisation & Temps','label.language':'Langue',
     'label.latitude':'Latitude','label.longitude':'Longitude','label.date':'Date','label.time':'Heure',
     'label.country':'Pays','label.city':'Ville','label.planet_names':'Noms des planetes','label.prayer_times':'Prieres',
+    'label.islamic_places':'Lieux saints de l\'Islam',
     'btn.my_position':'EMPLACEMENT PAR DEFAUT','btn.refresh':'ACTUALISER','btn.refresh_all':'ACTUALISER TOUT','menu.landmarks':'Reperes','btn.follow_moon':'SUIVRE','btn.follow_sun':'SUIVRE','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINE',
-    'menu.moon':'Lune','menu.sun':'Soleil','menu.date_time_location':'Date et heure / Localisation','menu.date_time':'Date et heure','menu.coordinates':'Coordonnees','menu.city':'Ville','menu.display':'Affichage',
+    'menu.moon':'Lune','menu.sun':'Soleil','menu.date_time_location':'Date et heure / Localisation','menu.date_time':'Date et heure','menu.coordinates':'Coordonnees','menu.city':'Ville','menu.display':'Affichage','menu.settings':'Parametres',
     'mobile.menu':'Parametres','mobile.prayers':'Prieres','mobile.moon':'Lune','mobile.sun':'Soleil','mobile.language':'Langue',
     'menu.moon_sun_info':'Infos Lune & Soleil','menu.timelapse':'Defilement','timelapse.speed':'Vitesse (x)','timelapse.speed_short':'vitesse','timelapse.controls_hint':'[??] vitesse [Espace] pause',
     'timelapse.start':'Demarrer','timelapse.resume':'Reprendre','timelapse.running':'En cours','timelapse.pause':'Pause','timelapse.stop':'Arreter','timelapse.inactive':'Inactif','timelapse.active':'Actif','timelapse.increase_speed':'Augmenter la vitesse','timelapse.decrease_speed':'Reduire la vitesse','timelapse.play_short':'Play','timelapse.reverse_start':'Lecture inverse','timelapse.reverse_resume':'Reprendre en arriere','timelapse.reverse_pause':'Pause du sens inverse',
@@ -8932,90 +9118,160 @@ const I18N = {
     'prayer.fajr_angle':'Angle Fajr','prayer.isha_angle':'Angle Icha','moon.visible':'LUNE VISIBLE','moon.invisible':'LUNE INVISIBLE','moon.status_visible':'VISIBLE','moon.status_hidden':'NON VISIBLE',
     'input.utc':'(heure locale)','input.help.date':'Format attendu : JJ/MM/AAAA','input.help.time':'Format attendu : HH:MM (heure locale)','input.error.date_format':'Format invalide. Utilise JJ/MM/AAAA.','input.error.date_invalid':'Date invalide. Exemple : 28/02/2026.','input.error.time_format':'Format invalide. Utilise HH:MM (00-23:00-59).',
     'time.local_suffix':'(heure locale)',
-    'hint.controls':'Clic = naviguer · Molette = zoom · Echap = panneau','location.loading':'Localisation...','info.altitude':'Altitude','info.azimuth':'Azimut','info.illumination':'Illumination','info.sun':'Soleil','info.solar_eclipse':'Eclipse (approx.)',
+    'hint.controls':'Clic = naviguer - Molette = zoom - Echap = panneau','location.loading':'Localisation...','info.altitude':'Altitude','info.azimuth':'Azimut','info.illumination':'Illumination','info.sun':'Soleil','info.solar_eclipse':'Eclipse (approx.)',
     'dir.east':'EST','dir.west':'OUEST','compass.n':'N','compass.e':'E','compass.s':'S','compass.w':'O',
-    'capture.title':'Horaires de prieres','capture.for_date':'du {date}','capture.for_city':'pour la ville de {city}, {country}','capture.method':'Methode de calcul : {method}','capture.fajr_isha':'Fajr : {fajr}?   Isha : {isha}?'
+    'capture.title':'Horaires de prieres','capture.for_date':'du {date}','capture.for_city':'pour la ville de {city}, {country}','capture.method':'Methode de calcul : {method}','capture.fajr_isha':'Fajr : {fajr} deg   Isha : {isha} deg','capture.header_title':'Exporter header desktop (PNG)','capture.exporting':'Export en cours...','capture.done':'Export PNG termine','capture.unsupported':'Export non supporte par ce navigateur pour ce rendu.',
+    'travel.placeholder.country':'Rechercher un pays','travel.placeholder.city_disabled':'Selectionner un pays d\'abord','travel.placeholder.city':'Choisir...','travel.status.ready':'Pret pour un trajet.',
+    'share.copy_param_link':'Copier lien parametre','share.copy_prompt':'Copiez ce lien :','share.copied':'Lien copie','share.ready':'Lien pret',
+    'default_location.title':'Emplacement par defaut','default_location.description':'Choisissez une source de position. Lors de la validation, les coordonnees sont appliquees directement.','default_location.mode_label':'Type d\'emplacement par defaut','default_location.mode.geo':'Ma position actuelle','default_location.mode.city':'Une ville','default_location.hint.geo':'La position actuelle du navigateur sera utilisee.','default_location.hint.city':'Choisissez un pays puis une ville pour definir les coordonnees.','default_location.cancel':'Annuler','default_location.apply':'Appliquer','default_location.error.geolocation':'Impossible de recuperer votre position. Verifiez les permissions de geolocalisation.','default_location.error.country_not_found':'Pays introuvable. Selectionnez un pays valide.','default_location.error.city_not_found':'Ville introuvable. Selectionnez une ville de la liste.',
+    'guide.open':'Ouvrir',
+    'guide.change_language':'Changer de langue',
+    'guide.progress_prefix':'Page',
+    'guide.intro1':'Bonjour, et bienvenue dans <strong>Show me the moon</strong>.',
+    'guide.intro2':'L\'application simule le ciel, la Lune, le Soleil, les planetes du systeme solaire et les etoiles les plus visibles, comme vous les verriez depuis une position et une date choisies.',
+    'guide.intro3':'<strong>Show me the moon</strong> vous propose un veritable voyage dans le temps et dans l\'espace.',
+    'guide.intro4':'A travers une experience unique, voyez le ciel comme on l\'a vu, comme on le voit, et comme on le verra incha Allah, aux 4 coins du monde et a toute epoque.',
+    'guide.intro5':'Ce guide propose de vous donner une vue rapide des fonctions essentielles, avant de commencer.',
+    'guide.intro6':'Bien que n\'etant pas indispensable, car l\'application est tres intuitive, sa lecture peut etre utile pour apprehender plus rapidement toutes les fonctionnalites qui s\'offrent a vous :',
+    'legal.footer_aria':'Informations legales et contact','legal.mentions':'Mentions legales','legal.contact':'Contact','legal.title':'Informations legales','legal.loading':'Chargement...',
+    'ui.fullscreen.enter':'Plein ecran','ui.fullscreen.exit':'Sortir',
+    'guide.kicker':'Guide de prise en main','guide.title':'BIENVENUE DANS<br>SHOW ME THE MOON','guide.dismiss':'Ne plus voir ce guide au lancement','guide.prev':'Precedent','guide.next':'Suivant','guide.close':'Fermer',
+    'guide.page1':'Bonjour, et bienvenue dans <strong>Show me the moon</strong>.',
+    'guide.page2.title':'1. Navigation','guide.page2.item1':'Cliquez dans la scene pour controler la camera, puis bougez la souris.','guide.page2.item2':'La molette ajuste le zoom.','guide.page2.item3':'Appuyez sur `Esc` pour liberer la navigation et manipuler les panneaux.',
+    'guide.page3.title':'2. Date, lieu, coordonnees','guide.page3.item1':'Le panneau lateral permet de changer date, heure et coordonnees.','guide.page3.item2':'La section Ville aide a cibler une zone via pays + ville.','guide.page3.item3':'Le bouton Emplacement par defaut ouvre un pop-up pour appliquer votre lieu prefere.',
+    'guide.page4.title':'3. Lecture du ciel','guide.page4.item1':'Les cartes Lune et Soleil affichent altitude, azimut et etat de visibilite.','guide.page4.item2':'Les boutons de suivi recentrent la vue sur l\'astre choisi.','guide.page4.item3':'Le repere central facilite l\'orientation N/E/S/O.',
+    'guide.page5.title':'4. Fonctions annexes','guide.page5.item1':'Le time lapse accelere le temps pour observer l\'evolution du ciel.','guide.page5.item2':'Vous pouvez partager un lien et exporter le header desktop en PNG.','guide.page5.item3':'Le guide reste accessible depuis le bloc Affichage.'
   },
   en: {
     'app.title':'SHOW ME THE MOON','menu.location_time':'Location & Time','label.language':'Language','label.latitude':'Latitude','label.longitude':'Longitude','label.date':'Date','label.time':'Time',
+    'label.country':'Country','label.city':'City','label.planet_names':'Planet names','label.prayer_times':'Prayer times','label.islamic_places':'Islamic holy sites',
     'btn.my_position':'DEFAULT LOCATION','btn.refresh':'REFRESH','btn.refresh_all':'REFRESH ALL','menu.landmarks':'Landmarks','btn.follow_moon':'FOLLOW','btn.follow_sun':'FOLLOW','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA',
-    'label.country':'Country','label.city':'City','label.planet_names':'Planet names','label.prayer_times':'Prayers',
-    'menu.moon':'Moon','menu.sun':'Sun','menu.date_time_location':'Date and time / Location','menu.date_time':'Date and time','menu.coordinates':'Coordinates','menu.city':'City','menu.display':'Display',
+    'menu.moon':'Moon','menu.sun':'Sun','menu.date_time_location':'Date and time / Location','menu.date_time':'Date and time','menu.coordinates':'Coordinates','menu.city':'City','menu.display':'Display','menu.settings':'Settings',
     'mobile.menu':'Menu','mobile.prayers':'Prayers','mobile.moon':'Moon','mobile.sun':'Sun','mobile.language':'Language',
     'menu.moon_sun_info':'Moon & Sun Info','menu.timelapse':'Time Lapse','timelapse.speed':'Speed (x)','timelapse.speed_short':'speed','timelapse.controls_hint':'[??] speed [Space] pause',
     'timelapse.start':'Start','timelapse.resume':'Resume','timelapse.running':'Running','timelapse.pause':'Pause','timelapse.stop':'Stop','timelapse.inactive':'Inactive','timelapse.active':'Active','timelapse.increase_speed':'Increase speed','timelapse.decrease_speed':'Decrease speed','timelapse.play_short':'Play','timelapse.reverse_start':'Play backward','timelapse.reverse_resume':'Resume backward','timelapse.reverse_pause':'Pause backward playback',
-    'prayer.panel_title':'Prayers','prayer.schedule_title':'Schedule','prayer.methods_title':'Calculation methods','prayer.method':'Method','prayer.custom_settings':'Custom settings','prayer.save_image':'Export',
+    'prayer.panel_title':'Prayer Times','prayer.schedule_title':'Schedule','prayer.methods_title':'Calculation methods','prayer.method':'Method','prayer.custom_settings':'Custom settings','prayer.save_image':'Export',
     'prayer.fajr':'Fajr','prayer.sunrise':'Sunrise','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Fajr angle','prayer.isha_angle':'Isha angle',
     'input.utc':'(local time)','input.help.date':'Expected format: DD/MM/YYYY','input.help.time':'Expected format: HH:MM (local time)','input.error.date_format':'Invalid format. Use DD/MM/YYYY.','input.error.date_invalid':'Invalid date. Example: 28/02/2026.','input.error.time_format':'Invalid format. Use HH:MM (00-23:00-59).',
     'time.local_suffix':'(local time)',
-    'moon.visible':'MOON VISIBLE','moon.invisible':'MOON NOT VISIBLE','moon.status_visible':'VISIBLE','moon.status_hidden':'NOT VISIBLE','hint.controls':'Click = navigate · Wheel = zoom · Esc = panel','location.loading':'Locating...',
+    'moon.visible':'MOON VISIBLE','moon.invisible':'MOON NOT VISIBLE','moon.status_visible':'VISIBLE','moon.status_hidden':'NOT VISIBLE','hint.controls':'Click = navigate - Wheel = zoom - Esc = panel','location.loading':'Locating...',
     'info.altitude':'Altitude','info.azimuth':'Azimuth','info.illumination':'Illumination','info.sun':'Sun','info.solar_eclipse':'Solar eclipse (approx.)','dir.east':'EAST','dir.west':'WEST',
     'compass.n':'N','compass.e':'E','compass.s':'S','compass.w':'W',
-    'capture.title':'Prayer Times','capture.for_date':'for {date}','capture.for_city':'for {city}, {country}','capture.method':'Calculation method: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'
+    'capture.title':'Prayer Times','capture.for_date':'for {date}','capture.for_city':'for {city}, {country}','capture.method':'Calculation method: {method}','capture.fajr_isha':'Fajr: {fajr} deg   Isha: {isha} deg','capture.header_title':'Export desktop header (PNG)','capture.exporting':'Exporting...','capture.done':'PNG export complete','capture.unsupported':'Export is not supported by this browser for this render.',
+    'travel.placeholder.country':'Search for a country','travel.placeholder.city_disabled':'Select a country first','travel.placeholder.city':'Choose...','travel.status.ready':'Ready for travel.',
+    'share.copy_param_link':'Copy parameter link','share.copy_prompt':'Copy this link:','share.copied':'Link copied','share.ready':'Link ready',
+    'default_location.title':'Default location','default_location.description':'Choose a location source. When you confirm, the coordinates are applied directly.','default_location.mode_label':'Default location type','default_location.mode.geo':'My current location','default_location.mode.city':'A city','default_location.hint.geo':'Your browser current location will be used.','default_location.hint.city':'Choose a country and then a city to set the coordinates.','default_location.cancel':'Cancel','default_location.apply':'Apply','default_location.error.geolocation':'Unable to retrieve your location. Check geolocation permissions.','default_location.error.country_not_found':'Country not found. Select a valid country.','default_location.error.city_not_found':'City not found. Select a city from the list.',
+    'guide.open':'Open',
+    'guide.change_language':'Change language',
+    'guide.progress_prefix':'Page',
+    'guide.intro1':'Hello, and welcome to <strong>Show me the moon</strong>.',
+    'guide.intro2':'The app simulates the sky, the Moon, the Sun, the planets of the solar system and the brightest stars, as you would see them from a chosen location and date.',
+    'guide.intro3':'<strong>Show me the moon</strong> offers you a true journey through time and space.',
+    'guide.intro4':'Through a unique experience, see the sky as it was seen, as it is seen today, and as it will be seen in the future, God willing, from every corner of the world and in every era.',
+    'guide.intro5':'This guide gives you a quick overview of the essential features before you begin.',
+    'guide.intro6':'It is not mandatory, because the app is very intuitive, but reading it can help you discover all the available features more quickly:',
+    'legal.footer_aria':'Legal information and contact','legal.mentions':'Legal notice','legal.contact':'Contact','legal.title':'Legal information','legal.loading':'Loading...',
+    'ui.fullscreen.enter':'Fullscreen','ui.fullscreen.exit':'Exit',
+    'guide.kicker':'Getting Started','guide.title':'WELCOME TO<br>SHOW ME THE MOON','guide.dismiss':'Do not show this guide at startup','guide.prev':'Previous','guide.next':'Next','guide.close':'Close',
+    'guide.page1':'Hello, and welcome to <strong>Show me the moon</strong>.',
+    'guide.page2.title':'1. Navigation','guide.page2.item1':'Click in the scene to control the camera, then move your mouse.','guide.page2.item2':'The scroll wheel adjusts the zoom.','guide.page2.item3':'Press `Esc` to release navigation and manipulate panels.',
+    'guide.page3.title':'2. Date, location, coordinates','guide.page3.item1':'The side panel allows you to change date, time and coordinates.','guide.page3.item2':'The City section helps target an area via country + city.','guide.page3.item3':'The Default Location button opens a pop-up to apply your preferred location.',
+    'guide.page4.title':'3. Reading the sky','guide.page4.item1':'The Moon and Sun maps display altitude, azimuth and visibility status.','guide.page4.item2':'Follow buttons recenter the view on the chosen celestial body.','guide.page4.item3':'The center crosshair makes N/E/S/W orientation easier.',
+    'guide.page5.title':'4. Additional features','guide.page5.item1':'Time lapse speeds up time so you can observe changes in the sky.','guide.page5.item2':'You can share a link and export the desktop header as a PNG.','guide.page5.item3':'The guide remains accessible from the Display panel.'
   },
-  es: {'app.title':'SHOW ME THE MOON','menu.location_time':'Ubicacion y hora','label.language':'Idioma','label.latitude':'Latitud','label.longitude':'Longitud','label.date':'Fecha (DD/MM/AAAA)','label.time':'Hora (HH:MM)','btn.my_position':'MI UBICACION','btn.refresh':'ACTUALIZAR','menu.landmarks':'Referencias','btn.follow_moon':'SEGUIR LA LUNA','btn.follow_sun':'SEGUIR EL SOL','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Info Luna y Sol','menu.timelapse':'Time Lapse','timelapse.speed':'Velocidad (x)','timelapse.speed_short':'velocidad','timelapse.controls_hint':'[??] velocidad [Espacio] pausa','timelapse.start':'Iniciar','timelapse.resume':'Reanudar','timelapse.running':'En curso','timelapse.pause':'Pausa','timelapse.stop':'Detener','timelapse.inactive':'Inactivo','timelapse.active':'Activo','prayer.panel_title':'Horarios de oracion','prayer.custom_settings':'Ajustes personalizados','prayer.save_image':'Guardar imagen de horarios de hoy','prayer.fajr':'Fajr','prayer.sunrise':'Amanecer','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Magreb','prayer.isha':'Isha','prayer.fajr_angle':'Angulo Fajr','prayer.isha_angle':'Angulo Isha','moon.visible':'LUNA VISIBLE','moon.invisible':'LUNA NO VISIBLE','hint.controls':'Clic = navegar · Rueda = zoom · Esc = panel','location.loading':'Localizando...','info.altitude':'Altitud','info.azimuth':'Azimut','info.illumination':'Iluminacion','info.sun':'Sol','info.solar_eclipse':'Eclipse solar (aprox.)','dir.east':'ESTE','dir.west':'OESTE','compass.n':'N','compass.e':'E','compass.s':'S','compass.w':'O','capture.title':'Horarios de oracion','capture.for_date':'del {date}','capture.for_city':'para {city}, {country}','capture.method':'Metodo de calculo: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
-  it: {'app.title':'SHOW ME THE MOON','menu.location_time':'Posizione e ora','label.language':'Lingua','label.latitude':'Latitudine','label.longitude':'Longitudine','label.date':'Data (GG/MM/AAAA)','label.time':'Ora (HH:MM)','btn.my_position':'LA MIA POSIZIONE','btn.refresh':'AGGIORNA','menu.landmarks':'Riferimenti','btn.follow_moon':'SEGUI LA LUNA','btn.follow_sun':'SEGUI IL SOLE','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Info Luna e Sole','menu.timelapse':'Time Lapse','timelapse.speed':'Velocita (x)','timelapse.speed_short':'velocita','timelapse.controls_hint':'[??] velocita [Spazio] pausa','timelapse.start':'Avvia','timelapse.resume':'Riprendi','timelapse.running':'In corso','timelapse.pause':'Pausa','timelapse.stop':'Ferma','timelapse.inactive':'Inattivo','timelapse.active':'Attivo','prayer.panel_title':'Orari delle preghiere','prayer.custom_settings':'Impostazioni personalizzate','prayer.save_image':'Salva immagine orari di oggi','prayer.fajr':'Fajr','prayer.sunrise':'Alba','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Angolo Fajr','prayer.isha_angle':'Angolo Isha','moon.visible':'LUNA VISIBILE','moon.invisible':'LUNA NON VISIBILE','hint.controls':'Clic = naviga · Rotella = zoom · Esc = pannello','location.loading':'Localizzazione...','info.altitude':'Altitudine','info.azimuth':'Azimut','info.illumination':'Illuminazione','info.sun':'Sole','info.solar_eclipse':'Eclissi solare (circa)','dir.east':'EST','dir.west':'OVEST','compass.n':'N','compass.e':'E','compass.s':'S','compass.w':'O','capture.title':'Orari delle preghiere','capture.for_date':'del {date}','capture.for_city':'per {city}, {country}','capture.method':'Metodo di calcolo: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
-  de: {'app.title':'SHOW ME THE MOON','menu.location_time':'Standort und Zeit','label.language':'Sprache','label.latitude':'Breitengrad','label.longitude':'Langengrad','label.date':'Datum (TT/MM/JJJJ)','label.time':'Uhrzeit (HH:MM)','btn.my_position':'MEIN STANDORT','btn.refresh':'AKTUALISIEREN','menu.landmarks':'Markierungen','btn.follow_moon':'MOND FOLGEN','btn.follow_sun':'SONNE FOLGEN','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Mond- und Sonneninfo','menu.timelapse':'Zeitraffer','timelapse.speed':'Geschwindigkeit (x)','timelapse.speed_short':'geschwindigkeit','timelapse.controls_hint':'[??] Geschwindigkeit [Leertaste] Pause','timelapse.start':'Starten','timelapse.resume':'Fortsetzen','timelapse.running':'Lauft','timelapse.pause':'Pause','timelapse.stop':'Stop','timelapse.inactive':'Inaktiv','timelapse.active':'Aktiv','prayer.panel_title':'Gebetszeiten','prayer.custom_settings':'Benutzerdefinierte Einstellungen','prayer.save_image':'Bild der heutigen Gebetszeiten speichern','prayer.fajr':'Fajr','prayer.sunrise':'Sonnenaufgang','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Fajr-Winkel','prayer.isha_angle':'Isha-Winkel','moon.visible':'MOND SICHTBAR','moon.invisible':'MOND NICHT SICHTBAR','hint.controls':'Klick = navigieren · Rad = zoom · Esc = Panel','location.loading':'Standort...','info.altitude':'Hohe','info.azimuth':'Azimut','info.illumination':'Beleuchtung','info.sun':'Sonne','info.solar_eclipse':'Sonnenfinsternis (ca.)','dir.east':'OST','dir.west':'WEST','compass.n':'N','compass.e':'O','compass.s':'S','compass.w':'W','capture.title':'Gebetszeiten','capture.for_date':'vom {date}','capture.for_city':'fur {city}, {country}','capture.method':'Berechnungsmethode: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
-  zh: {'app.title':'SHOW ME THE MOON','menu.location_time':'?????','label.language':'??','label.latitude':'??','label.longitude':'??','label.date':'?? (DD/MM/YYYY)','label.time':'?? (HH:MM)','btn.my_position':'????','btn.refresh':'??','menu.landmarks':'??','btn.follow_moon':'????','btn.follow_sun':'????','btn.qibla':'????','btn.alquds':'????','btn.medina':'???','menu.moon_sun_info':'???????','menu.timelapse':'??','timelapse.speed':'?? (x)','timelapse.speed_short':'??','timelapse.controls_hint':'[??] ?? [??] ??','timelapse.start':'??','timelapse.resume':'??','timelapse.running':'???','timelapse.pause':'??','timelapse.stop':'??','timelapse.inactive':'???','timelapse.active':'??','prayer.panel_title':'????','prayer.custom_settings':'?????','prayer.save_image':'??????????','prayer.fajr':'??','prayer.sunrise':'??','prayer.dhuhr':'??','prayer.asr':'??','prayer.maghreb':'??','prayer.isha':'??','prayer.fajr_angle':'????','prayer.isha_angle':'????','moon.visible':'????','moon.invisible':'?????','hint.controls':'?? = ?? · ?? = ?? · Esc = ??','location.loading':'???...','info.altitude':'??','info.azimuth':'???','info.illumination':'???','info.sun':'??','info.solar_eclipse':'??(?)','dir.east':'?','dir.west':'?','compass.n':'?','compass.e':'?','compass.s':'?','compass.w':'?','capture.title':'????','capture.for_date':'?? {date}','capture.for_city':'?? {city}, {country}','capture.method':'????: {method}','capture.fajr_isha':'??: {fajr} deg   ??: {isha} deg'},
-  ar: {'app.title':'SHOW ME THE MOON','menu.location_time':'?????? ??????','label.language':'?????','label.latitude':'?? ?????','label.longitude':'?? ?????','label.date':'??????? (DD/MM/YYYY)','label.time':'????? (HH:MM)','btn.my_position':'?????','btn.refresh':'?????','menu.landmarks':'???????','btn.follow_moon':'???? ?????','btn.follow_sun':'???? ?????','btn.qibla':'??????','btn.alquds':'?????','btn.medina':'???????','menu.moon_sun_info':'??????? ????? ??????','menu.timelapse':'????? ????','timelapse.speed':'?????? (x)','timelapse.speed_short':'??????','timelapse.controls_hint':'[??] ?????? [?????] ?????','timelapse.start':'????','timelapse.resume':'???????','timelapse.running':'????','timelapse.pause':'????? ????','timelapse.stop':'?????','timelapse.inactive':'??? ???','timelapse.active':'???','prayer.panel_title':'?????? ??????','prayer.custom_settings':'??????? ?????','prayer.save_image':'??? ???? ?????? ?????','prayer.fajr':'?????','prayer.sunrise':'??????','prayer.dhuhr':'?????','prayer.asr':'?????','prayer.maghreb':'??????','prayer.isha':'??????','prayer.fajr_angle':'????? ?????','prayer.isha_angle':'????? ??????','moon.visible':'????? ????','moon.invisible':'????? ??? ????','hint.controls':'???? = ???? · ???? = ????? · Esc = ??????','location.loading':'???? ????? ??????...','info.altitude':'????????','info.azimuth':'?????','info.illumination':'???????','info.sun':'?????','info.solar_eclipse':'???? ???? (??????)','dir.east':'???','dir.west':'???','compass.n':'?','compass.e':'?','compass.s':'?','compass.w':'?','capture.title':'?????? ??????','capture.for_date':'???? {date}','capture.for_city':'?? {city}? {country}','capture.method':'????? ??????: {method}','capture.fajr_isha':'?????: {fajr} deg   ??????: {isha} deg'},
-  pt: {'app.title':'SHOW ME THE MOON','menu.location_time':'Localizacao e hora','label.language':'Idioma','label.latitude':'Latitude','label.longitude':'Longitude','label.date':'Data (DD/MM/AAAA)','label.time':'Hora (HH:MM)','btn.my_position':'MINHA POSICAO','btn.refresh':'ATUALIZAR','menu.landmarks':'Referencias','btn.follow_moon':'SEGUIR A LUA','btn.follow_sun':'SEGUIR O SOL','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Info Lua e Sol','menu.timelapse':'Time Lapse','timelapse.speed':'Velocidade (x)','timelapse.speed_short':'velocidade','timelapse.controls_hint':'[??] velocidade [Espaco] pausa','timelapse.start':'Iniciar','timelapse.resume':'Retomar','timelapse.running':'Em execucao','timelapse.pause':'Pausa','timelapse.stop':'Parar','timelapse.inactive':'Inativo','timelapse.active':'Ativo','prayer.panel_title':'Horarios de oracao','prayer.custom_settings':'Configuracoes personalizadas','prayer.save_image':'Salvar imagem dos horarios de hoje','prayer.fajr':'Fajr','prayer.sunrise':'Nascer do sol','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Angulo Fajr','prayer.isha_angle':'Angulo Isha','moon.visible':'LUA VISIVEL','moon.invisible':'LUA NAO VISIVEL','hint.controls':'Clique = navegar · Roda = zoom · Esc = painel','location.loading':'Localizando...','info.altitude':'Altitude','info.azimuth':'Azimute','info.illumination':'Iluminacao','info.sun':'Sol','info.solar_eclipse':'Eclipse solar (aprox.)','dir.east':'LESTE','dir.west':'OESTE','compass.n':'N','compass.e':'L','compass.s':'S','compass.w':'O','capture.title':'Horarios de oracao','capture.for_date':'de {date}','capture.for_city':'para {city}, {country}','capture.method':'Metodo de calculo: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
-  id: {'app.title':'SHOW ME THE MOON','menu.location_time':'Lokasi & Waktu','label.language':'Bahasa','label.latitude':'Lintang','label.longitude':'Bujur','label.date':'Tanggal (DD/MM/YYYY)','label.time':'Waktu (HH:MM)','btn.my_position':'LOKASI SAYA','btn.refresh':'MUAT ULANG','menu.landmarks':'Penanda','btn.follow_moon':'IKUTI BULAN','btn.follow_sun':'IKUTI MATAHARI','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MADINAH','menu.moon_sun_info':'Info Bulan & Matahari','menu.timelapse':'Time Lapse','timelapse.speed':'Kecepatan (x)','timelapse.speed_short':'kecepatan','timelapse.controls_hint':'[??] kecepatan [Spasi] jeda','timelapse.start':'Mulai','timelapse.resume':'Lanjut','timelapse.running':'Berjalan','timelapse.pause':'Jeda','timelapse.stop':'Berhenti','timelapse.inactive':'Tidak aktif','timelapse.active':'Aktif','prayer.panel_title':'Jadwal shalat','prayer.custom_settings':'Pengaturan kustom','prayer.save_image':'Simpan gambar jadwal hari ini','prayer.fajr':'Subuh','prayer.sunrise':'Terbit','prayer.dhuhr':'Zuhur','prayer.asr':'Asar','prayer.maghreb':'Magrib','prayer.isha':'Isya','prayer.fajr_angle':'Sudut Subuh','prayer.isha_angle':'Sudut Isya','moon.visible':'BULAN TERLIHAT','moon.invisible':'BULAN TIDAK TERLIHAT','hint.controls':'Klik = navigasi · Roda = zoom · Esc = panel','location.loading':'Mencari lokasi...','info.altitude':'Ketinggian','info.azimuth':'Azimut','info.illumination':'Iluminasi','info.sun':'Matahari','info.solar_eclipse':'Gerhana matahari (perkiraan)','dir.east':'TIMUR','dir.west':'BARAT','compass.n':'U','compass.e':'T','compass.s':'S','compass.w':'B','capture.title':'Jadwal shalat','capture.for_date':'untuk {date}','capture.for_city':'untuk {city}, {country}','capture.method':'Metode perhitungan: {method}','capture.fajr_isha':'Subuh: {fajr} deg   Isya: {isha} deg'},
-  ms: {'app.title':'SHOW ME THE MOON','menu.location_time':'Lokasi & Masa','label.language':'Bahasa','label.latitude':'Latitud','label.longitude':'Longitud','label.date':'Tarikh (DD/MM/YYYY)','label.time':'Masa (HH:MM)','btn.my_position':'LOKASI SAYA','btn.refresh':'KEMAS KINI','menu.landmarks':'Penanda','btn.follow_moon':'IKUT BULAN','btn.follow_sun':'IKUT MATAHARI','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MADINAH','menu.moon_sun_info':'Info Bulan & Matahari','menu.timelapse':'Time Lapse','timelapse.speed':'Kelajuan (x)','timelapse.speed_short':'kelajuan','timelapse.controls_hint':'[??] kelajuan [Space] jeda','timelapse.start':'Mula','timelapse.resume':'Sambung','timelapse.running':'Sedang berjalan','timelapse.pause':'Jeda','timelapse.stop':'Henti','timelapse.inactive':'Tidak aktif','timelapse.active':'Aktif','prayer.panel_title':'Waktu solat','prayer.custom_settings':'Tetapan tersuai','prayer.save_image':'Simpan imej waktu hari ini','prayer.fajr':'Fajar','prayer.sunrise':'Syuruk','prayer.dhuhr':'Zuhur','prayer.asr':'Asar','prayer.maghreb':'Maghrib','prayer.isha':'Isyak','prayer.fajr_angle':'Sudut Fajar','prayer.isha_angle':'Sudut Isyak','moon.visible':'BULAN KELIHATAN','moon.invisible':'BULAN TIDAK KELIHATAN','hint.controls':'Klik = navigasi · Roda = zum · Esc = panel','location.loading':'Mencari lokasi...','info.altitude':'Altitud','info.azimuth':'Azimut','info.illumination':'Pencahayaan','info.sun':'Matahari','info.solar_eclipse':'Gerhana matahari (anggaran)','dir.east':'TIMUR','dir.west':'BARAT','compass.n':'U','compass.e':'T','compass.s':'S','compass.w':'B','capture.title':'Waktu solat','capture.for_date':'untuk {date}','capture.for_city':'untuk {city}, {country}','capture.method':'Kaedah kiraan: {method}','capture.fajr_isha':'Fajar: {fajr} deg   Isyak: {isha} deg'}
+  es: {
+    'app.title':'SHOW ME THE MOON','menu.location_time':'Ubicacion y hora','label.language':'Idioma','label.latitude':'Latitud','label.longitude':'Longitud','label.date':'Fecha','label.time':'Hora',
+    'label.country':'Pais','label.city':'Ciudad','label.planet_names':'Nombres de los planetas','label.prayer_times':'Horarios de oracion','label.islamic_places':'Lugares sagrados del islam',
+    'btn.my_position':'UBICACION PREDETERMINADA','btn.refresh':'ACTUALIZAR','btn.refresh_all':'ACTUALIZAR TODO','menu.landmarks':'Referencias','btn.follow_moon':'SEGUIR','btn.follow_sun':'SEGUIR','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA',
+    'menu.moon':'Luna','menu.sun':'Sol','menu.date_time_location':'Fecha y hora / Ubicacion','menu.date_time':'Fecha y hora','menu.coordinates':'Coordenadas','menu.city':'Ciudad','menu.display':'Visualizacion','menu.settings':'Ajustes',
+    'mobile.menu':'Menu','mobile.prayers':'Oraciones','mobile.moon':'Luna','mobile.sun':'Sol','mobile.language':'Idioma',
+    'menu.moon_sun_info':'Informacion de la Luna y el Sol','menu.timelapse':'Secuencia temporal','timelapse.speed':'Velocidad (x)','timelapse.speed_short':'velocidad','timelapse.controls_hint':'[??] velocidad [Espacio] pausa',
+    'timelapse.start':'Iniciar','timelapse.resume':'Reanudar','timelapse.running':'En curso','timelapse.pause':'Pausa','timelapse.stop':'Detener','timelapse.inactive':'Inactivo','timelapse.active':'Activo','timelapse.increase_speed':'Aumentar velocidad','timelapse.decrease_speed':'Reducir velocidad','timelapse.play_short':'Reproducir','timelapse.reverse_start':'Reproducir hacia atras','timelapse.reverse_resume':'Reanudar hacia atras','timelapse.reverse_pause':'Pausar reproduccion inversa',
+    'prayer.panel_title':'Horarios de oracion','prayer.schedule_title':'Horarios','prayer.methods_title':'Metodos de calculo','prayer.method':'Metodo','prayer.custom_settings':'Ajustes personalizados','prayer.save_image':'Exportar',
+    'prayer.fajr':'Fajr','prayer.sunrise':'Amanecer','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Angulo de Fajr','prayer.isha_angle':'Angulo de Isha',
+    'input.utc':'(hora local)','input.help.date':'Formato esperado: DD/MM/AAAA','input.help.time':'Formato esperado: HH:MM (hora local)','input.error.date_format':'Formato invalido. Usa DD/MM/AAAA.','input.error.date_invalid':'Fecha invalida. Ejemplo: 28/02/2026.','input.error.time_format':'Formato invalido. Usa HH:MM (00-23:00-59).',
+    'time.local_suffix':'(hora local)',
+    'moon.visible':'LUNA VISIBLE','moon.invisible':'LUNA NO VISIBLE','moon.status_visible':'VISIBLE','moon.status_hidden':'NO VISIBLE','hint.controls':'Clic = navegar - Rueda = zoom - Esc = panel','location.loading':'Localizando...','info.altitude':'Altitud','info.azimuth':'Azimut','info.illumination':'Iluminacion','info.sun':'Sol','info.solar_eclipse':'Eclipse solar (aprox.)',
+    'dir.east':'ESTE','dir.west':'OESTE','compass.n':'N','compass.e':'E','compass.s':'S','compass.w':'O',
+    'capture.title':'Horarios de oracion','capture.for_date':'del {date}','capture.for_city':'para {city}, {country}','capture.method':'Metodo de calculo: {method}','capture.fajr_isha':'Fajr: {fajr} deg   Isha: {isha} deg','capture.header_title':'Exportar cabecera de escritorio (PNG)','capture.exporting':'Exportando...','capture.done':'Exportacion PNG completada','capture.unsupported':'Este navegador no permite exportar este render.',
+    'travel.placeholder.country':'Buscar un pais','travel.placeholder.city_disabled':'Selecciona primero un pais','travel.placeholder.city':'Elegir...','travel.status.ready':'Listo para viajar.',
+    'share.copy_param_link':'Copiar enlace con parametros','share.copy_prompt':'Copia este enlace:','share.copied':'Enlace copiado','share.ready':'Enlace listo',
+    'default_location.title':'Ubicacion predeterminada','default_location.description':'Elige una fuente de ubicacion. Al confirmar, las coordenadas se aplican directamente.','default_location.mode_label':'Tipo de ubicacion predeterminada','default_location.mode.geo':'Mi ubicacion actual','default_location.mode.city':'Una ciudad','default_location.hint.geo':'Se utilizara la ubicacion actual del navegador.','default_location.hint.city':'Elige un pais y luego una ciudad para definir las coordenadas.','default_location.cancel':'Cancelar','default_location.apply':'Aplicar','default_location.error.geolocation':'No se pudo recuperar tu ubicacion. Comprueba los permisos de geolocalizacion.','default_location.error.country_not_found':'Pais no encontrado. Selecciona un pais valido.','default_location.error.city_not_found':'Ciudad no encontrada. Selecciona una ciudad de la lista.',
+    'guide.open':'Abrir',
+    'guide.change_language':'Cambiar idioma',
+    'guide.progress_prefix':'Pagina',
+    'guide.intro1':'Hola y bienvenido a <strong>Show me the moon</strong>.',
+    'guide.intro2':'La aplicacion simula el cielo, la Luna, el Sol, los planetas del sistema solar y las estrellas mas visibles, tal como los verias desde una posicion y una fecha elegidas.',
+    'guide.intro3':'<strong>Show me the moon</strong> te ofrece un verdadero viaje en el tiempo y en el espacio.',
+    'guide.intro4':'A traves de una experiencia unica, observa el cielo tal como se vio, tal como se ve y tal como se vera, incha Allah, en los cuatro rincones del mundo y en cualquier epoca.',
+    'guide.intro5':'Esta guia te ofrece una vision rapida de las funciones esenciales antes de empezar.',
+    'guide.intro6':'Aunque no es indispensable, porque la aplicacion es muy intuitiva, su lectura puede ayudarte a descubrir mas rapidamente todas las funciones disponibles:',
+    'legal.footer_aria':'Informacion legal y contacto','legal.mentions':'Aviso legal','legal.contact':'Contacto','legal.title':'Informacion legal','legal.loading':'Cargando...',
+    'ui.fullscreen.enter':'Pantalla completa','ui.fullscreen.exit':'Salir',
+    'guide.kicker':'Guia de inicio','guide.title':'BIENVENIDO A<br>SHOW ME THE MOON','guide.dismiss':'No mostrar esta guia al iniciar','guide.prev':'Anterior','guide.next':'Siguiente','guide.close':'Cerrar',
+    'guide.page1':'Hola y bienvenido a <strong>Show me the moon</strong>.',
+    'guide.page2.title':'1. Navegacion','guide.page2.item1':'Haz clic en la escena para controlar la camara y luego mueve el raton.','guide.page2.item2':'La rueda del raton ajusta el zoom.','guide.page2.item3':'Pulsa `Esc` para soltar la navegacion y manipular los paneles.',
+    'guide.page3.title':'2. Fecha, lugar y coordenadas','guide.page3.item1':'El panel lateral te permite cambiar la fecha, la hora y las coordenadas.','guide.page3.item2':'La seccion Ciudad ayuda a apuntar una zona mediante pais + ciudad.','guide.page3.item3':'El boton Ubicacion predeterminada abre una ventana para aplicar tu ubicacion preferida.',
+    'guide.page4.title':'3. Lectura del cielo','guide.page4.item1':'Las tarjetas de la Luna y del Sol muestran altitud, azimut y estado de visibilidad.','guide.page4.item2':'Los botones de seguimiento vuelven a centrar la vista en el astro elegido.','guide.page4.item3':'La cruceta central facilita la orientacion N/E/S/O.',
+    'guide.page5.title':'4. Funciones adicionales','guide.page5.item1':'La secuencia temporal acelera el tiempo para observar la evolucion del cielo.','guide.page5.item2':'Puedes compartir un enlace y exportar la cabecera de escritorio en PNG.','guide.page5.item3':'La guia sigue accesible desde el panel Visualizacion.'
+  },
+  it: {'app.title':'SHOW ME THE MOON','menu.location_time':'Posizione e ora','label.language':'Lingua','label.latitude':'Latitudine','label.longitude':'Longitudine','label.date':'Data (GG/MM/AAAA)','label.time':'Ora (HH:MM)','btn.my_position':'LA MIA POSIZIONE','btn.refresh':'AGGIORNA','menu.landmarks':'Riferimenti','btn.follow_moon':'SEGUI LA LUNA','btn.follow_sun':'SEGUI IL SOLE','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Info Luna e Sole','menu.timelapse':'Time Lapse','timelapse.speed':'Velocita (x)','timelapse.speed_short':'velocita','timelapse.controls_hint':'[??] velocita [Spazio] pausa','timelapse.start':'Avvia','timelapse.resume':'Riprendi','timelapse.running':'In corso','timelapse.pause':'Pausa','timelapse.stop':'Ferma','timelapse.inactive':'Inattivo','timelapse.active':'Attivo','prayer.panel_title':'Orari delle preghiere','prayer.custom_settings':'Impostazioni personalizzate','prayer.save_image':'Salva immagine orari di oggi','prayer.fajr':'Fajr','prayer.sunrise':'Alba','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Angolo Fajr','prayer.isha_angle':'Angolo Isha','moon.visible':'LUNA VISIBILE','moon.invisible':'LUNA NON VISIBILE','hint.controls':'Clic = naviga Â· Rotella = zoom Â· Esc = pannello','location.loading':'Localizzazione...','info.altitude':'Altitudine','info.azimuth':'Azimut','info.illumination':'Illuminazione','info.sun':'Sole','info.solar_eclipse':'Eclissi solare (circa)','dir.east':'EST','dir.west':'OVEST','compass.n':'N','compass.e':'E','compass.s':'S','compass.w':'O','capture.title':'Orari delle preghiere','capture.for_date':'del {date}','capture.for_city':'per {city}, {country}','capture.method':'Metodo di calcolo: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
+  de: {'app.title':'SHOW ME THE MOON','menu.location_time':'Standort und Zeit','label.language':'Sprache','label.latitude':'Breitengrad','label.longitude':'Langengrad','label.date':'Datum (TT/MM/JJJJ)','label.time':'Uhrzeit (HH:MM)','btn.my_position':'MEIN STANDORT','btn.refresh':'AKTUALISIEREN','menu.landmarks':'Markierungen','btn.follow_moon':'MOND FOLGEN','btn.follow_sun':'SONNE FOLGEN','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Mond- und Sonneninfo','menu.timelapse':'Zeitraffer','timelapse.speed':'Geschwindigkeit (x)','timelapse.speed_short':'geschwindigkeit','timelapse.controls_hint':'[??] Geschwindigkeit [Leertaste] Pause','timelapse.start':'Starten','timelapse.resume':'Fortsetzen','timelapse.running':'Lauft','timelapse.pause':'Pause','timelapse.stop':'Stop','timelapse.inactive':'Inaktiv','timelapse.active':'Aktiv','prayer.panel_title':'Gebetszeiten','prayer.custom_settings':'Benutzerdefinierte Einstellungen','prayer.save_image':'Bild der heutigen Gebetszeiten speichern','prayer.fajr':'Fajr','prayer.sunrise':'Sonnenaufgang','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Fajr-Winkel','prayer.isha_angle':'Isha-Winkel','moon.visible':'MOND SICHTBAR','moon.invisible':'MOND NICHT SICHTBAR','hint.controls':'Klick = navigieren Â· Rad = zoom Â· Esc = Panel','location.loading':'Standort...','info.altitude':'Hohe','info.azimuth':'Azimut','info.illumination':'Beleuchtung','info.sun':'Sonne','info.solar_eclipse':'Sonnenfinsternis (ca.)','dir.east':'OST','dir.west':'WEST','compass.n':'N','compass.e':'O','compass.s':'S','compass.w':'W','capture.title':'Gebetszeiten','capture.for_date':'vom {date}','capture.for_city':'fur {city}, {country}','capture.method':'Berechnungsmethode: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
+  zh: {'app.title':'SHOW ME THE MOON','menu.location_time':'?????','label.language':'??','label.latitude':'??','label.longitude':'??','label.date':'?? (DD/MM/YYYY)','label.time':'?? (HH:MM)','btn.my_position':'????','btn.refresh':'??','menu.landmarks':'??','btn.follow_moon':'????','btn.follow_sun':'????','btn.qibla':'????','btn.alquds':'????','btn.medina':'???','menu.moon_sun_info':'???????','menu.timelapse':'??','timelapse.speed':'?? (x)','timelapse.speed_short':'??','timelapse.controls_hint':'[??] ?? [??] ??','timelapse.start':'??','timelapse.resume':'??','timelapse.running':'???','timelapse.pause':'??','timelapse.stop':'??','timelapse.inactive':'???','timelapse.active':'??','prayer.panel_title':'????','prayer.custom_settings':'?????','prayer.save_image':'??????????','prayer.fajr':'??','prayer.sunrise':'??','prayer.dhuhr':'??','prayer.asr':'??','prayer.maghreb':'??','prayer.isha':'??','prayer.fajr_angle':'????','prayer.isha_angle':'????','moon.visible':'????','moon.invisible':'?????','hint.controls':'?? = ?? Â· ?? = ?? Â· Esc = ??','location.loading':'???...','info.altitude':'??','info.azimuth':'???','info.illumination':'???','info.sun':'??','info.solar_eclipse':'??(?)','dir.east':'?','dir.west':'?','compass.n':'?','compass.e':'?','compass.s':'?','compass.w':'?','capture.title':'????','capture.for_date':'?? {date}','capture.for_city':'?? {city}, {country}','capture.method':'????: {method}','capture.fajr_isha':'??: {fajr} deg   ??: {isha} deg'},
+  ar: {
+    'app.title':'SHOW ME THE MOON','menu.location_time':'الموقع والوقت','label.language':'اللغة','label.latitude':'خط العرض','label.longitude':'خط الطول','label.date':'التاريخ','label.time':'الوقت',
+    'label.country':'البلد','label.city':'المدينة','label.planet_names':'اسماء الكواكب','label.prayer_times':'مواقيت الصلاة','label.islamic_places':'الاماكن المقدسة في الاسلام',
+    'btn.my_position':'الموقع الافتراضي','btn.refresh':'تحديث','btn.refresh_all':'تحديث الكل','menu.landmarks':'المعالم','btn.follow_moon':'تتبع','btn.follow_sun':'تتبع','btn.qibla':'القبلة','btn.alquds':'القدس','btn.medina':'المدينة',
+    'menu.moon':'القمر','menu.sun':'الشمس','menu.date_time_location':'التاريخ والوقت / الموقع','menu.date_time':'التاريخ والوقت','menu.coordinates':'الاحداثيات','menu.city':'المدينة','menu.display':'العرض','menu.settings':'الاعدادات',
+    'mobile.menu':'القائمة','mobile.prayers':'الصلاة','mobile.moon':'القمر','mobile.sun':'الشمس','mobile.language':'اللغة',
+    'menu.moon_sun_info':'معلومات القمر والشمس','menu.timelapse':'التسلسل الزمني','timelapse.speed':'السرعة (x)','timelapse.speed_short':'السرعة','timelapse.controls_hint':'[??] السرعة [مسافة] ايقاف مؤقت',
+    'timelapse.start':'ابدأ','timelapse.resume':'استئناف','timelapse.running':'قيد التشغيل','timelapse.pause':'ايقاف مؤقت','timelapse.stop':'ايقاف','timelapse.inactive':'غير نشط','timelapse.active':'نشط','timelapse.increase_speed':'زيادة السرعة','timelapse.decrease_speed':'تقليل السرعة','timelapse.play_short':'تشغيل','timelapse.reverse_start':'تشغيل عكسي','timelapse.reverse_resume':'استئناف عكسي','timelapse.reverse_pause':'ايقاف مؤقت للتشغيل العكسي',
+    'prayer.panel_title':'مواقيت الصلاة','prayer.schedule_title':'المواقيت','prayer.methods_title':'طرق الحساب','prayer.method':'الطريقة','prayer.custom_settings':'اعدادات مخصصة','prayer.save_image':'تصدير',
+    'prayer.fajr':'الفجر','prayer.sunrise':'الشروق','prayer.dhuhr':'الظهر','prayer.asr':'العصر','prayer.maghreb':'المغرب','prayer.isha':'العشاء','prayer.fajr_angle':'زاوية الفجر','prayer.isha_angle':'زاوية العشاء',
+    'input.utc':'(الوقت المحلي)','input.help.date':'الصيغة المتوقعة: DD/MM/YYYY','input.help.time':'الصيغة المتوقعة: HH:MM (الوقت المحلي)','input.error.date_format':'صيغة غير صالحة. استخدم DD/MM/YYYY.','input.error.date_invalid':'تاريخ غير صالح. مثال: 28/02/2026.','input.error.time_format':'صيغة غير صالحة. استخدم HH:MM (00-23:00-59).',
+    'time.local_suffix':'(الوقت المحلي)',
+    'moon.visible':'القمر مرئي','moon.invisible':'القمر غير مرئي','moon.status_visible':'مرئي','moon.status_hidden':'غير مرئي','hint.controls':'نقرة = تنقل - عجلة = تكبير - Esc = لوحة','location.loading':'جار تحديد الموقع...','info.altitude':'الارتفاع','info.azimuth':'السمت','info.illumination':'الاضاءة','info.sun':'الشمس','info.solar_eclipse':'كسوف شمسي (تقريبي)',
+    'dir.east':'الشرق','dir.west':'الغرب','compass.n':'ش','compass.e':'ق','compass.s':'ج','compass.w':'غ',
+    'capture.title':'مواقيت الصلاة','capture.for_date':'ليوم {date}','capture.for_city':'لـ {city}، {country}','capture.method':'طريقة الحساب: {method}','capture.fajr_isha':'الفجر: {fajr} deg   العشاء: {isha} deg','capture.header_title':'تصدير راس الصفحة لسطح المكتب (PNG)','capture.exporting':'جار التصدير...','capture.done':'اكتمل تصدير PNG','capture.unsupported':'هذا المتصفح لا يدعم تصدير هذا المشهد.',
+    'travel.placeholder.country':'ابحث عن بلد','travel.placeholder.city_disabled':'اختر بلدا اولا','travel.placeholder.city':'اختر...','travel.status.ready':'جاهز للسفر.',
+    'share.copy_param_link':'نسخ رابط الاعدادات','share.copy_prompt':'انسخ هذا الرابط:','share.copied':'تم نسخ الرابط','share.ready':'الرابط جاهز',
+    'default_location.title':'الموقع الافتراضي','default_location.description':'اختر مصدر الموقع. عند التاكيد، ستطبق الاحداثيات مباشرة.','default_location.mode_label':'نوع الموقع الافتراضي','default_location.mode.geo':'موقعي الحالي','default_location.mode.city':'مدينة','default_location.hint.geo':'سيتم استخدام موقع المتصفح الحالي.','default_location.hint.city':'اختر بلدا ثم مدينة لتحديد الاحداثيات.','default_location.cancel':'الغاء','default_location.apply':'تطبيق','default_location.error.geolocation':'تعذر الحصول على موقعك. تحقق من اذونات تحديد الموقع.','default_location.error.country_not_found':'لم يتم العثور على البلد. اختر بلدا صالحا.','default_location.error.city_not_found':'لم يتم العثور على المدينة. اختر مدينة من القائمة.',
+    'guide.open':'فتح',
+    'guide.change_language':'تغيير اللغة',
+    'guide.progress_prefix':'الصفحة',
+    'guide.intro1':'مرحبا بك في <strong>Show me the moon</strong>.',
+    'guide.intro2':'يحاكي التطبيق السماء والقمر والشمس وكواكب المجموعة الشمسية والنجوم الاكثر سطوعا كما تراها من موقع وتاريخ تختارهما.',
+    'guide.intro3':'يمنحك <strong>Show me the moon</strong> رحلة حقيقية عبر الزمن والفضاء.',
+    'guide.intro4':'من خلال تجربة فريدة، شاهد السماء كما رآها الناس من قبل، وكما نراها اليوم، وكما ستظهر مستقبلا باذن الله، في كل انحاء العالم وفي كل عصر.',
+    'guide.intro5':'يقدم لك هذا الدليل نظرة سريعة على الوظائف الاساسية قبل البدء.',
+    'guide.intro6':'ورغم انه ليس ضروريا لان التطبيق سهل الاستخدام، فان قراءته قد تساعدك على اكتشاف جميع الميزات المتاحة بسرعة اكبر:',
+    'legal.footer_aria':'المعلومات القانونية وجهة الاتصال','legal.mentions':'اشعار قانوني','legal.contact':'اتصال','legal.title':'معلومات قانونية','legal.loading':'جار التحميل...',
+    'ui.fullscreen.enter':'ملء الشاشة','ui.fullscreen.exit':'خروج',
+    'guide.kicker':'دليل البداية','guide.title':'مرحبا بك في<br>SHOW ME THE MOON','guide.dismiss':'لا تعرض هذا الدليل عند بدء التشغيل','guide.prev':'السابق','guide.next':'التالي','guide.close':'اغلاق',
+    'guide.page1':'مرحبا بك في <strong>Show me the moon</strong>.',
+    'guide.page2.title':'1. التنقل','guide.page2.item1':'انقر داخل المشهد للتحكم في الكاميرا ثم حرك الفارة.','guide.page2.item2':'تضبط عجلة الفارة مستوى التكبير.','guide.page2.item3':'اضغط `Esc` لتحرير التنقل والتعامل مع اللوحات.',
+    'guide.page3.title':'2. التاريخ والموقع والاحداثيات','guide.page3.item1':'تسمح لك اللوحة الجانبية بتغيير التاريخ والوقت والاحداثيات.','guide.page3.item2':'يساعد قسم المدينة على استهداف منطقة عبر البلد + المدينة.','guide.page3.item3':'يفتح زر الموقع الافتراضي نافذة لتطبيق موقعك المفضل.',
+    'guide.page4.title':'3. قراءة السماء','guide.page4.item1':'تعرض بطاقات القمر والشمس الارتفاع والسمت وحالة الرؤية.','guide.page4.item2':'تعيد ازرار التتبع توسيط العرض على الجرم المختار.','guide.page4.item3':'تسهل العلامة المركزية تحديد الاتجاهات شمال/شرق/جنوب/غرب.',
+    'guide.page5.title':'4. ميزات اضافية','guide.page5.item1':'يسرع التسلسل الزمني مرور الوقت لمراقبة تغير السماء.','guide.page5.item2':'يمكنك مشاركة رابط وتصدير راس الصفحة المكتبي بصيغة PNG.','guide.page5.item3':'يبقى الدليل متاحا من لوحة العرض.'
+  },
+  pt: {'app.title':'SHOW ME THE MOON','menu.location_time':'Localizacao e hora','label.language':'Idioma','label.latitude':'Latitude','label.longitude':'Longitude','label.date':'Data (DD/MM/AAAA)','label.time':'Hora (HH:MM)','btn.my_position':'MINHA POSICAO','btn.refresh':'ATUALIZAR','menu.landmarks':'Referencias','btn.follow_moon':'SEGUIR A LUA','btn.follow_sun':'SEGUIR O SOL','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MEDINA','menu.moon_sun_info':'Info Lua e Sol','menu.timelapse':'Time Lapse','timelapse.speed':'Velocidade (x)','timelapse.speed_short':'velocidade','timelapse.controls_hint':'[??] velocidade [Espaco] pausa','timelapse.start':'Iniciar','timelapse.resume':'Retomar','timelapse.running':'Em execucao','timelapse.pause':'Pausa','timelapse.stop':'Parar','timelapse.inactive':'Inativo','timelapse.active':'Ativo','prayer.panel_title':'Horarios de oracao','prayer.custom_settings':'Configuracoes personalizadas','prayer.save_image':'Salvar imagem dos horarios de hoje','prayer.fajr':'Fajr','prayer.sunrise':'Nascer do sol','prayer.dhuhr':'Dhuhr','prayer.asr':'Asr','prayer.maghreb':'Maghrib','prayer.isha':'Isha','prayer.fajr_angle':'Angulo Fajr','prayer.isha_angle':'Angulo Isha','moon.visible':'LUA VISIVEL','moon.invisible':'LUA NAO VISIVEL','hint.controls':'Clique = navegar Â· Roda = zoom Â· Esc = painel','location.loading':'Localizando...','info.altitude':'Altitude','info.azimuth':'Azimute','info.illumination':'Iluminacao','info.sun':'Sol','info.solar_eclipse':'Eclipse solar (aprox.)','dir.east':'LESTE','dir.west':'OESTE','compass.n':'N','compass.e':'L','compass.s':'S','compass.w':'O','capture.title':'Horarios de oracao','capture.for_date':'de {date}','capture.for_city':'para {city}, {country}','capture.method':'Metodo de calculo: {method}','capture.fajr_isha':'Fajr: {fajr}?   Isha: {isha}?'},
+  id: {'app.title':'SHOW ME THE MOON','menu.location_time':'Lokasi & Waktu','label.language':'Bahasa','label.latitude':'Lintang','label.longitude':'Bujur','label.date':'Tanggal (DD/MM/YYYY)','label.time':'Waktu (HH:MM)','btn.my_position':'LOKASI SAYA','btn.refresh':'MUAT ULANG','menu.landmarks':'Penanda','btn.follow_moon':'IKUTI BULAN','btn.follow_sun':'IKUTI MATAHARI','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MADINAH','menu.moon_sun_info':'Info Bulan & Matahari','menu.timelapse':'Time Lapse','timelapse.speed':'Kecepatan (x)','timelapse.speed_short':'kecepatan','timelapse.controls_hint':'[??] kecepatan [Spasi] jeda','timelapse.start':'Mulai','timelapse.resume':'Lanjut','timelapse.running':'Berjalan','timelapse.pause':'Jeda','timelapse.stop':'Berhenti','timelapse.inactive':'Tidak aktif','timelapse.active':'Aktif','prayer.panel_title':'Jadwal shalat','prayer.custom_settings':'Pengaturan kustom','prayer.save_image':'Simpan gambar jadwal hari ini','prayer.fajr':'Subuh','prayer.sunrise':'Terbit','prayer.dhuhr':'Zuhur','prayer.asr':'Asar','prayer.maghreb':'Magrib','prayer.isha':'Isya','prayer.fajr_angle':'Sudut Subuh','prayer.isha_angle':'Sudut Isya','moon.visible':'BULAN TERLIHAT','moon.invisible':'BULAN TIDAK TERLIHAT','hint.controls':'Klik = navigasi Â· Roda = zoom Â· Esc = panel','location.loading':'Mencari lokasi...','info.altitude':'Ketinggian','info.azimuth':'Azimut','info.illumination':'Iluminasi','info.sun':'Matahari','info.solar_eclipse':'Gerhana matahari (perkiraan)','dir.east':'TIMUR','dir.west':'BARAT','compass.n':'U','compass.e':'T','compass.s':'S','compass.w':'B','capture.title':'Jadwal shalat','capture.for_date':'untuk {date}','capture.for_city':'untuk {city}, {country}','capture.method':'Metode perhitungan: {method}','capture.fajr_isha':'Subuh: {fajr} deg   Isya: {isha} deg'},
+  ms: {'app.title':'SHOW ME THE MOON','menu.location_time':'Lokasi & Masa','label.language':'Bahasa','label.latitude':'Latitud','label.longitude':'Longitud','label.date':'Tarikh (DD/MM/YYYY)','label.time':'Masa (HH:MM)','btn.my_position':'LOKASI SAYA','btn.refresh':'KEMAS KINI','menu.landmarks':'Penanda','btn.follow_moon':'IKUT BULAN','btn.follow_sun':'IKUT MATAHARI','btn.qibla':'QIBLA','btn.alquds':'AL QUDS','btn.medina':'MADINAH','menu.moon_sun_info':'Info Bulan & Matahari','menu.timelapse':'Time Lapse','timelapse.speed':'Kelajuan (x)','timelapse.speed_short':'kelajuan','timelapse.controls_hint':'[??] kelajuan [Space] jeda','timelapse.start':'Mula','timelapse.resume':'Sambung','timelapse.running':'Sedang berjalan','timelapse.pause':'Jeda','timelapse.stop':'Henti','timelapse.inactive':'Tidak aktif','timelapse.active':'Aktif','prayer.panel_title':'Waktu solat','prayer.custom_settings':'Tetapan tersuai','prayer.save_image':'Simpan imej waktu hari ini','prayer.fajr':'Fajar','prayer.sunrise':'Syuruk','prayer.dhuhr':'Zuhur','prayer.asr':'Asar','prayer.maghreb':'Maghrib','prayer.isha':'Isyak','prayer.fajr_angle':'Sudut Fajar','prayer.isha_angle':'Sudut Isyak','moon.visible':'BULAN KELIHATAN','moon.invisible':'BULAN TIDAK KELIHATAN','hint.controls':'Klik = navigasi Â· Roda = zum Â· Esc = panel','location.loading':'Mencari lokasi...','info.altitude':'Altitud','info.azimuth':'Azimut','info.illumination':'Pencahayaan','info.sun':'Matahari','info.solar_eclipse':'Gerhana matahari (anggaran)','dir.east':'TIMUR','dir.west':'BARAT','compass.n':'U','compass.e':'T','compass.s':'S','compass.w':'B','capture.title':'Waktu solat','capture.for_date':'untuk {date}','capture.for_city':'untuk {city}, {country}','capture.method':'Kaedah kiraan: {method}','capture.fajr_isha':'Fajar: {fajr} deg   Isyak: {isha} deg'}
 };
 Object.assign(I18N.es, {
-  'moon.status_visible':'VISIBLE',
-  'moon.status_hidden':'NO VISIBLE',
-  'label.country':'Pais',
-  'label.city':'Ciudad',
-  'label.planet_names':'Nombres de planetas',
-  'label.prayer_times':'Horarios de oracion',
-  'menu.moon':'Luna',
-  'menu.sun':'Sol',
-  'menu.date_time_location':'Fecha y hora / Ubicacion',
-  'menu.date_time':'Fecha y hora',
-  'menu.coordinates':'Coordenadas',
-  'menu.city':'Ciudad',
-  'menu.display':'Visualizacion',
-  'mobile.menu':'Menu',
-  'mobile.prayers':'Oracion',
-  'mobile.moon':'Luna',
-  'mobile.sun':'Sol',
-  'mobile.language':'Idioma',
-  'timelapse.increase_speed':'Aumentar velocidad',
-  'timelapse.decrease_speed':'Reducir velocidad',
-  'timelapse.play_short':'Play',
-  'timelapse.reverse_start':'Reproducir hacia atras',
-  'timelapse.reverse_resume':'Reanudar hacia atras',
-  'timelapse.reverse_pause':'Pausar reproduccion inversa'
+  'mobile.prayers':'Oraciones'
 });
 Object.assign(I18N.ar, {
-  'moon.status_visible':'VISIBLE',
-  'moon.status_hidden':'NOT VISIBLE',
-  'label.country':'Country',
-  'label.city':'City',
-  'label.planet_names':'Planet names',
-  'label.prayer_times':'Prayer times',
-  'menu.moon':'Moon',
-  'menu.sun':'Sun',
-  'menu.date_time_location':'Date and time / Location',
-  'menu.date_time':'Date and time',
-  'menu.coordinates':'Coordinates',
-  'menu.city':'City',
-  'menu.display':'Display',
-  'mobile.menu':'Menu',
-  'mobile.prayers':'Prayers',
-  'mobile.moon':'Moon',
-  'mobile.sun':'Sun',
-  'mobile.language':'Language',
-  'timelapse.increase_speed':'Increase speed',
-  'timelapse.decrease_speed':'Decrease speed',
-  'timelapse.play_short':'Play',
-  'timelapse.reverse_start':'Play backward',
-  'timelapse.reverse_resume':'Resume backward',
-  'timelapse.reverse_pause':'Pause backward playback'
+  'mobile.prayers':'الصلاة'
 });
-let currentLang = (appServices.getStorageItem('lunar_lang', 'fr') || 'fr').toLowerCase();
-if(!SUPPORTED_LANGS.includes(currentLang)) currentLang = 'fr';
+function getDefaultLanguage(){
+  // Detect browser language: use French if detected, otherwise default to English
+  const navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+  if(navLang.startsWith('fr')) return 'fr';
+  return 'en';
+}
+let currentLang = (appServices.getStorageItem('lunar_lang') || getDefaultLanguage()).toLowerCase();
+if(!SUPPORTED_LANGS.includes(currentLang)) currentLang = 'en';
 appRuntimeState.set('currentLang', currentLang);
 v1Diagnostics.setLang(currentLang);
 function t(key, vars){
@@ -10158,7 +10414,7 @@ function computeTwilightWindows(date, times, sunAltDeg){
   const sunrise = times && times.sunrise instanceof Date ? times.sunrise : null;
   const maghreb = times && times.maghreb instanceof Date ? times.maghreb : null;
   const isha = times && times.isha instanceof Date ? times.isha : null;
-  const sunriseRefDeg = -(HORIZON_REFRACTION_DEG + SUN_ANGULAR_RADIUS_DEG); // ~ -0.833 deg
+  const sunriseRefDeg = SUN_HORIZON_LIMB_CROSSING_DEG; // Chourouk/Maghreb limb crossing (~ -0.266 deg)
   const astroTwilightDeg = -18.0;
   const dawnAngleProgress = THREE.MathUtils.smoothstep(sunAltDeg, astroTwilightDeg, sunriseRefDeg);
   const duskAngleProgress = THREE.MathUtils.smoothstep(-sunAltDeg, -sunriseRefDeg, -astroTwilightDeg);
@@ -10557,6 +10813,7 @@ function updateDateTimeInputsFromDate(date){
   const d = (date instanceof Date && !Number.isNaN(date.getTime()))
     ? date
     : (currentDate instanceof Date ? currentDate : new Date());
+  if(manualDateTimeDraftActive && !tlActive) return;
   const p = getDatePartsInTimeZone(d, getMenuDisplayTimeZone());
   const dateEl = document.getElementById('idate');
   const timeEl = document.getElementById('itime');
@@ -10564,11 +10821,11 @@ function updateDateTimeInputsFromDate(date){
     const nextDate = (dateEl.type === 'date')
       ? `${p.year}-${p.month}-${p.day}`
       : `${p.day}/${p.month}/${p.year}`;
-    if(dateEl.value !== nextDate) dateEl.value = nextDate;
+    if(document.activeElement !== dateEl && dateEl.value !== nextDate) dateEl.value = nextDate;
   }
   if(timeEl){
     const nextTime = `${p.hour}:${p.minute}`;
-    if(timeEl.value !== nextTime) timeEl.value = nextTime;
+    if(document.activeElement !== timeEl && timeEl.value !== nextTime) timeEl.value = nextTime;
   }
 }
 function setCurrentTimeZone(nextTz){
@@ -10641,22 +10898,7 @@ function setTravelStatus(message, state){
   if(state === 'busy' || state === 'ok') el.classList.add(state);
 }
 function playArrivalFlash(onMidFlash){
-  if(!arrivalFlashOverlay){
-    if(typeof onMidFlash === 'function') onMidFlash();
-    return;
-  }
-  arrivalFlashOverlay.style.transition = 'none';
-  arrivalFlashOverlay.style.opacity = '0';
-  void arrivalFlashOverlay.offsetHeight;
-  arrivalFlashOverlay.style.transition = 'opacity 0.035s ease-out';
-  requestAnimationFrame(()=>{
-    arrivalFlashOverlay.style.opacity = '1';
-    window.setTimeout(()=>{
-      if(typeof onMidFlash === 'function') onMidFlash();
-      arrivalFlashOverlay.style.transition = 'opacity 0.05s ease-in';
-      arrivalFlashOverlay.style.opacity = '0';
-    }, 14);
-  });
+  if(typeof onMidFlash === 'function') onMidFlash();
 }
 function endTravelCinematic(reason){
   travelTween.active = false;
@@ -10792,21 +11034,24 @@ function updateLandingSpin(nowMs){
 }
 function updateTravelTick(nowMs){
   if(!travelTween.active) return false;
-  const tRaw = THREE.MathUtils.clamp((nowMs - travelTween.startMs) / travelTween.durationMs, 0, 1);
-  const elapsedMs = Math.max(0, nowMs - travelTween.startMs);
-  const flightT = THREE.MathUtils.clamp(elapsedMs / Math.max(1, travelTween.durationMs), 0, 1);
-  updateTravelRouteClipPlane();
-  // Keep the full route readable in cruise, then hide segments behind Earth near arrival.
-  setTravelRouteDepthOcclusion(false);
+  const tRaw = THREE.MathUtils.clamp((nowMs - travelTween.startMs) / Math.max(1, travelTween.durationMs), 0, 1);
   const smooth = (a,b,x)=>THREE.MathUtils.clamp((x-a)/(b-a),0,1);
-  const easeOutCubic = (x)=> 1 - Math.pow(1 - THREE.MathUtils.clamp(x, 0, 1), 3);
+  const easeInCubic = (x)=>Math.pow(THREE.MathUtils.clamp(x, 0, 1), 3);
+  const easeOutCubic = (x)=>1 - Math.pow(1 - THREE.MathUtils.clamp(x, 0, 1), 3);
+  const easeInOutCubic = (x)=>{
+    const v = THREE.MathUtils.clamp(x, 0, 1);
+    return v < 0.5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2;
+  };
+
+  updateTravelRouteClipPlane();
+  setTravelRouteDepthOcclusion(false);
+
   if(travelTween.postFlashLandingActive){
     const p = THREE.MathUtils.clamp(
       (nowMs - travelTween.postFlashLandingStartMs) / Math.max(1, travelTween.postFlashLandingDurationMs),
       0,
       1
     );
-    // Fast first, then braking near contact.
     const eased = 1 - Math.pow(1 - p, 3);
     controls.object.position.copy(
       travelTween.postFlashLandingFromPos.clone().lerp(travelTween.postFlashLandingToPos, eased)
@@ -10825,9 +11070,7 @@ function updateTravelTick(nowMs){
       const lonEl = document.getElementById('lon');
       if(latEl) latEl.value = currentLat.toFixed(5);
       if(lonEl) lonEl.value = currentLon.toFixed(5);
-      if(Number.isFinite(travelTween.toDateMs)){
-        currentDate = new Date(travelTween.toDateMs);
-      }
+      if(Number.isFinite(travelTween.toDateMs)) currentDate = new Date(travelTween.toDateMs);
       setCurrentTimeZone(travelTween.targetTimeZone);
       updateDateTimeInputsFromDate(currentDate instanceof Date ? currentDate : new Date());
       if(travelTween.targetCountry){
@@ -10851,71 +11094,65 @@ function updateTravelTick(nowMs){
       updateBottomLiveInfo(currentDate);
       updateMoonStatusDisplay();
       updateView(currentDate);
-      updateDateTimeInputsFromDate(currentDate instanceof Date ? currentDate : new Date());
       controls.object.position.set(0, GROUND_Y, 0);
       applyDefaultGroundView();
       endTravelCinematic('Arrivee terminee.');
     }
     return true;
   }
-  const takeoffGroundEnd = 0.0;
-  const blendToSpaceEnd = 0.0;
-  const labelRevealEnd = 0.08;
-  travelTween.spaceFade = THREE.MathUtils.smoothstep(flightT, 0.00, 0.10);
-  travelTween.landingBlendP = 0;
-  worldMapGroup.visible = true;
-  const yawAlignP = easeInOutCubic(smooth(0.00, 0.10, flightT));
-  const takeoffP = easeOutCubic(smooth(0.00, 0.26, flightT));
-  const cruiseP = easeInOutCubic(smooth(0.28, 0.61, flightT));
-  const approachP = easeInOutCubic(smooth(0.58, 0.86, flightT));
-  const landingP = easeInOutCubic(smooth(0.78, 1.00, flightT));
-  // Geo progression anchored to cinematic phases:
-  // - keep departure until end of takeoff blend
-  // - reach destination before landing blend starts
-  const travelP = easeInOutCubic(smooth(blendToSpaceEnd, 0.92, flightT));
-  const routeP = easeInOutCubic(smooth(0.00, 0.90, flightT));
-  const liftP = THREE.MathUtils.clamp(takeoffP * (1 - 0.18 * approachP), 0, 1);
-  const altitudeNorm = THREE.MathUtils.clamp(liftP * (1 - landingP), 0, 1);
-  if(flightT < 0.60) travelTween.phase = 'takeoff';
-  else if(flightT < 0.78) travelTween.phase = 'cruise';
-  else if(flightT < 0.88) travelTween.phase = 'approach';
-  else travelTween.phase = 'landing';
-  const geo = slerpLatLon(travelTween.fromLat, travelTween.fromLon, travelTween.toLat, travelTween.toLon, travelP);
-  const approachLockP = THREE.MathUtils.smoothstep(flightT, 0.86, 0.92);
-  currentLat = THREE.MathUtils.clamp(THREE.MathUtils.lerp(geo.lat, travelTween.toLat, approachLockP), -89.9, 89.9);
-  currentLon = geo.lon + shortestLonDeltaDeg(geo.lon, travelTween.toLon) * approachLockP;
-  if(Number.isFinite(travelTween.fromDateMs)){
-    // Keep cinematic lighting temporally stable during travel.
-    // Target date/time is applied once at arrival.
-    currentDate = new Date(travelTween.fromDateMs);
-  }
-  if(!travelTween.targetZoneApplied && (approachP >= 0.15 || landingP >= 0.05)){
-    travelTween.targetZoneApplied = true;
-  }
+
+  const startFrame = getTravelGeoFrame(travelTween.fromLat, travelTween.fromLon, 0);
+  const destFrame = getTravelGeoFrame(travelTween.toLat, travelTween.toLon, 0);
   const latEl = document.getElementById('lat');
   const lonEl = document.getElementById('lon');
+  const worldUp = new THREE.Vector3(0,1,0);
+
+  const takeoffEnd = 0.34;
+  const orbitRevealStart = 0.16;
+  const orbitRevealEnd = 0.36;
+  const cruiseEnd = 0.72;
+  const approachStart = 0.68;
+  const landingStart = 0.78;
+  const flashStart = 0.992;
+
+  const takeoffP = easeOutCubic(smooth(0.00, takeoffEnd, tRaw));
+  const orbitRevealP = easeInOutCubic(smooth(orbitRevealStart, orbitRevealEnd, tRaw));
+  const routeTravelP = easeInOutCubic(smooth(0.24, 0.86, tRaw));
+  const cruiseP = easeInOutCubic(smooth(0.28, cruiseEnd, tRaw));
+  const approachP = easeInOutCubic(smooth(approachStart, 0.90, tRaw));
+  const landingP = 1 - Math.pow(1 - smooth(landingStart, flashStart, tRaw), 1.6);
+  const arrivalLockP = THREE.MathUtils.smoothstep(tRaw, 0.88, 0.95);
+
+  if(tRaw < takeoffEnd) travelTween.phase = 'takeoff';
+  else if(tRaw < cruiseEnd) travelTween.phase = 'cruise';
+  else if(tRaw < landingStart) travelTween.phase = 'approach';
+  else travelTween.phase = 'landing';
+
+  travelTween.spaceFade = orbitRevealP;
+  travelTween.landingBlendP = landingP;
+
+  const geo = slerpLatLon(travelTween.fromLat, travelTween.fromLon, travelTween.toLat, travelTween.toLon, routeTravelP);
+  currentLat = THREE.MathUtils.clamp(THREE.MathUtils.lerp(geo.lat, travelTween.toLat, arrivalLockP), -89.9, 89.9);
+  currentLon = geo.lon + shortestLonDeltaDeg(geo.lon, travelTween.toLon) * arrivalLockP;
+  if(Number.isFinite(travelTween.fromDateMs)) currentDate = new Date(travelTween.fromDateMs);
   if(latEl) latEl.value = currentLat.toFixed(5);
   if(lonEl) lonEl.value = currentLon.toFixed(5);
-  const sceneBaseOpacity = THREE.MathUtils.clamp((tRaw - 0.03) / 0.12, 0, 1);
-  const borderFade = THREE.MathUtils.clamp((1 - landingP) * 1.8, 0, 1);
-  worldMapPlane.material.opacity = 1;
-  const routeBaseAlpha = sceneBaseOpacity * borderFade * (0.64 + 0.90 * routeP);
-  const routeBoost = THREE.MathUtils.smoothstep(flightT, blendToSpaceEnd, 0.94);
-  const routeAlpha = THREE.MathUtils.clamp(Math.max(routeBaseAlpha, 0.82 * routeBoost), 0, 1);
-  const routePulse = 0.90 + 0.10 * Math.sin(nowMs * 0.010);
-  travelRouteLine.material.opacity = routeAlpha * 0.94;
-  travelRouteGlowLine.material.opacity = routeAlpha * 0.52 * routePulse;
-  travelRouteGlowLine2.material.opacity = routeAlpha * 0.30 * routePulse;
-  const arrivalBorderFocus = THREE.MathUtils.smoothstep(flightT, 0.58, 0.97);
-  const arrivalBorderAlpha = THREE.MathUtils.clamp(0.10 + 0.52 * arrivalBorderFocus + 0.10 * sceneBaseOpacity, 0, 1);
-  updateTravelArrivalBorderPulse(nowMs, arrivalBorderAlpha);
-  travelProbe.material.opacity = 0;
-  const labelReveal = THREE.MathUtils.smoothstep(flightT, 0.00, labelRevealEnd);
-  const labelAlpha = sceneBaseOpacity * labelReveal;
-  const startPointFadeOut = THREE.MathUtils.smoothstep(flightT, 0.70, 0.88);
-  const startFrontVis = computeTravelFrontVisibility(travelStartPoint.position);
-  const endFrontVis = computeTravelFrontVisibility(travelEndPoint.position);
-  const nearestFrontVis = computeTravelFrontVisibility(travelNearestCityPoint.position);
+
+  const routeLift = Math.sin(Math.PI * routeTravelP) * TRAVEL_ROUTE_ARC_HEIGHT;
+  const currentFrame = getTravelGeoFrame(currentLat, currentLon, routeLift);
+  travelTween.workMapPos.copy(currentFrame.pos);
+  const leadP = THREE.MathUtils.clamp(routeTravelP + 0.08, 0, 1);
+  const leadGeo = slerpLatLon(travelTween.fromLat, travelTween.fromLon, travelTween.toLat, travelTween.toLon, leadP);
+  const leadLift = Math.sin(Math.PI * leadP) * TRAVEL_ROUTE_ARC_HEIGHT;
+  const leadFrame = getTravelGeoFrame(leadGeo.lat, leadGeo.lon, leadLift);
+
+  const pointPulse = 0.84 + 0.16 * Math.sin(nowMs * 0.014);
+  const sparklePulse = 0.78 + 0.22 * Math.sin(nowMs * 0.026 + 1.1);
+  const startCityAlpha = THREE.MathUtils.clamp(Math.max(smooth(0.00, 0.06, tRaw), 1 - smooth(0.58, 0.78, tRaw)), 0, 1);
+  const startCountryAlpha = travelShowStartCountryLabel ? (smooth(0.12, 0.22, tRaw) * (1 - smooth(0.54, 0.74, tRaw))) : 0;
+  const endCountryAlpha = smooth(0.68, 0.82, tRaw);
+  const endCityAlpha = smooth(0.78, 0.90, tRaw);
+  const routeAlpha = orbitRevealP * (1 - 0.25 * landingP);
   const closeFade = (obj, near, far)=>{
     if(!obj || !obj.position) return 1;
     const d = obj.position.distanceTo(camera.position);
@@ -10925,188 +11162,110 @@ function updateTravelTick(nowMs){
   const endPointNearFade = closeFade(travelEndPoint, 95, 250);
   const startLabelNearFade = closeFade(travelStartLabel, 150, 340);
   const endLabelNearFade = closeFade(travelEndLabel, 150, 340);
-  const startPointAlpha = Math.max(labelAlpha * (1 - 0.55 * startPointFadeOut), sceneBaseOpacity * 0.42) * startFrontVis * startPointNearFade;
-  const endPointAlpha = Math.max(labelAlpha, sceneBaseOpacity * 0.62) * endFrontVis * endPointNearFade;
-  const pointPulseA = 0.76 + 0.24 * Math.sin(nowMs * 0.018);
-  const pointPulseB = 0.60 + 0.40 * Math.sin(nowMs * 0.032 + 1.2);
+
   travelStartPoint.visible = false;
   travelEndPoint.visible = false;
   travelStartSparkle.visible = false;
   travelEndSparkle.visible = false;
   travelStartPoint.material.opacity = 0;
-  travelEndPoint.material.opacity = 0;
-  travelNearestCityPoint.material.opacity = travelNearestCityPoint.visible ? (Math.max(labelAlpha * 0.62, sceneBaseOpacity * 0.28) * nearestFrontVis * endPointNearFade) : 0;
   travelStartSparkle.material.opacity = 0;
+  travelStartLabel.material.opacity = startCityAlpha * startLabelNearFade;
+  travelStartCountryLabel.material.opacity = startCountryAlpha * startLabelNearFade;
+  travelCountryLeaderLine.material.opacity = Math.max(startCountryAlpha * startLabelNearFade, endCountryAlpha * endLabelNearFade) * 0.72;
+  travelCityLeaderLine.material.opacity = Math.max(startCityAlpha * startLabelNearFade, endCityAlpha * endLabelNearFade) * 0.48;
+  travelEndCountryLabel.material.opacity = endCountryAlpha * endLabelNearFade;
+  travelEndPoint.material.opacity = 0;
   travelEndSparkle.material.opacity = 0;
-  const startSparkScale = 30.0 + 5.0 * pointPulseB;
-  const endSparkScale = 30.0 + 5.0 * pointPulseB;
+  travelEndLabel.material.opacity = endCityAlpha * endLabelNearFade;
+  travelNearestCityPoint.material.opacity = travelNearestCityPoint.visible ? endCityAlpha * 0.56 * endPointNearFade : 0;
+  travelNearestCityLabel.material.opacity = travelNearestCityLabel.visible ? endCityAlpha * 0.56 * endLabelNearFade : 0;
+
+  const startPointScale = 18 + 10 * startCityAlpha;
+  const endPointScale = 18 + 12 * endCityAlpha + 10 * landingP;
+  travelStartPoint.scale.set(startPointScale, startPointScale, 1);
+  travelEndPoint.scale.set(endPointScale, endPointScale, 1);
+  const startSparkScale = 30 + 5 * sparklePulse + 3 * startCityAlpha;
+  const endSparkScale = 30 + 5 * sparklePulse + 5 * endCityAlpha + 6 * landingP;
   travelStartSparkle.scale.set(startSparkScale, startSparkScale, 1);
   travelEndSparkle.scale.set(endSparkScale, endSparkScale, 1);
   travelStartSparkle.position.copy(travelStartPoint.position);
   travelEndSparkle.position.copy(travelEndPoint.position);
-  const cityLabelAlpha = Math.max(labelAlpha, 0.22);
-  const countryLabelAlpha = Math.max(labelAlpha * 0.96, 0.18);
-  travelStartLabel.material.opacity = cityLabelAlpha * startLabelNearFade;
-  travelEndLabel.material.opacity = cityLabelAlpha * endLabelNearFade;
-  // No leader line for city labels: text sits directly above sparkling point.
-  travelCityLeaderLine.material.opacity = 0;
-  travelStartCountryLabel.material.opacity = travelShowStartCountryLabel ? (countryLabelAlpha * startLabelNearFade) : 0;
-  travelEndCountryLabel.material.opacity = countryLabelAlpha * endLabelNearFade;
-  travelCountryLeaderLine.material.opacity = countryLabelAlpha * 0.62 * Math.max(startLabelNearFade, endLabelNearFade);
-  travelNearestCityLabel.material.opacity = travelNearestCityLabel.visible ? (labelAlpha * nearestFrontVis * endLabelNearFade) : 0;
-  latLonToMapXZ(travelTween.fromLat, travelTween.fromLon, travelTween.sourceMapPos);
-  latLonToMapXZ(travelTween.toLat, travelTween.toLon, travelTween.targetMapPos);
-  const routeLift = Math.sin(Math.PI * travelP) * TRAVEL_ROUTE_ARC_HEIGHT;
-  travelTween.workMapPos.copy(latLonToTravelGlobe(currentLat, currentLon, routeLift, new THREE.Vector3()));
-  const flightHeight = THREE.MathUtils.lerp(0, 520, altitudeNorm);
-  const curFrame = getTravelGeoFrame(currentLat, currentLon, routeLift);
-  const radialOut = curFrame.up.clone();
-  const localNorth = curFrame.north.clone();
-  const fitDistance = TRAVEL_GLOBE_RADIUS / Math.sin(THREE.MathUtils.degToRad(Math.max(10, currentFOV) * 0.5));
-  // Keep takeoff height constrained: globe edge should sit near screen edge, not far inside.
-  const globeEdgeFitDistance = fitDistance + 5;
-  const recoilBase = THREE.MathUtils.lerp(0, TRAVEL_GLOBE_RADIUS * 0.58, takeoffP) * (1 - approachP) * (1 - landingP);
-  const recoilGate = 1 - THREE.MathUtils.smoothstep(flightT, 0.76, 0.86);
-  const recoilDist = recoilBase * recoilGate;
-  const cruiseSurfaceDist = THREE.MathUtils.clamp(
-    TRAVEL_GLOBE_FULL_VIEW_DISTANCE + flightHeight * 0.165,
-    TRAVEL_GLOBE_CAMERA_CLEARANCE,
-    globeEdgeFitDistance
-  );
-  const climbSurfaceDist = THREE.MathUtils.lerp(TRAVEL_GLOBE_CAMERA_CLEARANCE, cruiseSurfaceDist, liftP);
-  const approachSurfaceDist = THREE.MathUtils.lerp(climbSurfaceDist, TRAVEL_GLOBE_RADIUS * 0.58, approachP);
-  const camAltitudeRaw = THREE.MathUtils.lerp(approachSurfaceDist, TRAVEL_GLOBE_CAMERA_CLEARANCE, landingP);
-  const camAltitudeBase = THREE.MathUtils.lerp(TRAVEL_GLOBE_CAMERA_CLEARANCE, camAltitudeRaw, 0.5);
-  const orbitFitTarget = globeEdgeFitDistance;
-  const orbitFitBlend = THREE.MathUtils.clamp(cruiseP * (1 - approachP) * 0.22, 0, 1);
-  const camAltitude = THREE.MathUtils.lerp(camAltitudeBase, Math.max(camAltitudeBase, orbitFitTarget), orbitFitBlend);
-  controls.object.position.copy(
-    travelTween.workMapPos.clone()
-      .addScaledVector(radialOut, camAltitude)
-      .addScaledVector(localNorth.clone().negate(), recoilDist)
-  );
-  const aheadAngle = THREE.MathUtils.degToRad(22);
-  const initHoriz = travelTween.savedYawDir.clone().sub(radialOut.clone().multiplyScalar(travelTween.savedYawDir.dot(radialOut)));
-  if(initHoriz.lengthSq() < 1e-6){
-    initHoriz.copy(localNorth);
-  }else{
-    initHoriz.normalize();
-  }
-  const yawDir = initHoriz.lerp(localNorth.clone(), yawAlignP).normalize();
-  const destFrame = getTravelGeoFrame(travelTween.toLat, travelTween.toLon, 0);
-  const destNorth = destFrame.north.clone();
-  // Avoid early landing yaw swivel: keep heading stable until the very end.
-  const landingStabilizeP = THREE.MathUtils.smoothstep(flightT, 0.94, 0.985);
-  if(landingStabilizeP > 0){
-    yawDir.lerp(destNorth, landingStabilizeP).normalize();
-  }
-  const aheadNormal = radialOut.clone().multiplyScalar(Math.cos(aheadAngle)).add(yawDir.clone().multiplyScalar(Math.sin(aheadAngle))).normalize();
-  const horizonAim = TRAVEL_GLOBE_CENTER.clone().addScaledVector(aheadNormal, TRAVEL_GLOBE_RADIUS + 1);
-  const groundAim = travelTween.workMapPos.clone();
-  const takeoffPitch = 40;
-  const landingPitchRelease = 40 * THREE.MathUtils.smoothstep(flightT, 0.94, 1.00);
-  const flightPitchDeg = THREE.MathUtils.clamp(takeoffPitch - landingPitchRelease, 0, 40);
-  const activePitchDeg = flightPitchDeg;
-  const activePitchMix = THREE.MathUtils.clamp(activePitchDeg / 40, 0, 1);
-  travelTween.mapLookPos.copy(horizonAim).lerp(groundAim, activePitchMix);
-  const orbitCenterBlend = THREE.MathUtils.clamp(cruiseP * (1 - approachP) * 0.42, 0, 1);
-  if(orbitCenterBlend > 0){
-    travelTween.mapLookPos.lerp(TRAVEL_GLOBE_CENTER, orbitCenterBlend);
-  }
-  const followTipMix = THREE.MathUtils.clamp(
-    THREE.MathUtils.smoothstep(flightT, blendToSpaceEnd, 0.88) *
-    (1 - THREE.MathUtils.smoothstep(flightT, 0.86, 0.92)),
-    0,
-    1
-  );
-  if(followTipMix > 0){
-    const destinationMarkerFocus = (travelEndPoint && travelEndPoint.position)
-      ? travelEndPoint.position
-      : groundAim;
-    travelTween.mapLookPos.lerp(destinationMarkerFocus, followTipMix);
-  }
-  const worldUp = new THREE.Vector3(0,1,0);
-  // Same for roll/up-vector stabilization to remove the rotating camera feel.
-  const upStabilizeP = THREE.MathUtils.smoothstep(flightT, 0.94, 0.985);
-  camera.up.copy(radialOut.clone().lerp(worldUp, upStabilizeP).normalize());
-  camera.lookAt(travelTween.mapLookPos);
-  travelProbe.position.copy(travelTween.workMapPos).addScaledVector(radialOut, TRAVEL_PROBE_ALTITUDE);
+
   const routeDraw = travelRouteGeom.getAttribute('position');
   if(routeDraw){
     const total = routeDraw.count || 0;
-    travelRouteGeom.setDrawRange(0, Math.max(2, Math.floor(total * routeP)));
+    const visibleTravelP = easeInOutCubic(smooth(0.26, 0.90, tRaw));
+    travelRouteGeom.setDrawRange(0, Math.max(2, Math.floor(total * visibleTravelP)));
   }
-  const phaseLift = Math.sin(Math.PI * THREE.MathUtils.clamp((flightT - 0.20) / 0.72, 0, 1));
-  const liftFov = THREE.MathUtils.lerp(travelTween.fromFov, Math.min(FOV_MAX, travelTween.fromFov + 8), phaseLift);
-  currentFOV = THREE.MathUtils.lerp(liftFov, travelTween.toFov, easeInOutCubic(tRaw));
-  // Extra-short final zoom on destination point.
-  const arrivalDiveP = easeInOutCubic(smooth(0.91, 0.985, flightT));
-  if(arrivalDiveP > 0){
-    const destFrame = getTravelGeoFrame(travelTween.toLat, travelTween.toLon, 0);
-    const destPos = destFrame.pos.clone();
-    const arrivalSurfaceDist = THREE.MathUtils.lerp(
-      TRAVEL_GLOBE_CAMERA_CLEARANCE * 2.2,
-      TRAVEL_GLOBE_CAMERA_CLEARANCE * 1.35,
-      arrivalDiveP
-    );
-    const arrivalCamPos = destPos.clone().addScaledVector(destFrame.up, arrivalSurfaceDist);
-    if(arrivalDiveP >= 0.72){
-      controls.object.position.copy(arrivalCamPos);
-    }else{
-      controls.object.position.lerp(arrivalCamPos, THREE.MathUtils.clamp(arrivalDiveP * 0.95, 0, 1));
+  travelRouteLine.material.opacity = Math.max(routeAlpha * 0.94, 0.78);
+  travelRouteGlowLine.material.opacity = Math.max(routeAlpha * 0.56, 0.42);
+  travelRouteGlowLine2.material.opacity = Math.max(routeAlpha * 0.34, 0.22);
+  updateTravelArrivalBorderPulse(nowMs, 0);
+
+  let camPos;
+  let lookTarget;
+  let nextFov = currentFOV;
+
+  if(tRaw < takeoffEnd){
+    const rise = THREE.MathUtils.lerp(64, 180, takeoffP);
+    const backDist = THREE.MathUtils.lerp(36, 220, easeInCubic(smooth(0.00, takeoffEnd, tRaw)));
+    const heading = travelTween.savedYawDir.clone().normalize();
+    const startMarkerFocus = travelStartPoint.position.clone().lerp(travelStartLabel.position, 0.12);
+    camPos = startFrame.pos.clone()
+      .addScaledVector(startFrame.up, rise)
+      .addScaledVector(heading, -backDist);
+    const tiltedAim = startMarkerFocus
+      .clone()
+      .addScaledVector(startFrame.up, 18 * (1 - takeoffP))
+      .lerp(TRAVEL_GLOBE_CENTER, 0.12 + 0.18 * takeoffP);
+    lookTarget = tiltedAim;
+    camera.up.copy(worldUp);
+    nextFov = THREE.MathUtils.lerp(travelTween.fromFov, 42, takeoffP);
+  }else if(tRaw < landingStart){
+    const orbitDistance = THREE.MathUtils.lerp(300, TRAVEL_GLOBE_FULL_VIEW_DISTANCE * 1.38, orbitRevealP);
+    const approachPullback = THREE.MathUtils.lerp(1.02, 1.10, approachP);
+    const camDistance = orbitDistance * approachPullback;
+    const rearOffset = camDistance * THREE.MathUtils.lerp(0.22, 0.12, approachP);
+    camPos = currentFrame.pos.clone()
+      .addScaledVector(currentFrame.up, camDistance)
+      .addScaledVector(currentFrame.north, -rearOffset);
+    lookTarget = leadFrame.pos.clone().lerp(TRAVEL_GLOBE_CENTER, THREE.MathUtils.lerp(0.24, 0.48, cruiseP));
+    if(approachP > 0){
+      const destinationFocus = travelEndLabel.position.clone().lerp(travelEndCountryLabel.position, 0.22);
+      lookTarget.lerp(destinationFocus, approachP * 0.42);
     }
-    // Force end-approach lock on exact destination coordinates to avoid southward drift.
-    if(arrivalDiveP >= 0.55){
+    camera.up.copy(worldUp);
+    nextFov = THREE.MathUtils.lerp(42, 24, orbitRevealP);
+    nextFov = THREE.MathUtils.lerp(nextFov, 18, approachP);
+  }else{
+    const destFocus = (travelEndLabel && travelEndLabel.position)
+      ? travelEndLabel.position.clone()
+      : destFrame.pos.clone().addScaledVector(destFrame.up, 8);
+    const landingDistance = THREE.MathUtils.lerp(TRAVEL_GLOBE_FULL_VIEW_DISTANCE * 0.64, 52, landingP);
+    const rearOffset = THREE.MathUtils.lerp(landingDistance * 0.16, landingDistance * 0.03, landingP);
+    camPos = destFrame.pos.clone()
+      .addScaledVector(destFrame.up, landingDistance)
+      .addScaledVector(destFrame.north, -rearOffset);
+    lookTarget = destFocus;
+    camera.up.copy(worldUp);
+    nextFov = THREE.MathUtils.lerp(18, 11, landingP);
+    if(landingP >= 0.45){
       currentLat = THREE.MathUtils.clamp(travelTween.toLat, -89.9, 89.9);
       currentLon = travelTween.toLon;
       if(latEl) latEl.value = currentLat.toFixed(5);
       if(lonEl) lonEl.value = currentLon.toFixed(5);
-      travelTween.workMapPos.copy(destPos);
+      travelTween.workMapPos.copy(destFrame.pos);
     }
-    // Lock final zoom focus on the visible arrival marker (sparkle/point), not on the ground point.
-  const arrivalFocus = (travelEndLabel && travelEndLabel.position)
-    ? travelEndLabel.position.clone()
-    : destPos.clone().addScaledVector(destFrame.up, 8);
-    camera.up.copy(destFrame.up.clone().lerp(new THREE.Vector3(0,1,0), 0.3).normalize());
-    camera.lookAt(arrivalFocus);
-    currentFOV = THREE.MathUtils.lerp(currentFOV, 16, arrivalDiveP);
-    const pointBoost = 1 + arrivalDiveP * 1.2;
-    travelEndPoint.scale.set(18.0 * pointBoost, 18.0 * pointBoost, 1);
-    const sparkleBoost = 1 + arrivalDiveP * 0.45;
-    travelEndSparkle.scale.set(endSparkScale * sparkleBoost, endSparkScale * sparkleBoost, 1);
-  }else{
-    travelEndPoint.scale.set(18.0, 18.0, 1);
   }
+
+  controls.object.position.copy(camPos);
+  camera.lookAt(lookTarget);
+  travelTween.mapLookPos.copy(lookTarget);
+  travelProbe.position.copy(travelTween.workMapPos).addScaledVector(currentFrame.up, TRAVEL_PROBE_ALTITUDE);
+  currentFOV = nextFov;
   camera.fov = currentFOV;
   camera.updateProjectionMatrix();
-  const blendToGroundP = easeInOutCubic(smooth(0.92, 1.00, flightT));
-  if(blendToGroundP > 0 && tRaw < 1 && arrivalDiveP <= 0){
-    travelTween.landingBlendP = blendToGroundP;
-    currentLat = THREE.MathUtils.clamp(travelTween.toLat, -89.9, 89.9);
-    currentLon = travelTween.toLon;
-    if(latEl) latEl.value = currentLat.toFixed(5);
-    if(lonEl) lonEl.value = currentLon.toFixed(5);
-    if(!travelTween.landingBlendInitReady){
-      travelTween.landingBlendInitPos.copy(controls.object.position);
-      camera.getWorldDirection(travelTween.landingBlendInitDir).normalize();
-      travelTween.landingBlendInitReady = true;
-    }
-    travelTween.phase = 'blend-to-ground';
-    const p0 = travelTween.landingBlendInitPos.clone();
-    const p2 = new THREE.Vector3(0, GROUND_Y, 0);
-    const p1 = p0.clone().lerp(p2, 0.50);
-    p1.y = Math.max(p1.y, GROUND_Y + 120);
-    const u = 1 - blendToGroundP;
-    const landingBlendPos = p0.multiplyScalar(u * u)
-      .add(p1.multiplyScalar(2 * u * blendToGroundP))
-      .add(p2.multiplyScalar(blendToGroundP * blendToGroundP));
-    controls.object.position.copy(landingBlendPos);
-    const landingFocus = (travelEndPoint && travelEndPoint.position)
-      ? travelEndPoint.position
-      : travelTween.workMapPos;
-    camera.up.set(0,1,0);
-    camera.lookAt(landingFocus);
-  }
+
   if(tRaw >= 1){
     if(!travelTween.arrivalFlashPending){
       travelTween.arrivalFlashPending = true;
@@ -11116,9 +11275,7 @@ function updateTravelTick(nowMs){
         currentLon = travelTween.toLon;
         if(latEl) latEl.value = currentLat.toFixed(5);
         if(lonEl) lonEl.value = currentLon.toFixed(5);
-        if(Number.isFinite(travelTween.toDateMs)){
-          currentDate = new Date(travelTween.toDateMs);
-        }
+        if(Number.isFinite(travelTween.toDateMs)) currentDate = new Date(travelTween.toDateMs);
         setCurrentTimeZone(travelTween.targetTimeZone);
         updateDateTimeInputsFromDate(currentDate instanceof Date ? currentDate : new Date());
         if(travelTween.targetCountry){
@@ -11142,7 +11299,6 @@ function updateTravelTick(nowMs){
         updateBottomLiveInfo(currentDate);
         updateMoonStatusDisplay();
         updateView(currentDate);
-        updateDateTimeInputsFromDate(currentDate instanceof Date ? currentDate : new Date());
         controls.object.position.set(0, GROUND_Y, 0);
         applyDefaultGroundView();
         endTravelCinematic('Arrivee terminee.');
@@ -11882,8 +12038,7 @@ function startCinematicTravelTo(targetLat, targetLon, options){
   followSunDirection = false;
   autoLookTween.active = false;
   syncFollowButtons();
-  const travelAngularDist = Math.hypot(targetLat - currentLat, shortestLonDeltaDeg(currentLon, targetLon));
-  const durationMs = THREE.MathUtils.clamp(5000 + travelAngularDist * 21, 6200, 11200);
+  const durationMs = 8600;
   travelTween.active = true;
   travelTween.phase = 'takeoff';
   travelTween.startMs = performance.now();
@@ -11961,9 +12116,9 @@ function startCinematicTravel(options){
   const selection = getSelectedTravelPreset();
   if(!selection){
     setTravelStatus('Selection de destination invalide.', 'busy');
-    return;
+    return false;
   }
-  startCinematicTravelTo(selection.city.lat, selection.city.lon, {
+  return startCinematicTravelTo(selection.city.lat, selection.city.lon, {
     targetCityName: selection.city.name,
     targetCountryName: selection.country.country,
     targetCountryIdx: selection.countryIdx,
@@ -12143,6 +12298,9 @@ function applyTranslations(){
   document.querySelectorAll('[data-i18n-title]').forEach((el)=>{
     el.setAttribute('title', t(el.getAttribute('data-i18n-title')));
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el)=>{
+    el.setAttribute('placeholder', t(el.getAttribute('data-i18n-placeholder')));
+  });
   document.querySelectorAll('[data-i18n-aria-label]').forEach((el)=>{
     el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria-label')));
   });
@@ -12151,11 +12309,14 @@ function applyTranslations(){
   if(hintEl) hintEl.textContent = t('hint.controls');
   updateInputTimeZoneBadge();
   const speedLbl = document.getElementById('tl-speed-label');
-  if(speedLbl) speedLbl.textContent = `· ${t('timelapse.speed_short')} :`;
+  if(speedLbl) speedLbl.textContent = `- ${t('timelapse.speed_short')} :`;
   const ctlHint = document.getElementById('tl-controls-hint');
-  if(ctlHint) ctlHint.textContent = `· ${t('timelapse.controls_hint')}`;
+  if(ctlHint) ctlHint.textContent = `- ${t('timelapse.controls_hint')}`;
   const gpsBtn = document.getElementById('btn-gps');
   if(gpsBtn) gpsBtn.textContent = getGpsButtonText();
+  if(typeof defaultLocationMode !== 'undefined'){
+    setDefaultLocationMode(defaultLocationMode);
+  }
   // Language widget visual state: short code + emoji flag + active button state.
   const langMeta = LANG_WIDGET_META[currentLang] || LANG_WIDGET_META.fr;
   const codeEl = document.getElementById('lang-widget-code');
@@ -12206,6 +12367,12 @@ function applyTranslations(){
     }
   }
   syncBottomActionWidgets();
+  // Update onboarding guide if it's open
+  if(appOnboardingModal && !appOnboardingModal.hasAttribute('hidden')){
+    buildOnboardingIntroPages();
+    updateGuideContent();
+    updateOnboardingUi();
+  }
 }
 function setLanguage(lang){
   currentLang = SUPPORTED_LANGS.includes(lang) ? lang : 'fr';
@@ -12690,7 +12857,9 @@ function updateView(date, options){
     azimuthDegTrueNorth: astroSnapshot.sun.azimuthDegTrueNorth
   };
   const sunAltDeg=astroSnapshot.sun.altitudeDegApparent;
-  const solarHorizonOcclusionDeg = getDecorativeHorizonOcclusionDeg(sunAltDeg);
+  // Keep prayer-relevant solar crossings on the true apparent horizon.
+  // Decorative skyline occlusion must not shift sunrise/sunset timing.
+  const solarHorizonOcclusionDeg = 0;
   const sunDir=azAltToVec(sunPos.azimuth,sunPos.altitude);
   skyDome.position.copy(camera.position);
   skyDomeUniforms.uSunDir.value.copy(sunDir).normalize();
@@ -12764,22 +12933,31 @@ function updateView(date, options){
   worldMapNightUniforms.uSunDir.value.copy(latLonToTravelNormal(subsolar.latDeg, subsolar.lonDeg)).multiplyScalar(-1).normalize();
   const cloudSpin = ((terminatorDate.getTime() * 0.0000009) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
   worldCloudLayer.rotation.set(0, cloudSpin, 0);
-  const sunVisible = sunRenderAltDeg >= SUN_VISIBILITY_DEG;
+  // Pure geometric visibility: first/last rendered pixel at horizon crossing.
+  const sunRenderedUpperLimbAltDeg = sunRenderAltDeg + SUN_RENDER_ANGULAR_RADIUS_DEG;
+  const sunVisible = sunRenderedUpperLimbAltDeg >= GROUND_VISUAL_HORIZON_ALT_DEG;
   const sunPosVec = sunRenderDir.clone().multiplyScalar(SUN_DIST);
   sunPosVec.y += GROUND_Y;
   if(cinematicTravelActive){
     sunPosVec.add(camera.position);
   }
   sunSprite.position.copy(sunPosVec);
-  sunSprite.visible = sunVisible;
-  sunSprite.scale.set(SUN_SPRITE_DIAMETER, SUN_SPRITE_DIAMETER, 1);
-  // No cinematic fade: fully opaque from first visible pixel to last visible pixel.
-  const sunDiskFade = sunVisible ? 1 : 0;
+  sunSprite.visible = sunVisible && !cinematicTravelActive;
+  // Atmospheric scintillation: shimmer strongest near the horizon (alt < 4°).
+  const scintStrength = sunVisible ? (1 - THREE.MathUtils.smoothstep(Math.abs(sunRenderAltDeg), 0.2, 4.0)) : 0;
+  const scintT = performance.now() * 0.001;
+  const scintWave = scintStrength * (
+    0.50 * Math.sin(scintT * 7.3) +
+    0.30 * Math.sin(scintT * 13.7 + 1.2) +
+    0.20 * Math.sin(scintT * 23.1 + 2.8)
+  );
+  const scintScale = SUN_SPRITE_DIAMETER * (1 + 0.035 * scintWave);
+  sunSprite.scale.set(scintScale, scintScale, 1);
   const totalityFactor = THREE.MathUtils.smoothstep(solarObscurationVisual, 0.985, 0.9995);
   const sunEclipseOpacity = totalityFactor > 0
     ? Math.max(0.01, 1 - 0.985 * totalityFactor)
     : Math.max(0.22, 1 - 0.80 * solarEclipseVisualStrength);
-  sunSprite.material.opacity = (sunVisible ? sunDiskFade : 0) * sunEclipseOpacity;
+  sunSprite.material.opacity = cinematicTravelActive ? 0 : (sunVisible ? sunEclipseOpacity : 0);
   // Color pipeline with explicit 60-minute ramps:
   // - sunrise to +60 min: red -> dark orange -> light orange -> near white
   // - -60 min to Maghreb: inverse process
@@ -12797,9 +12975,9 @@ function updateView(date, options){
   const sunsetRawPhase = THREE.MathUtils.clamp(1 - (msToMaghreb / preMaghrebMs), 0, 1);
   const sunsetPhase = sunsetRawPhase;
   const inSunriseWindow = msFromSunrise >= 0 && msFromSunrise <= sunriseWindowMs;
-  const inSunsetWindow = msToMaghreb >= 0 && msToMaghreb <= preMaghrebMs;
+  const inSunsetWindow = msToMaghreb >= -3 * 60 * 1000 && msToMaghreb <= preMaghrebMs;
   const warmMix = THREE.MathUtils.clamp(horizonWarm * 0.82, 0, 1);
-  const sunBrightness = THREE.MathUtils.clamp(1.02 + 0.52 * THREE.MathUtils.smoothstep(sunAltDeg, -2, 32), 1.02, 1.54);
+  const sunBrightness = THREE.MathUtils.clamp(0.88 + 0.36 * THREE.MathUtils.smoothstep(sunAltDeg, -2, 24), 0.88, 1.22);
   if(inSunriseWindow){
     sunSprite.material.color
       .copy(sunDeepRed)
@@ -12817,17 +12995,21 @@ function updateView(date, options){
     sunSprite.material.color.copy(sunNearWhite).lerp(sunOrangeLight, warmMix * 0.22);
   }
   const sunsetBrightnessDrop = inSunsetWindow ? (1 - 0.14 * sunsetPhase) : 1;
-  sunSprite.material.color.multiplyScalar(sunBrightness * sunsetBrightnessDrop * (1 - 0.35 * solarEclipseVisualStrength));
+  const scintBright = 1 + 0.09 * scintStrength * (
+    0.55 * Math.sin(scintT * 11.1 + 0.5) +
+    0.45 * Math.sin(scintT * 19.3 + 3.1)
+  );
+  sunSprite.material.color.multiplyScalar(sunBrightness * sunsetBrightnessDrop * scintBright * (1 - 0.35 * solarEclipseVisualStrength));
   // Secondary halo sprite: stronger in mid/high sky, strongly suppressed near horizon.
-  const haloBase = sunVisible ? sunDiskFade : 0;
+  const haloBase = sunVisible ? 1 : 0;
   const haloNearHorizon = 1 - THREE.MathUtils.smoothstep(sunRenderAltDeg, -2.0, 22.0);
   const haloMidSkyBoost = THREE.MathUtils.smoothstep(sunRenderAltDeg, 6.0, 30.0);
   const haloZenithBoost = THREE.MathUtils.smoothstep(sunRenderAltDeg, 18.0, 74.0);
   const haloHorizonSuppression = THREE.MathUtils.smoothstep(sunRenderAltDeg, 1.6, 8.0);
-  const haloOpacity = haloBase * haloHorizonSuppression * (0.10 + 0.26 * haloMidSkyBoost + 0.42 * haloZenithBoost) * (1 - 0.72 * solarEclipseVisualStrength);
+  const haloOpacity = haloBase * haloHorizonSuppression * (0.08 + 0.20 * haloMidSkyBoost + 0.30 * haloZenithBoost) * (1 - 0.72 * solarEclipseVisualStrength);
   sunHaloSprite.position.copy(sunPosVec);
-  sunHaloSprite.visible = haloOpacity > 0.001;
-  sunHaloSprite.material.opacity = haloOpacity;
+  sunHaloSprite.visible = !cinematicTravelActive && haloOpacity > 0.001;
+  sunHaloSprite.material.opacity = cinematicTravelActive ? 0 : haloOpacity;
   sunHaloColorTmp.copy(sunHaloDayColor).lerp(sunHaloWarmColor, haloNearHorizon * 0.65).multiplyScalar(0.98 + 0.22 * haloNearHorizon);
   sunHaloSprite.material.color.copy(sunHaloColorTmp);
   const haloScale = SUN_SPRITE_DIAMETER * (2.35 + 0.22 * haloNearHorizon + 0.86 * haloMidSkyBoost + 1.05 * haloZenithBoost);
@@ -12835,14 +13017,14 @@ function updateView(date, options){
   const totalSolarEclipseVisible = sunVisible && (altDeg > MOON_LIMB_APPEAR_DEG) && totalityFactor > 0.02;
   const coronaOpacity = totalSolarEclipseVisible ? (0.08 + 0.85 * totalityFactor) * THREE.MathUtils.smoothstep(sunRenderAltDeg, -1.5, 7.0) : 0;
   sunCoronaSprite.position.copy(sunPosVec);
-  sunCoronaSprite.visible = coronaOpacity > 0.002;
-  sunCoronaSprite.material.opacity = coronaOpacity;
+  sunCoronaSprite.visible = !cinematicTravelActive && coronaOpacity > 0.002;
+  sunCoronaSprite.material.opacity = cinematicTravelActive ? 0 : coronaOpacity;
   sunCoronaSprite.material.color.copy(sunHaloDayColor).lerp(sunHaloWarmColor, haloNearHorizon * 0.45);
   sunCoronaSprite.scale.set(SUN_SPRITE_DIAMETER * (1.28 + 0.34 * totalityFactor), SUN_SPRITE_DIAMETER * (1.28 + 0.34 * totalityFactor), 1);
   const sceneSolarNorm = THREE.MathUtils.clamp(sunAltDeg / 90, 0, 1);
   const directSunGate = THREE.MathUtils.smoothstep(sunRenderAltDeg, 0.0, 6.0);
   const eclipseLightFactor = Math.max(0.25, 1 - 0.78 * solarEclipseVisualStrength);
-  sceneSunLight.intensity = sceneSolarNorm * SOLAR_SCENE_LIGHT_MAX * directSunGate * eclipseLightFactor;
+  sceneSunLight.intensity = cinematicTravelActive ? 0 : (sceneSolarNorm * SOLAR_SCENE_LIGHT_MAX * directSunGate * eclipseLightFactor);
   const ill = {
     fraction: renderedIlluminationFraction,
     phase: astroSnapshot.moon.phase
@@ -12927,7 +13109,7 @@ function updateView(date, options){
   const moonLimbVisible = moonRenderAltDeg >= MOON_LIMB_APPEAR_DEG;
   // One shared visibility boolean drives both scene object and UI badge.
   moonIsVisible=moonLimbVisible;
-  moon.visible=moonLimbVisible;
+  moon.visible=moonLimbVisible && !cinematicTravelActive;
   headerLogoFullMoonMode = moonLimbVisible && ill.fraction >= HEADER_FULLMOON_FRACTION_THRESHOLD;
   const camForward = new THREE.Vector3();
   camera.getWorldDirection(camForward);
@@ -12937,7 +13119,9 @@ function updateView(date, options){
   }else{
     camRight.normalize();
   }
-  const sunEdgeWorld = sunPosVec.clone().add(camRight.multiplyScalar(SUN_SPRITE_DIAMETER * 0.5));
+  const camUp = new THREE.Vector3().crossVectors(camRight, camForward).normalize();
+  const sunEdgeWorld = sunPosVec.clone().add(camRight.clone().multiplyScalar(SUN_SPRITE_DIAMETER * 0.5));
+  const sunEdgeWorldY = sunPosVec.clone().add(camUp.clone().multiplyScalar(SUN_SPRITE_DIAMETER * 0.5));
   const moonNdc = mPos.clone().project(camera);
   const moonSkyVertical = THREE.MathUtils.clamp(moonNdc.y * 0.5 + 0.5, 0, 1);
   const ze = skyOverlayState.ze;
@@ -12964,7 +13148,9 @@ function updateView(date, options){
   moonDarkBlendUniform.value = 0.95 * moonDarkSideSkyGate;
   moonSkyLocalColorUniform.value.copy(moonSkyLocalColor);
   const sunEdgeNdc = sunEdgeWorld.project(camera);
+  const sunEdgeNdcY = sunEdgeWorldY.project(camera);
   const sunRadiusNdc = Math.max(1e-4, Math.abs(sunEdgeNdc.x - sunNdc.x));
+  const sunRadiusNdcY = Math.max(1e-4, Math.abs(sunEdgeNdcY.y - sunNdc.y));
   const moonEdgeWorld = mPos.clone().add(camRight.clone().multiplyScalar(MOON_RADIUS));
   const moonEdgeNdc = moonEdgeWorld.project(camera);
   updateMoonScreenOcclusion(
@@ -12975,8 +13161,39 @@ function updateView(date, options){
     moonNdc.x >= -1.2 && moonNdc.x <= 1.2 &&
     moonNdc.y >= -1.2 && moonNdc.y <= 1.2
   );
-  // Horizon occlusion is handled by scene geometry; avoid any screen-space clipping on the sun disc.
-  const sunHorizonClip = 1;
+  // Screen-space horizon alignment:
+  // Sample the rendered ground surface (y=0) rather than the mathematical
+  // horizon (y=GROUND_Y) so the clip edge matches where the dark ground
+  // actually appears on screen, eliminating the sky gap when zoomed in.
+  const horizonSampleDir = azAltToVec(sunPos.azimuth, 0);
+  const horizonSampleWorld = horizonSampleDir.clone().multiplyScalar(GROUND_PLANE_HALF_SIZE);
+  // y stays at 0 (ground level) — using GROUND_PLANE_HALF_SIZE (not SUN_DIST) so the
+  // projected NDC matches exactly the far edge of the rendered ground plane.
+  if(cinematicTravelActive){
+    horizonSampleWorld.add(camera.position);
+  }
+  const horizonNdc = horizonSampleWorld.project(camera);
+  // Also clip against the silhouette mountain top at the sun's azimuth.
+  // Geometry angle: Math.PI/2 + azimuth maps scene axes to silhouette ring axes.
+  const silhouetteAngle = Math.PI / 2 + sunPos.azimuth;
+  const silhouetteSegT = ((silhouetteAngle % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2) / (Math.PI * 2);
+  const silhouetteSeg = Math.round(silhouetteSegT * HORIZON_SILHOUETTE_SEGMENTS) % HORIZON_SILHOUETTE_SEGMENTS;
+  let clipNdcY = horizonNdc.y;
+  for(const lCfg of horizonLayerEffectiveConfigs){
+    if(!lCfg.smoothedHeights) continue;
+    const worldY = lCfg.smoothedHeights[silhouetteSeg];
+    const samplePt = horizonSampleDir.clone().multiplyScalar(lCfg.radius);
+    if(cinematicTravelActive){ samplePt.x += camera.position.x; samplePt.z += camera.position.z; }
+    samplePt.y = worldY;
+    const ndc = samplePt.project(camera);
+    if(ndc.y > clipNdcY) clipNdcY = ndc.y;
+  }
+  const sunCenterToHorizonNdc = sunNdc.y - clipNdcY;
+  const sunHorizonClip = THREE.MathUtils.clamp(
+    0.5 + (sunCenterToHorizonNdc / (2 * sunRadiusNdcY)) - (1 / 512),
+    0,
+    1
+  );
   if (
     Math.abs(sunLimbDarkening - lastSunLimb) > 0.025 ||
     Math.abs(sunWarmth - lastSunWarmth) > 0.025 ||
@@ -12998,17 +13215,19 @@ function updateView(date, options){
     sunNdc.y >= -1 && sunNdc.y <= 1
   ) ? 1 : 0;
   const glareAltitudeGate = THREE.MathUtils.smoothstep(sunRenderAltDeg, 1.2, 22.0);
+  const glareTravelSuppression = cinematicTravelActive ? 0.0 : 1;
   const glareOpacity = glareOnScreen
     * glareLookAlign
     * (0.10 + 0.56 * glareAltitudeGate)
     * (1 - 0.78 * solarEclipseVisualStrength)
-    * sunEclipseOpacity;
-  if(glareOpacity > 0.002){
+    * sunEclipseOpacity
+    * glareTravelSuppression;
+  if(!cinematicTravelActive && glareOpacity > 0.002){
     sunGlareSprite.position.copy(sunPosVec);
     sunGlareSprite.visible = true;
     sunGlareSprite.material.opacity = glareOpacity;
     sunGlareSprite.material.color.copy(sunHaloWarmColor).lerp(sunHaloDayColor, glareAltitudeGate * 0.55);
-    const glareScale = SUN_SPRITE_DIAMETER * (5.5 + 10.0 * glareOpacity + 2.8 * glareAltitudeGate);
+    const glareScale = SUN_SPRITE_DIAMETER * (4.2 + 6.5 * glareOpacity + 1.8 * glareAltitudeGate);
     sunGlareSprite.scale.set(glareScale, glareScale, 1);
   }else{
     sunGlareSprite.visible = false;
@@ -13047,7 +13266,7 @@ function updateView(date, options){
     sunInfoPanel.innerHTML =
       `${t('info.altitude')} : <span class="val">${sunAltDeg.toFixed(1)} deg</span><br>`+
       `${t('info.azimuth')} : <span class="val">${sunPos.azimuthDegTrueNorth.toFixed(1)} deg</span><br>`+
-      `${t('info.solar_eclipse')} : <span class="val">${Math.round(solarEclipseStrength*100)}%</span>`;
+      `${t('info.solar_eclipse')} : <span class="val">${Math.round(solarEclipseVisualStrength*100)}%</span>`;
   }
   if(moonInfoPanel){
     moonInfoPanel.innerHTML =
@@ -13159,7 +13378,7 @@ renderer.domElement.addEventListener('mouseleave', ()=>{
   tooltip.style.display = 'none';
 });
 
-// â”€â”€â”€ Boutons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Boutons Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 const applyTravelBtn=document.getElementById('btn-travel');
 const shareLinkBtn=document.getElementById('share-link-btn');
 const captureHeaderBtn=document.getElementById('capture-header-btn');
@@ -13171,14 +13390,16 @@ const appOnboardingPrevBtn=document.getElementById('app-onboarding-prev-btn');
 const appOnboardingNextBtn=document.getElementById('app-onboarding-next-btn');
 const appOnboardingCloseBtn=document.getElementById('app-onboarding-close-btn');
 const appOnboardingOpenBtn=document.getElementById('app-onboarding-open-btn');
-const APP_ONBOARDING_INTRO_BLOCKS=[
-  "Bonjour, et bienvenue dans <strong>Show me the moon</strong>.",
-  "L'application simule le ciel, la Lune, le Soleil, les planetes du systeme solaire et les etoiles les plus visibles, comme vous les verriez depuis une position et une date choisies.",
-  "<strong>Show me the moon</strong> vous propose un veritable voyage dans le temps et dans l'espace.",
-  "A travers une experience unique, voyez le ciel comme on l'a vu, comme on le voit, et comme on le verra incha Allah, aux 4 coins du monde et a toute epoque.",
-  "Ce guide propose de vous donner une vue rapide des fonctions essentielles, avant de commencer.",
-  "Bien que n'etant pas indispensable, car l'application est tres intuitive, sa lecture peut etre utile pour apprehender plus rapidement toutes les fonctionnalites qui s'offrent a vous :"
-];
+function getOnboardingIntroBlocks(){
+  return [
+    t('guide.intro1'),
+    t('guide.intro2'),
+    t('guide.intro3'),
+    t('guide.intro4'),
+    t('guide.intro5'),
+    t('guide.intro6')
+  ];
+}
 const defaultLocationModal=document.getElementById('default-location-modal');
 const defaultLocationModeGeoBtn=document.getElementById('default-location-mode-geo');
 const defaultLocationModeCityBtn=document.getElementById('default-location-mode-city');
@@ -13197,6 +13418,8 @@ let appOnboardingPageIndex=0;
 let defaultLocationMode='geo';
 let defaultLocationCountryIdx=-1;
 let locationApplyBaseline='';
+let pendingDateTimeTimeLapseResume=null;
+let manualDateTimeDraftActive=false;
 function getLocationApplyBaselineState(){
   if(!locationApplyBaseline){
     return getLocationApplyState();
@@ -13274,6 +13497,29 @@ function setLocationApplyBaseline(){
   setLocationApplyBaselineState(getLocationApplyState());
   syncLocationApplyButton();
 }
+function armTimeLapseResumeAfterDateTimeEdit(){
+  if(pendingDateTimeTimeLapseResume) return;
+  if(!(tlActive && !tlPaused)) return;
+  pendingDateTimeTimeLapseResume = {
+    direction: tlDirection === -1 ? -1 : 1,
+    speed: clampTlSpeed(tlSpeed)
+  };
+}
+function clearPendingDateTimeTimeLapseResume(){
+  pendingDateTimeTimeLapseResume = null;
+}
+function resumeTimeLapseAfterDateTimeApply(date){
+  if(!pendingDateTimeTimeLapseResume) return false;
+  const snapshot = pendingDateTimeTimeLapseResume;
+  pendingDateTimeTimeLapseResume = null;
+  tlSpeed = clampTlSpeed(snapshot.speed);
+  if(tlRateInput) tlRateInput.value = String(tlSpeed);
+  const seed = (date instanceof Date && !Number.isNaN(date.getTime()))
+    ? new Date(date.getTime())
+    : (currentDate instanceof Date && !Number.isNaN(currentDate.getTime()) ? new Date(currentDate.getTime()) : new Date());
+  startTimeLapseFrom(seed, snapshot.direction);
+  return true;
+}
 let prayerPreviewTimer = null;
 function previewPrayerPanelFromInputs(){
   if(templateMode !== 'islamic') return;
@@ -13304,8 +13550,30 @@ function watchLocationInputs(){
   ids.forEach((id)=>{
     const el=document.getElementById(id);
     if(!el) return;
+    if(id === 'idate' || id === 'itime'){
+      const stopTlBeforePickerOpens = ()=>{
+        if(tlActive){
+          if(!tlPaused){
+            armTimeLapseResumeAfterDateTimeEdit();
+          }else{
+            clearPendingDateTimeTimeLapseResume();
+          }
+          stopTimeLapse();
+        }
+      };
+      ['pointerdown','mousedown','focus'].forEach((evt)=>el.addEventListener(evt, stopTlBeforePickerOpens));
+    }
     const onFieldEvent = (evt)=>{
       if(id === 'idate' || id === 'itime'){
+        manualDateTimeDraftActive = true;
+        const parsedDraftDate = parseDateInTimeZone(
+          String((document.getElementById('idate') && document.getElementById('idate').value) || ''),
+          String((document.getElementById('itime') && document.getElementById('itime').value) || ''),
+          getInputTimeZone()
+        );
+        if(!tlActive && parsedDraftDate instanceof Date && !Number.isNaN(parsedDraftDate.getTime())){
+          currentDate = new Date(parsedDraftDate.getTime());
+        }
         renderDateTimeValidation(evt.type === 'blur' || evt.type === 'change');
       }
       if(id === 'lat' || id === 'lon' || id === 'idate' || id === 'itime'){
@@ -13364,9 +13632,9 @@ function setDefaultLocationMode(nextMode){
   if(defaultLocationModeCityBtn) defaultLocationModeCityBtn.classList.toggle('active', cityMode);
   if(defaultLocationCityWrap) defaultLocationCityWrap.hidden=!cityMode;
   if(!cityMode){
-    setDefaultLocationHint('La position actuelle du navigateur sera utilisee.');
+    setDefaultLocationHint(t('default_location.hint.geo'));
   }else{
-    setDefaultLocationHint('Choisissez un pays puis une ville pour definir les coordonnees.');
+    setDefaultLocationHint(t('default_location.hint.city'));
   }
 }
 function setDefaultCountrySuggestions(query){
@@ -13432,7 +13700,7 @@ function openDefaultLocationModal(){
   if(defaultLocationCityInput){
     defaultLocationCityInput.value='';
     defaultLocationCityInput.disabled=true;
-    defaultLocationCityInput.placeholder="Selectionner un pays d'abord";
+    defaultLocationCityInput.placeholder=t('travel.placeholder.city_disabled');
   }
   if(defaultLocationCountryList) defaultLocationCountryList.innerHTML='';
   if(defaultLocationCityList) defaultLocationCityList.innerHTML='';
@@ -13442,7 +13710,7 @@ function openDefaultLocationModal(){
     defaultLocationCountryIdx=resolveDefaultCountryIndex(defaultLocationCountryInput.value);
     if(defaultLocationCountryIdx >= 0){
       defaultLocationCityInput.disabled=false;
-      defaultLocationCityInput.placeholder='Choisir...';
+      defaultLocationCityInput.placeholder=t('travel.placeholder.city');
       setDefaultCitySuggestions(defaultLocationCountryIdx, '');
       defaultLocationCityInput.value=pref.city || '';
     }else{
@@ -13468,7 +13736,7 @@ function applyDefaultLocationFromGeolocation(){
     if(gpsBtn) gpsBtn.textContent=getGpsButtonText();
   }, ()=>{
     if(gpsBtn) gpsBtn.textContent=getGpsButtonText();
-    setDefaultLocationHint('Impossible de recuperer votre position. Verifiez les permissions de geolocalisation.');
+    setDefaultLocationHint(t('default_location.error.geolocation'));
   });
 }
 function applyDefaultLocationFromCity(){
@@ -13477,14 +13745,14 @@ function applyDefaultLocationFromCity(){
   }
   defaultLocationCountryIdx=resolveDefaultCountryIndex(defaultLocationCountryInput.value);
   if(defaultLocationCountryIdx < 0 || !TRAVEL_CATALOG[defaultLocationCountryIdx]){
-    setDefaultLocationHint('Pays introuvable. Selectionnez un pays valide.');
+    setDefaultLocationHint(t('default_location.error.country_not_found'));
     return;
   }
   const country=TRAVEL_CATALOG[defaultLocationCountryIdx];
   const cityName=stripNearbyCityDisplayLabel(defaultLocationCityInput.value);
   const cityIdx=findCityIndexByName(defaultLocationCountryIdx, cityName);
   if(cityIdx < 0 || !country.cities || !country.cities[cityIdx]){
-    setDefaultLocationHint('Ville introuvable. Selectionnez une ville de la liste.');
+    setDefaultLocationHint(t('default_location.error.city_not_found'));
     return;
   }
   const city=country.cities[cityIdx];
@@ -13518,12 +13786,12 @@ if(defaultLocationCountryInput){
     if(defaultLocationCityInput){
       if(defaultLocationCountryIdx >= 0){
         defaultLocationCityInput.disabled=false;
-        defaultLocationCityInput.placeholder='Choisir...';
+        defaultLocationCityInput.placeholder=t('travel.placeholder.city');
         setDefaultCitySuggestions(defaultLocationCountryIdx, '');
       }else{
         defaultLocationCityInput.disabled=true;
         defaultLocationCityInput.value='';
-        defaultLocationCityInput.placeholder="Selectionner un pays d'abord";
+        defaultLocationCityInput.placeholder=t('travel.placeholder.city_disabled');
         if(defaultLocationCityList) defaultLocationCityList.innerHTML='';
       }
     }
@@ -13594,6 +13862,7 @@ function applyLocationChanges(scope, options){
   const willStartTravelCinematic = !!(cityChanged || latChanged || lonChanged);
   if(applyDateTime && (dateChanged || timeChanged || dateTimeDelta)){
     if(!renderDateTimeValidation(true)){
+      clearPendingDateTimeTimeLapseResume();
       syncLocationApplyButton();
       return;
     }
@@ -13602,6 +13871,7 @@ function applyLocationChanges(scope, options){
   // Pure location travel should simulate timezone/date drift continuously during flight.
   const shouldUseArrivalWallClock = !!(dateChanged || timeChanged || utcChanged || dateTimeDelta);
   if(!(cityChanged || latChanged || lonChanged || dateChanged || timeChanged || utcChanged || dateTimeDelta)){
+    clearPendingDateTimeTimeLapseResume();
     return;
   }
   if(shouldFollowMoonAfterRefresh && !willStartTravelCinematic){
@@ -13631,11 +13901,16 @@ function applyLocationChanges(scope, options){
     currentDate = manualDate;
   }
   if(cityChanged && effectiveState.country){
-    startCinematicTravel({
+    const started = startCinematicTravel({
       targetDate: effectiveState.date,
       targetTime: effectiveState.time,
       useArrivalWallClock: shouldUseArrivalWallClock
     });
+    if(!started){
+      updateView(currentDate instanceof Date ? currentDate : new Date(), { forceUi:true });
+      clearPendingDateTimeTimeLapseResume();
+      if(queuedRefreshFollow) runPendingMoonFollowAfterRefresh();
+    }
   }else if(latChanged || lonChanged){
     const targetLat = parseCoordinate(effectiveState.lat, currentLat, -89.9, 89.9);
     const targetLon = parseCoordinate(effectiveState.lon, currentLon, -180, 180);
@@ -13647,7 +13922,7 @@ function applyLocationChanges(scope, options){
     updateBottomLiveInfo(currentDate);
     const destinationCountry = syncedCountry || resolveNearestCatalogCountry(targetLat, targetLon) || currentCountry || 'Destination';
     const destinationLabel = formatTravelCoordinateLabel(targetLat, targetLon);
-      const started = startCinematicTravelTo(targetLat, targetLon, {
+    const started = startCinematicTravelTo(targetLat, targetLon, {
       targetCityName: destinationLabel,
       targetCountryName: destinationCountry,
       targetCountryIdx: Number(travelSearchState.countryIdx),
@@ -13655,29 +13930,34 @@ function applyLocationChanges(scope, options){
       targetDate: effectiveState.date,
       targetTime: effectiveState.time,
       useArrivalWallClock: shouldUseArrivalWallClock
-      });
-      if(!started){
-        updateView(currentDate instanceof Date ? currentDate : new Date());
-        if(queuedRefreshFollow) runPendingMoonFollowAfterRefresh();
-      }
+    });
+    if(!started){
+      updateView(currentDate instanceof Date ? currentDate : new Date());
+      clearPendingDateTimeTimeLapseResume();
+      if(queuedRefreshFollow) runPendingMoonFollowAfterRefresh();
+    }
   }else if(dateChanged || timeChanged || utcChanged || dateTimeDelta){
     if(manualDate){
+      manualDateTimeDraftActive = false;
       if(isWithinManualTimeCinematicWindow(manualDate.getTime())){
         const started = startManualTimeTransition(manualDate);
         if(!started){
           updateView(currentDate instanceof Date ? currentDate : new Date(), { forceUi:true });
         }
+        resumeTimeLapseAfterDateTimeApply(manualDate);
       }else{
         const fromDate = currentDate instanceof Date ? new Date(currentDate.getTime()) : null;
         const targetDate = new Date(manualDate.getTime());
         const shouldFade = shouldRunRefreshDayNightFade(fromDate, targetDate, currentLat, currentLon);
         if(shouldFade){
           startManualRefreshFadeOnly(targetDate);
+          resumeTimeLapseAfterDateTimeApply(targetDate);
         }else{
           stopManualTimeTransition(false);
           currentDate = targetDate;
           updateView(currentDate, { forceUi:true });
           requestImmediateFullPrecisionRecalc();
+          resumeTimeLapseAfterDateTimeApply(currentDate);
           if(queuedRefreshFollow) runPendingMoonFollowAfterRefresh();
         }
         showViewUpdatedSignal();
@@ -13685,10 +13965,13 @@ function applyLocationChanges(scope, options){
       }
     }else{
       updateView(currentDate instanceof Date ? currentDate : new Date(), { forceUi:true });
+      clearPendingDateTimeTimeLapseResume();
       if(queuedRefreshFollow) runPendingMoonFollowAfterRefresh();
     }
   }else{
+    manualDateTimeDraftActive = false;
     updateView(currentDate instanceof Date ? currentDate : new Date());
+    clearPendingDateTimeTimeLapseResume();
     if(queuedRefreshFollow) runPendingMoonFollowAfterRefresh();
   }
   if(typeof mobileViewportQuery !== 'undefined' && isMobileUiMode()){
@@ -13715,14 +13998,14 @@ if(shareLinkBtn){
     }catch(e){}
     if(!copied){
       try{
-        window.prompt('Copiez ce lien :', url);
+        window.prompt(t('share.copy_prompt'), url);
       }catch(e){}
     }
     shareLinkBtn.classList.add('is-done');
-    shareLinkBtn.title = copied ? 'Lien copie' : 'Lien pret';
+    shareLinkBtn.title = copied ? t('share.copied') : t('share.ready');
     setTimeout(()=>{
       shareLinkBtn.classList.remove('is-done');
-      shareLinkBtn.title = 'Copier lien parametre';
+      shareLinkBtn.title = t('share.copy_param_link');
     }, 1600);
   });
 }
@@ -13733,7 +14016,7 @@ if(captureHeaderBtn){
     const mimeType = 'image/png';
     const ext = 'png';
     captureHeaderBtn.disabled = true;
-    captureHeaderBtn.title = 'Export en cours...';
+    captureHeaderBtn.title = t('capture.exporting');
     try{
       if(document.fonts && document.fonts.ready){
         await document.fonts.ready;
@@ -13756,17 +14039,17 @@ if(captureHeaderBtn){
       a.download = `header-desktop-${stamp}.${ext}`;
       a.click();
       captureHeaderBtn.classList.add('is-done');
-      captureHeaderBtn.title = 'Export PNG termine';
+      captureHeaderBtn.title = t('capture.done');
     }catch(e){
-      captureHeaderBtn.title = 'Export non supporte par ce navigateur pour ce rendu.';
+      captureHeaderBtn.title = t('capture.unsupported');
       try{
-        window.alert('Export non supporte par ce navigateur pour ce rendu.');
+        window.alert(t('capture.unsupported'));
       }catch(_err){}
     }finally{
       captureHeaderBtn.disabled = false;
       setTimeout(()=>{
         captureHeaderBtn.classList.remove('is-done');
-        captureHeaderBtn.title = 'Exporter header desktop (PNG)';
+        captureHeaderBtn.title = t('capture.header_title');
       }, 1600);
     }
   });
@@ -14294,10 +14577,11 @@ function syncDesktopFullscreenButtonUi(){
     return;
   }
   const active=isBrowserFullscreenActive();
+  const label = active ? t('ui.fullscreen.exit') : t('ui.fullscreen.enter');
   fullscreenDesktopBtn.setAttribute('aria-pressed', active ? 'true' : 'false');
-  fullscreenDesktopBtn.setAttribute('aria-label', active ? 'Quitter plein ecran' : 'Plein ecran');
-  fullscreenDesktopBtn.setAttribute('title', active ? 'Quitter plein ecran' : 'Plein ecran');
-  fullscreenDesktopBtn.textContent = active ? 'Quitter plein ecran' : 'Plein ecran';
+  fullscreenDesktopBtn.setAttribute('aria-label', label);
+  fullscreenDesktopBtn.setAttribute('title', label);
+  fullscreenDesktopBtn.textContent = label;
 }
 async function toggleBrowserFullscreen(){
   if(!canUseBrowserFullscreen()) return;
@@ -14317,9 +14601,10 @@ async function toggleBrowserFullscreen(){
 function syncUiZenToggleUi(){
   if(!uiZenToggleBtn || !uiZenToggleIcon) return;
   const minimal = !!(document.body && document.body.classList.contains('ui-minimal-mode'));
+  const label = minimal ? t('ui.fullscreen.exit') : t('ui.fullscreen.enter');
   uiZenToggleBtn.setAttribute('aria-pressed', minimal ? 'true' : 'false');
-  uiZenToggleBtn.setAttribute('aria-label', minimal ? 'Sortir' : 'Plein ecran');
-  uiZenToggleBtn.setAttribute('title', minimal ? 'Sortir' : 'Plein ecran');
+  uiZenToggleBtn.setAttribute('aria-label', label);
+  uiZenToggleBtn.setAttribute('title', label);
   uiZenToggleIcon.textContent = minimal ? '\u00D7' : '\u26F6';
 }
 function setUiMinimalMode(next){
@@ -14367,11 +14652,11 @@ async function openLegalModal(kind, triggerEl){
   lastLegalTrigger = triggerEl || document.activeElement;
   legalModal.removeAttribute('hidden');
   if(kind === 'contact'){
-    legalModalTitle.textContent = 'Contact';
+    legalModalTitle.textContent = t('legal.contact');
     legalModalBody.innerHTML = LEGAL_CONTACT_HTML;
   }else{
-    legalModalTitle.textContent = 'Mentions legales';
-    legalModalBody.innerHTML = '<p>Chargement...</p>';
+    legalModalTitle.textContent = t('legal.mentions');
+    legalModalBody.innerHTML = `<p>${t('legal.loading')}</p>`;
     legalModalBody.innerHTML = await loadLegalMentionsHtml();
   }
   if(legalCloseBtn) legalCloseBtn.focus();
@@ -14520,7 +14805,7 @@ let mobileUiOpen=false;
 let mobilePrayerOpen=false;
 let mobileLayoutWasActive=false;
 let sidePanelHeightSyncRaf=0;
-const TRAVEL_VIEW_MIN_STEP_MS = 1000 / 45;
+const TRAVEL_VIEW_MIN_STEP_MS = 0;
 function syncDesktopSidePanelHeights(){
   if(!uiPanel || !prayerPanel) return;
   // Keep both side panels fully independent: no cross-panel height coupling.
@@ -15069,6 +15354,99 @@ if(templateIslamicToggle){
   templateIslamicToggle.checked = templateMode === 'islamic';
   templateIslamicToggle.addEventListener('change',(e)=>applyTemplateMode(e.target.checked ? 'islamic' : 'core'));
 }
+function updateGuideContent(){
+  // Update kicker
+  const kickerEl = document.getElementById('app-onboarding-kicker');
+  if(kickerEl) kickerEl.textContent = t('guide.kicker');
+  
+  // Update main title
+  const titleEl = document.getElementById('app-onboarding-title');
+  if(titleEl) titleEl.innerHTML = t('guide.title');
+  
+  // Update dismiss label
+  const dismissLabelEl = document.getElementById('app-onboarding-dismiss-label');
+  if(dismissLabelEl) dismissLabelEl.textContent = t('guide.dismiss');
+  
+  // Update button texts
+  const prevBtn = document.getElementById('app-onboarding-prev-btn');
+  if(prevBtn) prevBtn.textContent = t('guide.prev');
+  
+  const nextBtn = document.getElementById('app-onboarding-next-btn');
+  if(nextBtn) nextBtn.textContent = t('guide.next');
+  
+  const closeBtn = document.getElementById('app-onboarding-close-btn');
+  if(closeBtn) closeBtn.textContent = t('guide.close');
+  
+  // Update page contents
+  const page1El = document.getElementById('app-onboarding-page1');
+  if(page1El) page1El.innerHTML = t('guide.page1');
+  
+  const page2TitleEl = document.getElementById('app-onboarding-page2-title');
+  if(page2TitleEl) page2TitleEl.textContent = t('guide.page2.title');
+  
+  const page2Items = [
+    { id: 'app-onboarding-page2-item1', key: 'guide.page2.item1' },
+    { id: 'app-onboarding-page2-item2', key: 'guide.page2.item2' },
+    { id: 'app-onboarding-page2-item3', key: 'guide.page2.item3' }
+  ];
+  page2Items.forEach(item => {
+    const el = document.getElementById(item.id);
+    if(el) el.innerHTML = t(item.key);
+  });
+  
+  const page3TitleEl = document.getElementById('app-onboarding-page3-title');
+  if(page3TitleEl) page3TitleEl.textContent = t('guide.page3.title');
+  
+  const page3Items = [
+    { id: 'app-onboarding-page3-item1', key: 'guide.page3.item1' },
+    { id: 'app-onboarding-page3-item2', key: 'guide.page3.item2' },
+    { id: 'app-onboarding-page3-item3', key: 'guide.page3.item3' }
+  ];
+  page3Items.forEach(item => {
+    const el = document.getElementById(item.id);
+    if(el) el.innerHTML = t(item.key);
+  });
+  
+  const page4TitleEl = document.getElementById('app-onboarding-page4-title');
+  if(page4TitleEl) page4TitleEl.textContent = t('guide.page4.title');
+  
+  const page4Items = [
+    { id: 'app-onboarding-page4-item1', key: 'guide.page4.item1' },
+    { id: 'app-onboarding-page4-item2', key: 'guide.page4.item2' },
+    { id: 'app-onboarding-page4-item3', key: 'guide.page4.item3' }
+  ];
+  page4Items.forEach(item => {
+    const el = document.getElementById(item.id);
+    if(el) el.innerHTML = t(item.key);
+  });
+  
+  const page5TitleEl = document.getElementById('app-onboarding-page5-title');
+  if(page5TitleEl) page5TitleEl.textContent = t('guide.page5.title');
+  
+  const page5Items = [
+    { id: 'app-onboarding-page5-item1', key: 'guide.page5.item1' },
+    { id: 'app-onboarding-page5-item2', key: 'guide.page5.item2' },
+    { id: 'app-onboarding-page5-item3', key: 'guide.page5.item3' }
+  ];
+  page5Items.forEach(item => {
+    const el = document.getElementById(item.id);
+    if(el) el.innerHTML = t(item.key);
+  });
+  
+  // Update language widget state
+  updateOnboardingLangWidget();
+}
+function updateOnboardingLangWidget(){
+  const langCodeEl = document.getElementById('app-onboarding-lang-code');
+  if(langCodeEl){
+    const langMeta = LANG_WIDGET_META[currentLang] || LANG_WIDGET_META.fr;
+    langCodeEl.textContent = langMeta.code;
+  }
+  
+  document.querySelectorAll('#app-onboarding-lang-menu button[data-lang]').forEach((btn)=>{
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+  });
+}
 function updateOnboardingUi(){
   const pages=Array.from(document.querySelectorAll('#app-onboarding-modal .onboarding-page'));
   if(!pages.length) return;
@@ -15078,7 +15456,7 @@ function updateOnboardingUi(){
     page.classList.toggle('active', idx === appOnboardingPageIndex);
   });
   if(appOnboardingProgress){
-    appOnboardingProgress.textContent=`Page ${appOnboardingPageIndex + 1} / ${total}`;
+    appOnboardingProgress.textContent=`${t('guide.progress_prefix')} ${appOnboardingPageIndex + 1} / ${total}`;
   }
   if(appOnboardingPrevBtn){
     appOnboardingPrevBtn.disabled=appOnboardingPageIndex <= 0;
@@ -15123,7 +15501,8 @@ function buildOnboardingIntroPages(){
   };
   const pages=[];
   let chunk=[];
-  APP_ONBOARDING_INTRO_BLOCKS.forEach((block)=>{
+  const introBlocks=getOnboardingIntroBlocks();
+  introBlocks.forEach((block)=>{
     const candidate=chunk.concat(block);
     if(!chunk.length || fits(candidate)){
       chunk=candidate;
@@ -15137,7 +15516,7 @@ function buildOnboardingIntroPages(){
     }
   });
   if(chunk.length) pages.push(chunk);
-  if(!pages.length) pages.push([APP_ONBOARDING_INTRO_BLOCKS[0]]);
+  if(!pages.length) pages.push([introBlocks[0]]);
   measure.remove();
   pages.forEach((blocks, idx)=>{
     const page=document.createElement('section');
@@ -15185,18 +15564,21 @@ function openAppOnboarding(resetPage){
   }
   appOnboardingModal.removeAttribute('hidden');
   buildOnboardingIntroPages();
+  updateGuideContent();
   updateOnboardingUi();
 }
 function createStartupPhaseAnimator(){
   const canvas = document.querySelector('#startup-shell .startup-phase-canvas');
   if(!canvas) return null;
   if(!(typeof THREE !== 'undefined' && THREE.WebGLRenderer)) return null;
-  const renderer = new THREE.WebGLRenderer({
+  if(!WEBGL_RENDERING_ACTIVE) return null;
+  const renderer = createSafeWebGLRenderer({
     canvas,
     antialias:true,
     alpha:true,
     premultipliedAlpha:true
-  });
+  }, 'Startup phase animator');
+  if(!renderer) return null;
   renderer.setClearColor(0x000000, 0);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   const scene = new THREE.Scene();
@@ -15363,6 +15745,43 @@ if(appOnboardingModal){
       closeAppOnboarding();
     }
   });
+  
+  // Handle onboarding language widget
+  const onboardingLangToggle = document.getElementById('app-onboarding-lang-toggle');
+  const onboardingLangMenu = document.getElementById('app-onboarding-lang-menu');
+  
+  if(onboardingLangToggle && onboardingLangMenu){
+    onboardingLangToggle.addEventListener('click', ()=>{
+      const willOpen = onboardingLangMenu.hasAttribute('hidden');
+      if(willOpen) onboardingLangMenu.removeAttribute('hidden');
+      else onboardingLangMenu.setAttribute('hidden','');
+      onboardingLangToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+    
+    onboardingLangMenu.querySelectorAll('button[data-lang]').forEach((btn)=>{
+      btn.addEventListener('click', ()=>{
+        const lang = btn.getAttribute('data-lang');
+        if(lang && lang !== currentLang){
+          setLanguage(lang);
+          buildOnboardingIntroPages();
+          updateGuideContent();
+          updateOnboardingUi();
+        }
+        onboardingLangMenu.setAttribute('hidden','');
+        onboardingLangToggle.setAttribute('aria-expanded','false');
+      });
+    });
+    
+    // Close on click outside
+    document.addEventListener('click',(e)=>{
+      if(!onboardingLangMenu.hasAttribute('hidden')){
+        if(!onboardingLangToggle.contains(e.target) && !onboardingLangMenu.contains(e.target)){
+          onboardingLangMenu.setAttribute('hidden','');
+          onboardingLangToggle.setAttribute('aria-expanded','false');
+        }
+      }
+    });
+  }
 }
 document.addEventListener('keydown',(e)=>{
   if(e.key !== 'Escape') return;
@@ -15397,7 +15816,7 @@ window.addEventListener('resize', ()=>{
   requestAnimationFrame(syncTopInfoCardsAgainstHeader);
 });
 
-// â”€â”€â”€ Time-lapse â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Time-lapse Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 tlActive=false; tlPaused=false; tlSpeed=1; tlDate=null;
 let tlDirection = 1;
 const tlBar=document.getElementById('timelapse-bar');
@@ -15439,7 +15858,7 @@ function stopTimeLapse(){
   syncTimeLapseUI();
 }
 function startTimeLapseFrom(startDate, direction){
-  stopManualTimeTransition(false);
+  stopManualTimeTransition(true);
   const seed = (startDate instanceof Date && !Number.isNaN(startDate.getTime()))
     ? new Date(startDate)
     : (currentDate instanceof Date ? new Date(currentDate) : new Date());
@@ -15482,7 +15901,15 @@ function handleTimeLapsePlay(direction){
   commitTlRateInput();
   const nextDirection = direction === -1 ? -1 : 1;
   if(!tlActive){
-    startTimeLapseFrom(resolveTimeLapseSeedDate(), nextDirection);
+    if(manualTimeTransition.active){
+      stopManualTimeTransition(true);
+    }
+    const seedDate = resolveTimeLapseSeedDate();
+    if(seedDate instanceof Date && !Number.isNaN(seedDate.getTime())){
+      currentDate = new Date(seedDate.getTime());
+    }
+    manualDateTimeDraftActive = false;
+    startTimeLapseFrom(seedDate, nextDirection);
     return;
   }
   if(tlDirection !== nextDirection){
@@ -15663,7 +16090,7 @@ function initTravelControlsDeferred(){
 initTravelControlsDeferred();
 applyTranslations();
 
-// â”€â”€â”€ Boucle d'animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Boucle d'animation Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 let prevTime=performance.now();
 let frameCounter = 0;
 const velocity=new THREE.Vector3();
@@ -15824,7 +16251,10 @@ function animate(){
       renderer.toneMappingExposure = RENDER_EXPOSURE_NORMAL;
     }
   }
-  const cinematicMapOnly = travelCinematicActive;
+  const cinematicMapOnly = (
+    travelTween.active &&
+    !['takeoff'].includes(travelTween.phase)
+  ) || !!landingSpinTween.active;
   setTravelMapOnlyMode(cinematicMapOnly);
   updateGroundMotionLinesAnchor();
   updateHorizonSilhouetteAnchor();
@@ -15835,7 +16265,8 @@ function animate(){
     updatePlanetShine(now);
     updatePlanetLabelAnchors();
   }
-  const showGround = !travelCinematicActive;
+  const groundTravelPhase = travelTween.active && ['takeoff'].includes(travelTween.phase);
+  const showGround = !travelCinematicActive || groundTravelPhase;
   ground.visible = showGround;
   horizonSilhouetteGroup.visible = showGround;
   groundGrid.visible = false;
@@ -15844,17 +16275,17 @@ function animate(){
   if(templateMode === 'islamic' && !travelCinematicActive){
     updateQibla(currentLat, currentLon);
   }
-  const hideGuidesForTravel = travelCinematicActive;
+  const hideGuidesForTravel = travelCinematicActive && !groundTravelPhase;
   if(templateMode === 'islamic'){
     qiblaGuide.visible = showQiblaGuide && !hideGuidesForTravel;
     qudsGuide.visible = showQudsGuide && !hideGuidesForTravel;
     medinaGuide.visible = showMedinaGuide && !hideGuidesForTravel;
   }
   cardinalHorizonMarkers.visible = !hideGuidesForTravel;
-  qiblaAzOverlay.visible = showQiblaGuide && !hideGuidesForTravel;
+  qiblaAzOverlay.visible = showQiblaGuide && !hideGuidesForTravel && moonIsVisible;
   const spaceFade = travelTween.active ? THREE.MathUtils.clamp(travelTween.spaceFade || 0, 0, 1) : (landingSpinTween.active ? 1 : 0);
   worldMapGroup.visible = travelCinematicActive;
-  // Keep night-side terminator visible during travel.
+  worldCloudLayer.visible = !travelCinematicActive;
   worldMapNightMask.visible = travelCinematicActive;
   if(travelCinematicActive){
     worldMapNightUniforms.uNightOpacity.value = 0.62;
@@ -15865,7 +16296,7 @@ function animate(){
     worldMapNightUniforms.uTerminatorWidth.value = 0.038;
     worldMapNightUniforms.uRimStrength.value = 0.82;
   }
-  worldMapPlane.material.opacity = travelCinematicActive ? 1 : 0;
+  worldMapPlane.material.opacity = travelCinematicActive ? 0.88 : 0;
   if(travelCinematicActive){
     travelStartPoint.visible = false;
     travelEndPoint.visible = false;
@@ -15903,17 +16334,13 @@ function animate(){
     travelRouteGlowLine.material.blending = THREE.AdditiveBlending;
     travelRouteGlowLine.material.needsUpdate = true;
   }
-  const cinematicSpaceActive = travelCinematicActive;
-  if(cinematicSpaceActive){
-    scene.background = TRAVEL_SPACE_BG;
-    worldMapPlane.material.opacity = Math.max(worldMapPlane.material.opacity || 0, 0.08);
-  }else{
-    scene.background = skyBgColor;
-  }
+  scene.background = travelCinematicActive ? TRAVEL_SPACE_BG : skyBgColor;
   renderer.clear();
   renderer.render(scene,camera);
-  // Keep scene depth so terrain/horizon can correctly occlude the moon.
-  renderer.render(moonScene,camera);
+  if(!travelCinematicActive){
+    // Keep scene depth so terrain/horizon can correctly occlude the moon.
+    renderer.render(moonScene,camera);
+  }
   renderMoonLogoOverlays();
 }
 
